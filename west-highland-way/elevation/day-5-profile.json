@@ -1,0 +1,25 @@
+{
+  "points": [
+    { "km": 0, "elevation_m": 210 },
+    { "km": 2.0, "elevation_m": 250 },
+    { "km": 4.0, "elevation_m": 310 },
+    { "km": 5.0, "elevation_m": 340 },
+    { "km": 7.0, "elevation_m": 280 },
+    { "km": 9.0, "elevation_m": 220 },
+    { "km": 11.0, "elevation_m": 170 },
+    { "km": 13.0, "elevation_m": 210 },
+    { "km": 15.0, "elevation_m": 195 },
+    { "km": 17.0, "elevation_m": 280 },
+    { "km": 18.0, "elevation_m": 350 },
+    { "km": 19.5, "elevation_m": 410 },
+    { "km": 21.0, "elevation_m": 445 },
+    { "km": 23.0, "elevation_m": 380 },
+    { "km": 25.0, "elevation_m": 340 },
+    { "km": 27.0, "elevation_m": 305 },
+    { "km": 28.5, "elevation_m": 280 },
+    { "km": 30.0, "elevation_m": 260 },
+    { "km": 30.5, "elevation_m": 260 }
+  ],
+  "summit_label": "Black Mount shoulder 445m",
+  "summit_km": 21.0
+}

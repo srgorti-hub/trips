@@ -1,0 +1,25 @@
+{
+  "points": [
+    { "km": 0, "elevation_m": 64 },
+    { "km": 1.5, "elevation_m": 80 },
+    { "km": 2.5, "elevation_m": 110 },
+    { "km": 4.0, "elevation_m": 180 },
+    { "km": 5.0, "elevation_m": 260 },
+    { "km": 6.0, "elevation_m": 330 },
+    { "km": 6.5, "elevation_m": 361 },
+    { "km": 7.5, "elevation_m": 200 },
+    { "km": 9.0, "elevation_m": 25 },
+    { "km": 10.5, "elevation_m": 40 },
+    { "km": 12.0, "elevation_m": 55 },
+    { "km": 13.0, "elevation_m": 70 },
+    { "km": 14.5, "elevation_m": 45 },
+    { "km": 16.5, "elevation_m": 30 },
+    { "km": 18.0, "elevation_m": 55 },
+    { "km": 19.5, "elevation_m": 65 },
+    { "km": 21.0, "elevation_m": 40 },
+    { "km": 22.5, "elevation_m": 50 },
+    { "km": 24.0, "elevation_m": 19 }
+  ],
+  "summit_label": "Conic Hill 361m",
+  "summit_km": 6.5
+}

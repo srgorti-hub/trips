@@ -1,0 +1,23 @@
+{
+  "points": [
+    { "km": 0, "elevation_m": 51 },
+    { "km": 1.0, "elevation_m": 55 },
+    { "km": 2.0, "elevation_m": 72 },
+    { "km": 3.5, "elevation_m": 105 },
+    { "km": 5.0, "elevation_m": 120 },
+    { "km": 6.0, "elevation_m": 110 },
+    { "km": 7.5, "elevation_m": 130 },
+    { "km": 8.5, "elevation_m": 140 },
+    { "km": 10.0, "elevation_m": 125 },
+    { "km": 11.2, "elevation_m": 100 },
+    { "km": 12.5, "elevation_m": 115 },
+    { "km": 13.0, "elevation_m": 130 },
+    { "km": 14.5, "elevation_m": 120 },
+    { "km": 16.0, "elevation_m": 90 },
+    { "km": 17.5, "elevation_m": 70 },
+    { "km": 19.0, "elevation_m": 55 },
+    { "km": 19.2, "elevation_m": 64 }
+  ],
+  "summit_label": "Carbeth area 140m",
+  "summit_km": 8.5
+}

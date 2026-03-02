@@ -1,0 +1,23 @@
+{
+  "points": [
+    { "km": 0, "elevation_m": 19 },
+    { "km": 1.5, "elevation_m": 45 },
+    { "km": 3.0, "elevation_m": 65 },
+    { "km": 4.5, "elevation_m": 35 },
+    { "km": 5.5, "elevation_m": 50 },
+    { "km": 7.0, "elevation_m": 80 },
+    { "km": 8.5, "elevation_m": 40 },
+    { "km": 10.0, "elevation_m": 70 },
+    { "km": 12.0, "elevation_m": 25 },
+    { "km": 13.5, "elevation_m": 55 },
+    { "km": 14.0, "elevation_m": 75 },
+    { "km": 15.5, "elevation_m": 50 },
+    { "km": 16.5, "elevation_m": 65 },
+    { "km": 18.0, "elevation_m": 45 },
+    { "km": 19.5, "elevation_m": 30 },
+    { "km": 21.0, "elevation_m": 20 },
+    { "km": 22.5, "elevation_m": 17 }
+  ],
+  "summit_label": "Above Inversnaid 80m",
+  "summit_km": 7.0
+}

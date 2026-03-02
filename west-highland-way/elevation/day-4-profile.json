@@ -1,0 +1,20 @@
+{
+  "points": [
+    { "km": 0, "elevation_m": 17 },
+    { "km": 1.5, "elevation_m": 35 },
+    { "km": 3.5, "elevation_m": 70 },
+    { "km": 5.0, "elevation_m": 100 },
+    { "km": 7.0, "elevation_m": 135 },
+    { "km": 8.5, "elevation_m": 170 },
+    { "km": 10.0, "elevation_m": 155 },
+    { "km": 11.5, "elevation_m": 175 },
+    { "km": 13.0, "elevation_m": 195 },
+    { "km": 14.0, "elevation_m": 170 },
+    { "km": 15.5, "elevation_m": 200 },
+    { "km": 17.0, "elevation_m": 215 },
+    { "km": 18.5, "elevation_m": 200 },
+    { "km": 19.5, "elevation_m": 210 }
+  ],
+  "summit_label": "Above Tyndrum 215m",
+  "summit_km": 17.0
+}

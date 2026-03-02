@@ -1,0 +1,25 @@
+{
+  "points": [
+    { "km": 0, "elevation_m": 10 },
+    { "km": 1.5, "elevation_m": 80 },
+    { "km": 3.0, "elevation_m": 180 },
+    { "km": 4.0, "elevation_m": 260 },
+    { "km": 5.5, "elevation_m": 310 },
+    { "km": 7.0, "elevation_m": 330 },
+    { "km": 7.5, "elevation_m": 340 },
+    { "km": 9.0, "elevation_m": 310 },
+    { "km": 10.5, "elevation_m": 280 },
+    { "km": 12.0, "elevation_m": 250 },
+    { "km": 14.0, "elevation_m": 200 },
+    { "km": 16.0, "elevation_m": 170 },
+    { "km": 17.0, "elevation_m": 150 },
+    { "km": 18.5, "elevation_m": 100 },
+    { "km": 20.0, "elevation_m": 60 },
+    { "km": 21.0, "elevation_m": 30 },
+    { "km": 22.5, "elevation_m": 20 },
+    { "km": 24.0, "elevation_m": 15 },
+    { "km": 25.0, "elevation_m": 10 }
+  ],
+  "summit_label": "Lairigmor 340m",
+  "summit_km": 7.5
+}
