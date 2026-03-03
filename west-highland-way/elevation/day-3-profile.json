@@ -1,23 +1,190 @@
 {
   "points": [
-    { "km": 0, "elevation_m": 19 },
-    { "km": 1.5, "elevation_m": 45 },
-    { "km": 3.0, "elevation_m": 65 },
-    { "km": 4.5, "elevation_m": 35 },
-    { "km": 5.5, "elevation_m": 50 },
-    { "km": 7.0, "elevation_m": 80 },
-    { "km": 8.5, "elevation_m": 40 },
-    { "km": 10.0, "elevation_m": 70 },
-    { "km": 12.0, "elevation_m": 25 },
-    { "km": 13.5, "elevation_m": 55 },
-    { "km": 14.0, "elevation_m": 75 },
-    { "km": 15.5, "elevation_m": 50 },
-    { "km": 16.5, "elevation_m": 65 },
-    { "km": 18.0, "elevation_m": 45 },
-    { "km": 19.5, "elevation_m": 30 },
-    { "km": 21.0, "elevation_m": 20 },
-    { "km": 22.5, "elevation_m": 17 }
+    {
+      "km": 0,
+      "elevation_m": 26
+    },
+    {
+      "km": 0.5,
+      "elevation_m": 19
+    },
+    {
+      "km": 1,
+      "elevation_m": 32
+    },
+    {
+      "km": 1.5,
+      "elevation_m": 27
+    },
+    {
+      "km": 2,
+      "elevation_m": 29
+    },
+    {
+      "km": 2.5,
+      "elevation_m": 29
+    },
+    {
+      "km": 3,
+      "elevation_m": 22
+    },
+    {
+      "km": 3.5,
+      "elevation_m": 13
+    },
+    {
+      "km": 4,
+      "elevation_m": 26
+    },
+    {
+      "km": 4.5,
+      "elevation_m": 8
+    },
+    {
+      "km": 5,
+      "elevation_m": 28
+    },
+    {
+      "km": 5.5,
+      "elevation_m": 31
+    },
+    {
+      "km": 6,
+      "elevation_m": 19
+    },
+    {
+      "km": 6.5,
+      "elevation_m": 11
+    },
+    {
+      "km": 7,
+      "elevation_m": 50
+    },
+    {
+      "km": 7.5,
+      "elevation_m": 50
+    },
+    {
+      "km": 8,
+      "elevation_m": 76
+    },
+    {
+      "km": 8.5,
+      "elevation_m": 46
+    },
+    {
+      "km": 9,
+      "elevation_m": 31
+    },
+    {
+      "km": 9.5,
+      "elevation_m": 58
+    },
+    {
+      "km": 10,
+      "elevation_m": 27
+    },
+    {
+      "km": 10.5,
+      "elevation_m": 37
+    },
+    {
+      "km": 11,
+      "elevation_m": 31
+    },
+    {
+      "km": 11.5,
+      "elevation_m": 17
+    },
+    {
+      "km": 12,
+      "elevation_m": 30
+    },
+    {
+      "km": 12.5,
+      "elevation_m": 45
+    },
+    {
+      "km": 13,
+      "elevation_m": 31
+    },
+    {
+      "km": 13.5,
+      "elevation_m": 77
+    },
+    {
+      "km": 14,
+      "elevation_m": 60
+    },
+    {
+      "km": 14.5,
+      "elevation_m": 63
+    },
+    {
+      "km": 15,
+      "elevation_m": 47
+    },
+    {
+      "km": 15.5,
+      "elevation_m": 79
+    },
+    {
+      "km": 16,
+      "elevation_m": 79
+    },
+    {
+      "km": 16.5,
+      "elevation_m": 49
+    },
+    {
+      "km": 17,
+      "elevation_m": 13
+    },
+    {
+      "km": 17.5,
+      "elevation_m": 67
+    },
+    {
+      "km": 18,
+      "elevation_m": 34
+    },
+    {
+      "km": 18.5,
+      "elevation_m": 20
+    },
+    {
+      "km": 19,
+      "elevation_m": 20
+    },
+    {
+      "km": 19.5,
+      "elevation_m": 64
+    },
+    {
+      "km": 20,
+      "elevation_m": 104
+    },
+    {
+      "km": 20.5,
+      "elevation_m": 92
+    },
+    {
+      "km": 21,
+      "elevation_m": 121
+    },
+    {
+      "km": 21.5,
+      "elevation_m": 54
+    },
+    {
+      "km": 22,
+      "elevation_m": 34
+    },
+    {
+      "km": 22.4,
+      "elevation_m": 19
+    }
   ],
-  "summit_label": "Above Inversnaid 80m",
-  "summit_km": 7.0
+  "summit_label": "121m",
+  "summit_km": 21
 }

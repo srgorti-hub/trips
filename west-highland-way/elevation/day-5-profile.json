@@ -1,25 +1,250 @@
 {
   "points": [
-    { "km": 0, "elevation_m": 210 },
-    { "km": 2.0, "elevation_m": 250 },
-    { "km": 4.0, "elevation_m": 310 },
-    { "km": 5.0, "elevation_m": 340 },
-    { "km": 7.0, "elevation_m": 280 },
-    { "km": 9.0, "elevation_m": 220 },
-    { "km": 11.0, "elevation_m": 170 },
-    { "km": 13.0, "elevation_m": 210 },
-    { "km": 15.0, "elevation_m": 195 },
-    { "km": 17.0, "elevation_m": 280 },
-    { "km": 18.0, "elevation_m": 350 },
-    { "km": 19.5, "elevation_m": 410 },
-    { "km": 21.0, "elevation_m": 445 },
-    { "km": 23.0, "elevation_m": 380 },
-    { "km": 25.0, "elevation_m": 340 },
-    { "km": 27.0, "elevation_m": 305 },
-    { "km": 28.5, "elevation_m": 280 },
-    { "km": 30.0, "elevation_m": 260 },
-    { "km": 30.5, "elevation_m": 260 }
+    {
+      "km": 0,
+      "elevation_m": 235
+    },
+    {
+      "km": 0.5,
+      "elevation_m": 269
+    },
+    {
+      "km": 1,
+      "elevation_m": 292
+    },
+    {
+      "km": 1.5,
+      "elevation_m": 313
+    },
+    {
+      "km": 2,
+      "elevation_m": 329
+    },
+    {
+      "km": 2.5,
+      "elevation_m": 327
+    },
+    {
+      "km": 3,
+      "elevation_m": 312
+    },
+    {
+      "km": 3.5,
+      "elevation_m": 282
+    },
+    {
+      "km": 4,
+      "elevation_m": 256
+    },
+    {
+      "km": 4.5,
+      "elevation_m": 236
+    },
+    {
+      "km": 5,
+      "elevation_m": 226
+    },
+    {
+      "km": 5.5,
+      "elevation_m": 201
+    },
+    {
+      "km": 6,
+      "elevation_m": 198
+    },
+    {
+      "km": 6.5,
+      "elevation_m": 196
+    },
+    {
+      "km": 7,
+      "elevation_m": 204
+    },
+    {
+      "km": 7.5,
+      "elevation_m": 213
+    },
+    {
+      "km": 8,
+      "elevation_m": 214
+    },
+    {
+      "km": 8.5,
+      "elevation_m": 219
+    },
+    {
+      "km": 9,
+      "elevation_m": 220
+    },
+    {
+      "km": 9.5,
+      "elevation_m": 217
+    },
+    {
+      "km": 10,
+      "elevation_m": 198
+    },
+    {
+      "km": 10.5,
+      "elevation_m": 164
+    },
+    {
+      "km": 11,
+      "elevation_m": 180
+    },
+    {
+      "km": 11.5,
+      "elevation_m": 217
+    },
+    {
+      "km": 12,
+      "elevation_m": 267
+    },
+    {
+      "km": 12.5,
+      "elevation_m": 307
+    },
+    {
+      "km": 13,
+      "elevation_m": 311
+    },
+    {
+      "km": 13.5,
+      "elevation_m": 252
+    },
+    {
+      "km": 14,
+      "elevation_m": 200
+    },
+    {
+      "km": 14.5,
+      "elevation_m": 178
+    },
+    {
+      "km": 15,
+      "elevation_m": 169
+    },
+    {
+      "km": 15.5,
+      "elevation_m": 173
+    },
+    {
+      "km": 16,
+      "elevation_m": 185
+    },
+    {
+      "km": 16.5,
+      "elevation_m": 200
+    },
+    {
+      "km": 17,
+      "elevation_m": 223
+    },
+    {
+      "km": 17.5,
+      "elevation_m": 259
+    },
+    {
+      "km": 18,
+      "elevation_m": 282
+    },
+    {
+      "km": 18.5,
+      "elevation_m": 291
+    },
+    {
+      "km": 19,
+      "elevation_m": 300
+    },
+    {
+      "km": 19.5,
+      "elevation_m": 309
+    },
+    {
+      "km": 20,
+      "elevation_m": 326
+    },
+    {
+      "km": 20.5,
+      "elevation_m": 327
+    },
+    {
+      "km": 21,
+      "elevation_m": 311
+    },
+    {
+      "km": 21.5,
+      "elevation_m": 314
+    },
+    {
+      "km": 22,
+      "elevation_m": 319
+    },
+    {
+      "km": 22.5,
+      "elevation_m": 316
+    },
+    {
+      "km": 23,
+      "elevation_m": 340
+    },
+    {
+      "km": 23.5,
+      "elevation_m": 349
+    },
+    {
+      "km": 24,
+      "elevation_m": 352
+    },
+    {
+      "km": 24.5,
+      "elevation_m": 394
+    },
+    {
+      "km": 25,
+      "elevation_m": 427
+    },
+    {
+      "km": 25.5,
+      "elevation_m": 445
+    },
+    {
+      "km": 26,
+      "elevation_m": 418
+    },
+    {
+      "km": 26.5,
+      "elevation_m": 394
+    },
+    {
+      "km": 27,
+      "elevation_m": 367
+    },
+    {
+      "km": 27.5,
+      "elevation_m": 333
+    },
+    {
+      "km": 28,
+      "elevation_m": 308
+    },
+    {
+      "km": 28.5,
+      "elevation_m": 292
+    },
+    {
+      "km": 29,
+      "elevation_m": 283
+    },
+    {
+      "km": 29.5,
+      "elevation_m": 257
+    },
+    {
+      "km": 29.7,
+      "elevation_m": 248
+    }
   ],
-  "summit_label": "Black Mount shoulder 445m",
-  "summit_km": 21.0
+  "summit_label": "445m",
+  "summit_km": 25.5
 }
