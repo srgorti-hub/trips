@@ -196,6 +196,60 @@ Open photos.html → It reads trip-data.json to get day structure
 
 ---
 
+## GPX Data Processor (`gpx-tool.html`)
+
+### User: Trip Organizer
+Used locally or hosted. Processes real GPX track data to replace estimated stats.
+
+### Screen Layout
+Single-page layout: header with back link, day card grid, sticky download bar.
+
+### User Flow
+
+```
+Open gpx-tool.html → It reads trip-data.json to get day structure and estimated stats
+  → See grid of day cards, each with a drop zone for a GPX file
+  → Drop a GPX file for a day → see comparison table (estimated vs. GPX) and mini elevation chart
+  → Repeat for each day
+  → Download updated trip-data.json (with real stats) and/or elevation data zip
+```
+
+### Header
+- Back link to `index.html`
+- Title: "GPX Data Processor"
+- Trip name (read from `trip-data.json`)
+- Brief instructions
+
+### Day Cards
+- One card per day, labeled with day number and segment name
+- Estimated stats shown (distance, ascent, descent from `trip-data.json`)
+- Drag-and-drop zone for GPX file (click-to-browse fallback)
+- After processing:
+  - Comparison table: Estimated vs GPX stats with diff percentages (>10% highlighted amber)
+  - Mini SVG elevation chart from parsed track points
+  - Clear & re-drop button
+
+### Download Bar (sticky bottom)
+- Processed day count
+- "Download trip-data.json" button — updated JSON with GPX-derived stats
+- "Download Elevation Data" button — zip of per-day elevation profile JSONs
+
+### Responsive Behavior
+- Desktop-primary (same as Photo Manager)
+- Mobile: functional with file picker fallback
+
+---
+
+## Guide Footer
+
+Each trip's `index.html` includes a footer with links to both companion tools:
+- **Photo Manager** (`photos.html`)
+- **GPX Data Processor** (`gpx-tool.html`)
+
+Both tools link back to the guide via a "Back to Guide" link in their headers.
+
+---
+
 ## Interaction Patterns
 
 | Pattern | Behavior |

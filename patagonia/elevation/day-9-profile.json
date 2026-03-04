@@ -1,0 +1,14 @@
+{
+  "points": [
+    {"km": 0, "elevation_m": 80},
+    {"km": 15, "elevation_m": 100},
+    {"km": 30, "elevation_m": 120},
+    {"km": 50, "elevation_m": 100},
+    {"km": 70, "elevation_m": 60},
+    {"km": 90, "elevation_m": 30},
+    {"km": 110, "elevation_m": 15},
+    {"km": 120, "elevation_m": 5}
+  ],
+  "summit_label": "Park exit plateau 120m",
+  "summit_km": 30
+}

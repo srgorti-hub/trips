@@ -1,0 +1,42 @@
+{
+  "points": [
+    {
+      "km": 0,
+      "elevation_m": 295
+    },
+    {
+      "km": 0.5,
+      "elevation_m": 275
+    },
+    {
+      "km": 1.0,
+      "elevation_m": 254
+    },
+    {
+      "km": 1.5,
+      "elevation_m": 239
+    },
+    {
+      "km": 2.0,
+      "elevation_m": 241
+    },
+    {
+      "km": 2.5,
+      "elevation_m": 223
+    },
+    {
+      "km": 3.0,
+      "elevation_m": 186
+    },
+    {
+      "km": 3.5,
+      "elevation_m": 184
+    },
+    {
+      "km": 3.6,
+      "elevation_m": 191
+    }
+  ],
+  "summit_label": "295m",
+  "summit_km": 0
+}

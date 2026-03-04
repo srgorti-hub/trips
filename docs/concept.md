@@ -46,6 +46,11 @@ Currently, organizers cobble together Google Docs, email threads, and WhatsApp m
 - Gear checklist (interactive, saves progress)
 - Photos (your own or auto-fetched stock photos)
 
+## Companion Tools (per trip)
+Each trip folder includes two companion tools accessible via footer links in the guide:
+- **Photo Manager** (`photos.html`) — Drag-and-drop photo organizer for assigning images to days
+- **GPX Data Processor** (`gpx-tool.html`) — Drop GPX files per day to generate accurate elevation profiles and distance/ascent stats from real GPS data, replacing estimated values
+
 ## Core Value Proposition
 - **For the organizer**: Describe your trip → AI does the research → polished guide in minutes
 - **For participants**: One URL, all the info, works on any phone
@@ -66,9 +71,12 @@ Currently, organizers cobble together Google Docs, email threads, and WhatsApp m
 
 ## Deliverables
 
-| File | Purpose |
-|------|---------|
-| `trip-template.md` | Upload to Claude.ai with your itinerary — tells Claude how to generate the JSON and elevation data |
-| `index.html` | Travel guide template — reads `trip-data.json`, renders elevation charts, fetches stock photos |
-| `photos.html` | Drag-and-drop page to organize your own photos into the right day folders |
-| `README.md` | End-to-end workflow instructions |
+| File | Location | Purpose |
+|------|----------|---------|
+| `trip-template.md` | Project root | Upload to Claude.ai with your itinerary — tells Claude how to generate the JSON and elevation data |
+| `index.html` | Each trip folder | Travel guide — reads `trip-data.json`, renders elevation charts, fetches stock photos |
+| `photos.html` | Each trip folder | Drag-and-drop page to organize your own photos into the right day folders |
+| `gpx-tool.html` | Each trip folder | GPX processor — drop GPX files to generate accurate stats and elevation profiles from real GPS data |
+| `README.md` | WHW folder | End-to-end workflow instructions |
+
+All three HTML tools (`index.html`, `photos.html`, `gpx-tool.html`) are trip-agnostic — they read `trip-data.json` from their own folder. When creating a new trip, copy all three into the trip folder alongside the generated data files.

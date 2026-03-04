@@ -192,6 +192,48 @@ Clean folder structure. No dead files. Project root has reusable tools, trip fol
 
 ---
 
+---
+
+## Phase 7: GPX Data Processor (`gpx-tool.html`)
+
+**Goal**: Build a GPX processing tool that parses real GPS data and compares it against estimated stats in `trip-data.json`.
+
+**Status**: DONE
+
+### Steps
+1. Create `gpx-tool.html` with matching design system (same fonts, colors, card style)
+2. Load `trip-data.json` to get day structure and estimated stats
+3. Build per-day drop zones for GPX file upload
+4. Implement GPX parser (XML → track points with lat/lon/ele)
+5. Implement stats calculator (haversine distance, ascent/descent with noise threshold, max elevation)
+6. Implement elevation profile generator (sampled at 0.5km intervals)
+7. Render comparison tables (estimated vs. GPX with diff %)
+8. Render mini SVG elevation charts per day
+9. Export updated `trip-data.json` with GPX-derived stats
+10. Export elevation data as zip (JSZip)
+
+### Milestone
+Organizer can drop GPX files for each day, see stat comparisons and elevation profiles, and download updated trip data.
+
+---
+
+## Phase 8: Multi-Trip Tool Availability
+
+**Goal**: Make `photos.html` and `gpx-tool.html` available in every trip folder, not just WHW.
+
+**Status**: DONE
+
+### Steps
+1. Copy `gpx-tool.html` from `west-highland-way/` to `patagonia/`
+2. Copy `photos.html` from `west-highland-way/` to `patagonia/`
+3. Add footer links (Photo Manager + GPX Data Processor) to `patagonia/index.html`
+4. Verify tools load `trip-data.json` correctly from the Patagonia folder
+
+### Milestone
+Both trips have all three tools. Footer links work. New trips follow the same pattern: copy all three HTML files into the trip folder.
+
+---
+
 ## Dependencies Graph
 
 ```
@@ -206,6 +248,10 @@ Phase 4 (trip-template.md) ← independent, can run in parallel
 Phase 5 (README) ← depends on all above
    │
    └──► Phase 6 (cleanup) ← last
+
+Phase 7 (gpx-tool.html) ← depends on Phase 1
+
+Phase 8 (multi-trip tools) ← depends on Phases 3, 7
 ```
 
-Phases 2, 3, and 4 can be built in parallel after Phase 1 is complete.
+All phases complete.

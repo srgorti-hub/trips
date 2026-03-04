@@ -327,20 +327,80 @@
 
 ---
 
-## TC-15: Trip Template (`trip-template.md`)
+## TC-15: GPX Data Processor (`gpx-tool.html`)
 
-### TC-15.1: Claude.ai End-to-End
+### TC-15.1: Initial Load
+- **Input**: Open `gpx-tool.html` via local HTTP server (with `trip-data.json` present)
+- **Expected**: Page loads, shows day cards with correct segment labels and estimated stats
+
+### TC-15.2: Missing trip-data.json
+- **Input**: Open `gpx-tool.html` without `trip-data.json`
+- **Expected**: Error message displayed — not a blank/broken page
+
+### TC-15.3: GPX File Drop
+- **Input**: Drop a valid GPX file onto Day 1 slot
+- **Expected**: File parsed, comparison table shown with estimated vs. GPX stats, mini elevation chart rendered
+
+### TC-15.4: Non-GPX File Rejection
+- **Input**: Drop a `.txt` file onto a day slot
+- **Expected**: Alert shown, file not processed
+
+### TC-15.5: GPX Without Elevation Data
+- **Input**: Drop a GPX file that has no `<ele>` elements
+- **Expected**: Alert: "GPX file does not contain elevation data"
+
+### TC-15.6: GPX With Few Points
+- **Input**: Drop a GPX file with fewer than 2 track points
+- **Expected**: Alert: "GPX file contains fewer than 2 track points"
+
+### TC-15.7: Comparison Table Accuracy
+- **Input**: Drop GPX for a day with known distance
+- **Expected**: GPX distance matches known value. Diff percentage calculated correctly. >10% differences highlighted amber.
+
+### TC-15.8: Mini Elevation Chart
+- **Input**: Drop GPX for a day with elevation data
+- **Expected**: SVG chart renders with correct elevation shape, axis labels, summit marker
+
+### TC-15.9: Clear & Re-Drop
+- **Input**: Process a GPX file, then click "Clear & re-drop"
+- **Expected**: Results cleared, drop zone reappears, day can be re-processed
+
+### TC-15.10: Download Updated trip-data.json
+- **Input**: Process GPX for 3 days, click "Download trip-data.json"
+- **Expected**: Downloaded JSON has GPX-derived stats for processed days, original estimates for unprocessed days, updated totals
+
+### TC-15.11: Download Elevation Data Zip
+- **Input**: Process GPX for 3 days, click "Download Elevation Data"
+- **Expected**: Zip contains `elevation/day-N-profile.json` for each processed day with correct schema
+
+### TC-15.12: Results Summary Table
+- **Input**: Process GPX for multiple days
+- **Expected**: Summary table appears showing all days with estimated vs. GPX values side by side
+
+### TC-15.13: Multi-Trip Availability
+- **Input**: Open `gpx-tool.html` from `patagonia/` folder (with patagonia `trip-data.json`)
+- **Expected**: Loads patagonia trip data, shows correct day cards for Patagonia trip
+
+### TC-15.14: Footer Link Navigation
+- **Input**: Click "GPX Data Processor" link in trip `index.html` footer
+- **Expected**: Navigates to `gpx-tool.html`, which loads correctly
+
+---
+
+## TC-16: Trip Template (`trip-template.md`)
+
+### TC-16.1: Claude.ai End-to-End
 - **Input**: Upload `trip-template.md` + a rough text itinerary (e.g., "5-day Camino de Santiago from Sarria") to Claude.ai
 - **Expected**: Claude generates valid `trip-data.json` with all required fields and elevation JSONs
 
-### TC-15.2: Spreadsheet Input
+### TC-16.2: Spreadsheet Input
 - **Input**: Upload `trip-template.md` + an xlsx with day/distance/accommodation columns
 - **Expected**: Claude uses spreadsheet data and fills in remaining fields via research
 
-### TC-15.3: Output Schema Compliance
+### TC-16.3: Output Schema Compliance
 - **Input**: JSON output from Claude.ai
 - **Expected**: Passes all TC-1 validation checks (schema, types, required fields, location_keywords)
 
-### TC-15.4: Different Trip Type
+### TC-16.4: Different Trip Type
 - **Input**: Upload `trip-template.md` + "3-day cycling trip through Tuscany"
 - **Expected**: Claude generates valid output adapted for cycling (not hardcoded to hiking)

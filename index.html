@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip Guides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F5F3EF;
+  --surface: #FFFFFF;
+  --surface2: #F0EDE7;
+  --green: #2C4A1E;
+  --green-mid: #3D6B2C;
+  --green-light: #EBF2E5;
+  --amber: #D4721A;
+  --text: #1C1C1A;
+  --muted: #6B7569;
+  --border: #DDD9D0;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; line-height: 1.3; }
+
+.header {
+  background: var(--green);
+  color: #fff;
+  padding: 48px 0 44px;
+  text-align: center;
+}
+.header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+.header p { opacity: 0.8; font-size: 1rem; max-width: 500px; margin: 0 auto; }
+
+.container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+.trip-grid {
+  display: grid;
+  gap: 24px;
+  padding: 40px 0 80px;
+}
+
+.trip-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: block;
+}
+.trip-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.trip-card-body { padding: 28px; }
+.trip-card h2 { font-size: 1.4rem; margin-bottom: 4px; color: var(--green); }
+.trip-destination { font-size: 0.95rem; color: var(--muted); margin-bottom: 12px; }
+.trip-description {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.trip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.trip-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.trip-meta svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .header { padding: 32px 0 28px; }
+  .header h1 { font-size: 1.7rem; }
+  .trip-card-body { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <h1>Trip Guides</h1>
+    <p>Walking and hiking trip guides with day-by-day itineraries, elevation profiles, and GPX downloads.</p>
+  </div>
+</header>
+
+<main class="container">
+  <div class="trip-grid">
+
+    <a href="patagonia/index.html" class="trip-card">
+      <div class="trip-card-body">
+        <h2>Patagonia Explorer</h2>
+        <div class="trip-destination">Argentina / Chile (Patagonia)</div>
+        <div class="trip-description">A nine-day journey through the heart of Patagonia, spanning Argentine and Chilean highlights. From El Chalt&eacute;n's trekking trails to the Perito Moreno Glacier and Torres del Paine's iconic towers, French Valley, and grand park tour.</div>
+        <div class="trip-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+            Nov 22 &ndash; 30, 2026
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            9 days
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            97 km &middot; 3,054 m ascent
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <a href="west-highland-way/index.html" class="trip-card">
+      <div class="trip-card-body">
+        <h2>West Highland Way</h2>
+        <div class="trip-destination">Scotland, United Kingdom</div>
+        <div class="trip-description">Scotland's oldest and most celebrated long-distance trail, stretching 154 km from Milngavie to Fort William. Seven walking days through farmland, ancient woodland, Loch Lomond, Rannoch Moor, Glencoe, and the Devil's Staircase.</div>
+        <div class="trip-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+            May 9 &ndash; 18, 2026
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            10 days
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            151 km &middot; 4,555 m ascent
+          </span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+</body>
+</html>

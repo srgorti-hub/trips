@@ -39,24 +39,36 @@
 - **FR-4.4**: Generates/downloads a zip or organized folder structure matching the expected layout.
 - **FR-4.5**: Preview of assigned photos before saving.
 
-### FR-5: Trip Template (`trip-template.md`)
-- **FR-5.1**: Markdown document that instructs Claude.ai how to generate trip content.
-- **FR-5.2**: Contains the complete `trip-data.json` schema with field descriptions.
-- **FR-5.3**: Contains the `elevation/day-N-profile.json` schema.
-- **FR-5.4**: Contains the expected folder structure.
-- **FR-5.5**: Contains content guidelines — what to research for each day, how detailed descriptions should be, what trail data to include.
-- **FR-5.6**: Works with any trip type (hiking, trekking, active travel) — not hardcoded to a specific route.
+### FR-5: GPX Data Processor (`gpx-tool.html`)
+- **FR-5.1**: Standalone HTML page for processing GPX files against trip data.
+- **FR-5.2**: Reads `trip-data.json` to know the day structure (number of days, segment names, estimated stats).
+- **FR-5.3**: Per-day drag-and-drop interface to load GPX files.
+- **FR-5.4**: Parses GPX files to extract distance, ascent, descent, max elevation, and elevation profile from real GPS data.
+- **FR-5.5**: Comparison table per day showing estimated vs. GPX-measured stats with difference highlighting.
+- **FR-5.6**: Mini SVG elevation chart per day rendered from parsed track points.
+- **FR-5.7**: Downloads updated `trip-data.json` with GPX-derived stats replacing estimated values.
+- **FR-5.8**: Downloads elevation profile data as a zip file for use in the travel guide.
+- **FR-5.9**: Available in every trip folder (trip-agnostic — reads `trip-data.json` from same directory).
 
-### FR-6: Data Files
-- **FR-6.1**: `trip-data.json` — conforms to prescribed schema (see `api.md`). Contains trip metadata, participants, day-by-day data, weather, gear checklist, and location keywords for stock photo fallback.
-- **FR-6.2**: `elevation/day-N-profile.json` — array of `{km, elevation_m}` points plus summit label and km. One file per day.
+### FR-6: Trip Template (`trip-template.md`)
+- **FR-6.1**: Markdown document that instructs Claude.ai how to generate trip content.
+- **FR-6.2**: Contains the complete `trip-data.json` schema with field descriptions.
+- **FR-6.3**: Contains the `elevation/day-N-profile.json` schema.
+- **FR-6.4**: Contains the expected folder structure.
+- **FR-6.5**: Contains content guidelines — what to research for each day, how detailed descriptions should be, what trail data to include.
+- **FR-6.6**: Works with any trip type (hiking, trekking, active travel) — not hardcoded to a specific route.
 
-### FR-7: Folder Structure
-- **FR-7.1**: Prescribed folder structure:
+### FR-7: Data Files
+- **FR-7.1**: `trip-data.json` — conforms to prescribed schema (see `api.md`). Contains trip metadata, participants, day-by-day data, weather, gear checklist, and location keywords for stock photo fallback.
+- **FR-7.2**: `elevation/day-N-profile.json` — array of `{km, elevation_m}` points plus summit label and km. One file per day.
+
+### FR-8: Folder Structure
+- **FR-8.1**: Prescribed folder structure:
   ```
   /[trip-name]/
   ├── index.html
   ├── photos.html
+  ├── gpx-tool.html
   ├── trip-data.json
   ├── photos/hero/
   ├── photos/day-N/
@@ -65,6 +77,8 @@
   ├── elevation/day-N-profile.json
   └── README.md
   ```
+- **FR-8.2**: All three HTML tools (`index.html`, `photos.html`, `gpx-tool.html`) are trip-agnostic and must be copied into each new trip folder.
+- **FR-8.3**: Each trip's `index.html` footer contains links to `photos.html` and `gpx-tool.html`.
 
 ## Non-Functional Requirements
 

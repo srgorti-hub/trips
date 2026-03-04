@@ -76,19 +76,38 @@ python -m http.server 8000
 8. Zip download — correct folder structure in zip (TC-14.8, TC-14.9)
 9. Empty download — blocked or warned (TC-14.10)
 
-### Phase 5: Trip Template Testing (Manual)
+### Phase 5: GPX Data Processor Testing (Manual)
+**When**: After building/copying `gpx-tool.html` into trip folders
+**How**: Manual browser testing with local HTTP server
+
+**Test execution order**:
+1. Initial load — reads `trip-data.json`, shows correct day cards with estimated stats (TC-15.1)
+2. Missing data file — shows error message (TC-15.2)
+3. GPX file drop — parsed, comparison table + chart shown (TC-15.3)
+4. Non-GPX rejection — alert shown (TC-15.4)
+5. GPX without elevation — alert shown (TC-15.5)
+6. Comparison accuracy — diff percentages correct, >10% highlighted (TC-15.7)
+7. Mini elevation chart — SVG renders correctly (TC-15.8)
+8. Clear & re-drop — results cleared, drop zone reappears (TC-15.9)
+9. Download updated trip-data.json — stats replaced correctly (TC-15.10)
+10. Download elevation zip — correct folder structure (TC-15.11)
+11. Results summary — table shows all days (TC-15.12)
+12. Multi-trip — open from patagonia folder, loads patagonia data (TC-15.13)
+13. Footer link — navigate from index.html footer (TC-15.14)
+
+### Phase 6: Trip Template Testing (Manual)
 **When**: After creating `trip-template.md` (Build Phase 4)
 **How**: Actually upload to Claude.ai and test with real conversations
 
 | Test | Input | Expected |
 |------|-------|----------|
-| Text itinerary | `trip-template.md` + "5-day Camino from Sarria" | Valid `trip-data.json` + elevation files (TC-15.1) |
-| Spreadsheet | `trip-template.md` + xlsx with day/distance/accommodation | Claude uses spreadsheet data, fills gaps (TC-15.2) |
-| Schema compliance | Output from above tests | Passes all TC-1 validation checks (TC-15.3) |
-| Different trip type | `trip-template.md` + "3-day cycling trip in Tuscany" | Valid output adapted for cycling (TC-15.4) |
+| Text itinerary | `trip-template.md` + "5-day Camino from Sarria" | Valid `trip-data.json` + elevation files (TC-16.1) |
+| Spreadsheet | `trip-template.md` + xlsx with day/distance/accommodation | Claude uses spreadsheet data, fills gaps (TC-16.2) |
+| Schema compliance | Output from above tests | Passes all TC-1 validation checks (TC-16.3) |
+| Different trip type | `trip-template.md` + "3-day cycling trip in Tuscany" | Valid output adapted for cycling (TC-16.4) |
 
-### Phase 6: Responsive Testing (Manual)
-**When**: After Phases 2–4 pass
+### Phase 7: Responsive Testing (Manual)
+**When**: After Phases 2–5 pass
 **How**: Browser DevTools device emulation + real devices if available
 
 | Viewport | Test targets |
@@ -106,7 +125,7 @@ python -m http.server 8000
 - Elevation charts fit viewport
 - Tabs accessible (scroll if needed on mobile)
 
-### Phase 7: Cross-Browser Testing (Manual)
+### Phase 8: Cross-Browser Testing (Manual)
 **When**: After responsive testing
 **How**: Open in each browser, run through core flow
 
@@ -126,7 +145,7 @@ python -m http.server 8000
 6. Dark mode toggle
 7. Photo lightbox (with stock and local photos)
 
-### Phase 8: Error Handling Testing (Manual)
+### Phase 9: Error Handling Testing (Manual)
 **When**: After core functional tests pass
 **How**: Deliberately break things
 
@@ -162,7 +181,8 @@ python -m http.server 8000
 | Lightbox & Dark mode | — | Yes | TC-11, TC-12 |
 | Responsive | — | Yes | TC-13 |
 | Photo Manager | — | Yes | TC-14 |
-| Trip Template | — | Yes | TC-15 |
+| GPX Data Processor | — | Yes | TC-15 |
+| Trip Template | — | Yes | TC-16 |
 | Cross-browser | — | Yes | (subset of all TCs) |
 | Error handling | — | Yes | TC-3.3, TC-3.4, TC-8.3 |
 
@@ -171,9 +191,11 @@ python -m http.server 8000
 ## When to Re-Test
 
 - After any change to `trip-data.json` → re-run Phase 1 (data validation)
-- After any change to `index.html` → re-run Phases 2, 3, 6, 7
+- After any change to `index.html` → re-run Phases 2, 3, 7, 8
 - After any change to `photos.html` → re-run Phase 4
-- After any change to `trip-template.md` → re-run Phase 5
+- After any change to `gpx-tool.html` → re-run Phase 5
+- After any change to `trip-template.md` → re-run Phase 6
+- After adding a new trip folder → verify tools copied and footer links work (TC-15.13, TC-15.14)
 - Before deployment → full regression (all phases)
 
 ---
@@ -185,6 +207,9 @@ All test phases pass:
 - [ ] All Travel Guide App test cases pass in Chrome
 - [ ] Stock photo fallback works (online and offline graceful)
 - [ ] Photo Manager drag-drop and zip export work
+- [ ] GPX Data Processor parses files, shows comparisons, exports correctly
+- [ ] GPX tool and Photo Manager available in all trip folders (WHW + Patagonia)
+- [ ] Footer links work in all trips
 - [ ] Trip template produces valid output from Claude.ai
 - [ ] Responsive layout correct at all breakpoints
 - [ ] Core flow works in Safari, Firefox, Edge

@@ -1,0 +1,29 @@
+{
+  "points": [
+    {"km": 0, "elevation_m": 405},
+    {"km": 0.5, "elevation_m": 450},
+    {"km": 1, "elevation_m": 510},
+    {"km": 2, "elevation_m": 580},
+    {"km": 3, "elevation_m": 560},
+    {"km": 4, "elevation_m": 540},
+    {"km": 5, "elevation_m": 530},
+    {"km": 6, "elevation_m": 520},
+    {"km": 7, "elevation_m": 510},
+    {"km": 8, "elevation_m": 505},
+    {"km": 8.5, "elevation_m": 500},
+    {"km": 9, "elevation_m": 520},
+    {"km": 10, "elevation_m": 540},
+    {"km": 11, "elevation_m": 520},
+    {"km": 12, "elevation_m": 505},
+    {"km": 13, "elevation_m": 510},
+    {"km": 14, "elevation_m": 520},
+    {"km": 15, "elevation_m": 530},
+    {"km": 16, "elevation_m": 560},
+    {"km": 17, "elevation_m": 580},
+    {"km": 18, "elevation_m": 510},
+    {"km": 19, "elevation_m": 450},
+    {"km": 20, "elevation_m": 405}
+  ],
+  "summit_label": "Initial climb above El Chaltén 580m",
+  "summit_km": 2
+}

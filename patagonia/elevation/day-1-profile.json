@@ -1,0 +1,15 @@
+{
+  "points": [
+    {"km": 0, "elevation_m": 210},
+    {"km": 20, "elevation_m": 220},
+    {"km": 50, "elevation_m": 250},
+    {"km": 80, "elevation_m": 270},
+    {"km": 110, "elevation_m": 290},
+    {"km": 140, "elevation_m": 320},
+    {"km": 170, "elevation_m": 380},
+    {"km": 200, "elevation_m": 410},
+    {"km": 220, "elevation_m": 405}
+  ],
+  "summit_label": "Approach to El Chaltén 410m",
+  "summit_km": 200
+}

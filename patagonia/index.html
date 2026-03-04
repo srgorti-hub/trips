@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>West Highland Way — Travel Guide</title>
+<title>Travel Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -1188,6 +1188,8 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 <nav class="top-nav">
   <div class="logo">Trail <span>&</span> Co</div>
   <div class="nav-right">
+    <a href="photos.html" style="color:var(--green);text-decoration:none;font-weight:500;font-size:0.9rem;">Photos</a>
+    <a href="gpx-tool.html" style="color:var(--green);text-decoration:none;font-weight:500;font-size:0.9rem;">GPX Tool</a>
     <button class="unit-toggle" id="unitToggle" aria-label="Toggle units">
       <span class="unit-label">km / m</span>
     </button>
@@ -1314,6 +1316,11 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="site-footer">
+  <div style="margin-bottom:10px;">
+    <a href="photos.html" style="color:var(--green);text-decoration:none;font-weight:500;margin:0 10px;">Photo Manager</a>
+    <span style="color:var(--border);">|</span>
+    <a href="gpx-tool.html" style="color:var(--green);text-decoration:none;font-weight:500;margin:0 10px;">GPX Data Processor</a>
+  </div>
   Built with Trail & Co — Active Travel Companion
 </footer>
 
@@ -1379,8 +1386,7 @@ function rerenderAllUnits() {
 
 /* ═══════════════════════════════
    PHOTO RESOLVER
-   Fallback chain: local file -> Lorem Picsum (stock) -> hide gracefully
-   Uses keyword-seeded URLs for consistent photos per location
+   Fallback chain: local file -> Wikimedia Commons search -> hide gracefully
    Caches results in sessionStorage to avoid re-fetching
 ═══════════════════════════════ */
 
@@ -1397,28 +1403,46 @@ function setPhotoCache(key, value) {
 }
 
 /**
- * Builds a Lorem Picsum URL seeded by keyword for consistent results.
- * Same seed always returns the same photo.
+ * Searches Wikimedia Commons for a JPEG/PNG image matching the query.
+ * Returns the first usable thumbnail URL, or null if nothing found.
  */
-function buildStockPhotoUrl(keywords, width = 800, height = 600) {
-  const seed = keywords.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase().slice(0, 60);
-  return `https://picsum.photos/seed/${seed}/${width}/${height}`;
+async function searchWikimediaPhoto(query, width = 800) {
+  const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url|mime&iiurlwidth=${width}&format=json&origin=*`;
+  try {
+    const res = await fetch(apiUrl);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const pages = data.query && data.query.pages;
+    if (!pages) return null;
+    // Sort by page ID to get most relevant first
+    const sorted = Object.values(pages).sort((a, b) => (a.index || 0) - (b.index || 0));
+    for (const page of sorted) {
+      const info = page.imageinfo && page.imageinfo[0];
+      if (!info) continue;
+      // Only use JPEG or PNG images
+      if (info.mime && (info.mime === 'image/jpeg' || info.mime === 'image/png')) {
+        return info.thumburl || info.url;
+      }
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 /**
  * Resolves a photo URL using the fallback chain:
  * 1. Try local path (if provided)
- * 2. Try Claude-provided URL (if provided)
- * 3. Try stock photo (Lorem Picsum, seeded by keywords)
+ * 2. Search Wikimedia Commons using keywords
+ * 3. Search Wikimedia Commons using keywords
  * 4. Return null (caller hides gracefully)
  *
  * @param {string|null} localPath - Local file path to try first
- * @param {string} keywords - Search keywords (used as seed for stock photo)
+ * @param {string} keywords - Search keywords for Wikimedia Commons
  * @param {string} cacheKey - Unique key for sessionStorage cache
- * @param {string|null} claudeUrl - Claude-provided public image URL
- * @returns {Promise<{url: string, source: 'local'|'claude'|'stock'}|null>}
+ * @returns {Promise<{url: string, source: 'local'|'stock'}|null>}
  */
-async function resolvePhoto(localPath, keywords, cacheKey, claudeUrl) {
+async function resolvePhoto(localPath, keywords, cacheKey) {
   // Check sessionStorage cache first
   const cached = getPhotoCache()[cacheKey];
   if (cached) {
@@ -1436,20 +1460,16 @@ async function resolvePhoto(localPath, keywords, cacheKey, claudeUrl) {
     } catch { /* local file not available */ }
   }
 
-  // Step 2: Try Claude-provided URL
-  if (claudeUrl) {
-    setPhotoCache(cacheKey, { url: claudeUrl, source: 'claude' });
-    return { url: claudeUrl, source: 'claude' };
-  }
-
-  // Step 3: Return stock photo URL (Lorem Picsum)
+  // Step 2: Search Wikimedia Commons
   if (keywords) {
-    const stockUrl = buildStockPhotoUrl(keywords);
-    setPhotoCache(cacheKey, { url: stockUrl, source: 'stock' });
-    return { url: stockUrl, source: 'stock' };
+    const wikimediaUrl = await searchWikimediaPhoto(keywords);
+    if (wikimediaUrl) {
+      setPhotoCache(cacheKey, { url: wikimediaUrl, source: 'stock' });
+      return { url: wikimediaUrl, source: 'stock' };
+    }
   }
 
-  // Step 4: No photo available
+  // Step 3: No photo available
   return null;
 }
 
@@ -1632,7 +1652,7 @@ function renderHero() {
 
   // Resolve hero image asynchronously
   const heroKeywords = (t.location_keywords || []).join(', ');
-  resolvePhoto('photos/hero/hero-1.jpg', heroKeywords, 'hero', t.hero_photo_url || null).then(result => {
+  resolvePhoto('photos/hero/hero-1.jpg', heroKeywords, 'hero').then(result => {
     skeleton.remove();
     if (result) {
       const img = new Image();
@@ -1728,7 +1748,8 @@ function renderOverview() {
   // Summary + YouTube
   let summaryHTML = `<p>${t.description}</p>`;
   if (t.youtube_overview) {
-    summaryHTML += `<a href="${t.youtube_overview}" target="_blank" rel="noopener" class="youtube-link">&#9654; Watch Trail Overview</a>`;
+    const ytOverviewUrl = t.youtube_overview.startsWith('http') ? t.youtube_overview : `https://www.youtube.com/results?search_query=${encodeURIComponent(t.youtube_overview)}`;
+    summaryHTML += `<a href="${ytOverviewUrl}" target="_blank" rel="noopener" class="youtube-link">&#9654; Watch Trail Overview</a>`;
   }
   document.getElementById('tripSummary').innerHTML = summaryHTML;
 
@@ -1801,14 +1822,12 @@ function renderDays() {
 
 /**
  * Resolves photos for a given day card — async, after DOM insertion.
- * Each photo slot tries: local -> stock (Lorem Picsum) -> hide
+ * Each photo slot tries: local -> stock (Wikimedia Commons) -> hide
  */
 async function resolveDayPhotos(day) {
   const photos = day.photos || [];
   const keywords = day.location_keywords || [];
-  const claudeUrls = day.photo_urls || [];
   let hasStock = false;
-  let hasClaude = false;
   let allHidden = true;
   const resolvedUrls = [];
 
@@ -1819,14 +1838,12 @@ async function resolveDayPhotos(day) {
     const localPath = photos[i];
     const kw = keywords[i] || keywords[0] || day.label;
     const cacheKey = `day-${day.day}-photo-${i}`;
-    const claudeUrl = claudeUrls[i] || null;
 
-    const result = await resolvePhoto(localPath, kw, cacheKey, claudeUrl);
+    const result = await resolvePhoto(localPath, kw, cacheKey);
 
     if (result) {
       allHidden = false;
       if (result.source === 'stock') hasStock = true;
-      if (result.source === 'claude') hasClaude = true;
       resolvedUrls[i] = result.url;
 
       const photoIndex = i;
@@ -1849,13 +1866,11 @@ async function resolveDayPhotos(day) {
   }
 
   // Show attribution based on photo source
-  if (hasStock || hasClaude) {
+  if (hasStock) {
     const attr = document.getElementById(`day-${day.day}-attribution`);
     if (attr) {
       attr.style.display = 'block';
-      if (hasClaude && !hasStock) attr.textContent = 'Photo: Wikimedia Commons / Public Domain';
-      else if (hasStock && !hasClaude) attr.textContent = 'Photo: Lorem Picsum';
-      else attr.textContent = 'Photos: Wikimedia Commons / Lorem Picsum';
+      attr.textContent = 'Photo: Wikimedia Commons';
     }
   }
 
@@ -2007,7 +2022,7 @@ function renderDayCard(day) {
       <ul class="poi-list">${day.interesting_links.map(link => `
         <li class="poi-item">
           <span class="poi-icon">${poiIcons[link.type] || poiIcons.other}</span>
-          <a href="${link.url}" target="_blank" rel="noopener">${link.title}</a>
+          <a href="${link.url || `https://www.google.com/search?q=${encodeURIComponent(link.title)}`}" target="_blank" rel="noopener">${link.title}</a>
         </li>`).join('')}</ul>
     </div>` : '';
 
@@ -2034,9 +2049,18 @@ function renderDayCard(day) {
   // External links (without GPX, since it now has its own button)
   const links = day.links || {};
   const linksArr = [];
-  if (links.alltrails) linksArr.push(`<a href="${links.alltrails}" target="_blank" rel="noopener" class="ext-link">&#127968; AllTrails</a>`);
-  if (links.komoot) linksArr.push(`<a href="${links.komoot}" target="_blank" rel="noopener" class="ext-link">&#127759; Komoot</a>`);
-  if (links.walk_highlands) linksArr.push(`<a href="${links.walk_highlands}" target="_blank" rel="noopener" class="ext-link">&#9968;&#65039; Walk Highlands</a>`);
+  if (links.alltrails) {
+    const atUrl = links.alltrails.startsWith('http') ? links.alltrails : `https://www.alltrails.com/search?q=${encodeURIComponent(links.alltrails)}`;
+    linksArr.push(`<a href="${atUrl}" target="_blank" rel="noopener" class="ext-link">&#127968; AllTrails</a>`);
+  }
+  if (links.komoot) {
+    const kmUrl = links.komoot.startsWith('http') ? links.komoot : `https://www.komoot.com/search?q=${encodeURIComponent(links.komoot)}`;
+    linksArr.push(`<a href="${kmUrl}" target="_blank" rel="noopener" class="ext-link">&#127759; Komoot</a>`);
+  }
+  if (links.walk_highlands) {
+    const whUrl = links.walk_highlands.startsWith('http') ? links.walk_highlands : `https://www.walkhighlands.co.uk/search.php?q=${encodeURIComponent(links.walk_highlands)}`;
+    linksArr.push(`<a href="${whUrl}" target="_blank" rel="noopener" class="ext-link">&#9968;&#65039; Walk Highlands</a>`);
+  }
   const externalLinksHTML = linksArr.length ? `
     <div class="detail-section">
       <h4>&#128279; Trail Resources</h4>
@@ -2089,12 +2113,12 @@ function renderDayCard(day) {
         ${photoSlots ? `
           <div class="photo-strip-wrapper" id="day-${day.day}-photo-strip">
             <div class="photo-strip">${photoSlots}</div>
-            <div class="photo-attribution" id="day-${day.day}-attribution" style="display:none;">Photo: Lorem Picsum</div>
+            <div class="photo-attribution" id="day-${day.day}-attribution" style="display:none;">Photo: Wikimedia Commons</div>
           </div>` : ''}
       </div>
 
       <div class="day-footer">
-        ${day.youtube ? `<a href="${day.youtube}" target="_blank" rel="noopener" class="day-yt-link">&#9654; Watch on YouTube</a>` : '<span></span>'}
+        ${day.youtube ? `<a href="${day.youtube.startsWith('http') ? day.youtube : `https://www.youtube.com/results?search_query=${encodeURIComponent(day.youtube)}`}" target="_blank" rel="noopener" class="day-yt-link">&#9654; Watch on YouTube</a>` : '<span></span>'}
         <button class="deep-dive-toggle">
           <span class="toggle-text">Deep Dive</span>
           <span class="arrow">&#9660;</span>
@@ -2441,7 +2465,10 @@ function renderPreparation() {
       <div class="prep-section">
         <h3>&#128200; What to Expect</h3>
         <ul class="prep-tips">
-          ${prep.what_to_expect.map((exp, i) => `<li><strong>Day ${i + 1}:</strong> ${exp}</li>`).join('')}
+          ${prep.what_to_expect.map((exp, i) => {
+            const cleaned = exp.replace(/^Day\s+\d+:\s*/i, '');
+            return `<li><strong>Day ${i + 1}:</strong> ${cleaned}</li>`;
+          }).join('')}
         </ul>
       </div>`;
   }

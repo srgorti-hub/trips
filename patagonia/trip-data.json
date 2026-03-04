@@ -1,0 +1,1469 @@
+{
+  "trip": {
+    "name": "Patagonia Explorer — El Chaltén, El Calafate & Torres del Paine",
+    "destination": "Argentina / Chile (Patagonia)",
+    "dates": {
+      "start": "2026-11-22",
+      "end": "2026-11-30"
+    },
+    "group_size": 2,
+    "total_distance_km": 96.8,
+    "total_ascent_m": 3054,
+    "youtube_overview": "Patagonia El Chaltén El Calafate Torres del Paine hiking guide",
+    "description": "A nine-day journey through the heart of Patagonia, spanning Argentine and Chilean highlights. The trip begins in El Chaltén — Argentina's trekking capital — with hikes to Laguna Torre beneath the spires of Cerro Torre, and panoramic viewpoints above the Río de las Vueltas valley. It then moves to El Calafate for a full day at the Perito Moreno Glacier, one of the only advancing glaciers on Earth, combining walkway viewing, boat safari, and sunset kayaking. The final four nights are spent at Hotel Las Torres inside Torres del Paine National Park, with guided day hikes to the iconic Base of the Towers, the dramatic French Valley, and a van-supported grand tour of the park's lakes, waterfalls, and Grey Glacier. Expect big winds, bigger mountains, and some of the most dramatic scenery on the planet.",
+    "location_keywords": [
+      "Patagonia mountains landscape",
+      "Torres del Paine granite towers",
+      "Cerro Torre El Chaltén Argentina"
+    ]
+  },
+  "participants": [
+    {
+      "name": "Organizer",
+      "role": "organizer"
+    },
+    {
+      "name": "Participant",
+      "role": "participant"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "label": "El Calafate to El Chaltén",
+      "date": "2026-11-22",
+      "distance_km": 0,
+      "ascent_m": 0,
+      "descent_m": 0,
+      "estimated_hours": 0,
+      "difficulty": "Easy",
+      "terrain_tags": [
+        "Transfer day",
+        "Paved road"
+      ],
+      "description": "A scenic three-hour drive north from El Calafate through the Patagonian steppe to El Chaltén, the small mountain village at the foot of the Fitz Roy massif. The road crosses flat, wind-swept grassland before the landscape transforms as you approach Los Glaciares National Park. About halfway, the route passes La Leona Roadhouse — a historic parador from the 1890s — and a viewpoint over Lago Viedma where the distant Viedma Glacier comes into view.\n\nAs the bus rounds the final bends into El Chaltén, the jagged silhouettes of Cerro Torre and Monte Fitz Roy appear above the valley. Use the afternoon to explore the village, stock up on supplies for tomorrow's trek, and check weather forecasts at the park ranger station near the entrance to town. El Chaltén has a handful of gear shops, bakeries, and restaurants — small-town Patagonia at its best.",
+      "accommodation": {
+        "name": "Hotel in El Chaltén",
+        "location": "El Chaltén"
+      },
+      "resupply_notes": "Several small supermarkets in El Chaltén (La Anónima, Poirot). Stock up on trail snacks, water, and sunscreen. ATMs are unreliable — bring cash from El Calafate.",
+      "water_sources": [],
+      "escape_routes": [],
+      "warnings": [],
+      "waypoints": [
+        {
+          "name": "El Calafate (departure)",
+          "km": 0,
+          "note": "Shared transfer departs from hotel"
+        },
+        {
+          "name": "El Chaltén (arrival)",
+          "km": 0,
+          "note": "Approx. 3-hour drive, 220 km"
+        }
+      ],
+      "links": {
+        "alltrails": "",
+        "komoot": "",
+        "walk_highlands": "",
+        "gpx_download": "gpx/day-1.gpx"
+      },
+      "youtube": "El Calafate to El Chaltén road trip Patagonia",
+      "photos": [
+        "photos/day-1/img1.jpg",
+        "photos/day-1/img2.jpg",
+        "photos/day-1/img3.jpg"
+      ],
+      "location_keywords": [
+        "El Chaltén village Fitz Roy",
+        "Patagonian steppe road Argentina",
+        "Lago Viedma viewpoint"
+      ],
+      "map": "maps/day-1-map.jpg",
+      "elevation_profile": "elevation/day-1-profile.json",
+      "food_stops": [
+        {
+          "name": "La Leona Roadhouse",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Historic parador halfway between El Calafate and El Chaltén. Coffee, cake, and simple meals. Worth a 15-minute stop."
+        },
+        {
+          "name": "Restaurants in El Chaltén",
+          "km": 0,
+          "type": "restaurant",
+          "notes": "Multiple options in town. Arrive in time for a late lunch."
+        }
+      ],
+      "toilet_facilities": [
+        {
+          "name": "La Leona Roadhouse",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Available during the comfort stop"
+        },
+        {
+          "name": "El Chaltén Park Ranger Station",
+          "km": 0,
+          "type": "public",
+          "notes": "Toilets at the national park entrance station"
+        }
+      ],
+      "interesting_links": [
+        {
+          "title": "La Leona Roadhouse — Historic 1890s Parador on Ruta 40",
+          "type": "history"
+        },
+        {
+          "title": "El Chaltén — Argentina's National Trekking Capital",
+          "type": "attraction"
+        },
+        {
+          "title": "Los Glaciares National Park — UNESCO World Heritage Site",
+          "type": "attraction"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "label": "Laguna Torre Trek",
+      "date": "2026-11-23",
+      "distance_km": 18,
+      "ascent_m": 490,
+      "descent_m": 490,
+      "estimated_hours": 7,
+      "difficulty": "Moderate",
+      "terrain_tags": [
+        "Forest trail",
+        "River valley",
+        "Glacial lake",
+        "Rocky sections"
+      ],
+      "description": "The Laguna Torre trail is one of El Chaltén's two iconic hikes, leading 9 km into the Fitz Roy river valley to a glacial lake at the foot of Cerro Torre — one of the most technically difficult peaks in the world. On a clear day, the needle-like granite tower rises above the turquoise lake with Glacier Grande spilling into it, a sight that ranks among Patagonia's finest.\n\nThe trailhead starts at the western edge of El Chaltén. Most of the elevation gain happens in the first 2 km as you climb through lenga forest to the first viewpoint above the Fitz Roy River canyon, where Margarita Waterfall is visible across the gorge. After this initial climb, the trail levels off and follows the river valley for several kilometres through open woodland and meadows, passing a midway viewpoint with panoramic views of the Adela Range and Cerro Torre. The final approach to the lagoon crosses rocky terrain before opening onto the lake shore, where icebergs calved from the glacier float in milky-blue water.\n\nFor the best views, continue past the main lakeside viewpoint to Mirador Maestri on the ridge above — an extra 20-minute scramble that gives an in-your-face perspective of Glacier Grande. Return is via the same route. Your guide will accompany you throughout the day.",
+      "accommodation": {
+        "name": "Hotel in El Chaltén",
+        "location": "El Chaltén"
+      },
+      "resupply_notes": "Carry your own lunch and at least 1.5L of water. Streams along the trail are drinkable. Shops in El Chaltén for resupply on return.",
+      "water_sources": [
+        "Streams throughout the trail — water is safe to drink directly",
+        "Río Fitz Roy (early in the trail)",
+        "Campamento De Agostini area (near the lagoon)"
+      ],
+      "escape_routes": [
+        "Return the same way to El Chaltén — no alternative exit routes",
+        "Campamento De Agostini at km 8 is the last sheltered spot before the lagoon"
+      ],
+      "warnings": [
+        "Wind can be extreme at the lagoon — gusts over 80 km/h are common. Secure loose items.",
+        "The final rocky section near the lagoon is uneven — watch your footing",
+        "Start early to maximise chances of clear views; Cerro Torre clouds over frequently by midday",
+        "Two dry composting toilets along the trail — bring your own toilet paper"
+      ],
+      "waypoints": [
+        {
+          "name": "Laguna Torre Trailhead",
+          "km": 0,
+          "note": "Western edge of El Chaltén, signed 'Sendero a Laguna Torre'"
+        },
+        {
+          "name": "Mirador Río Fitz Roy",
+          "km": 1.5,
+          "note": "First viewpoint — canyon views and Margarita Waterfall across the gorge"
+        },
+        {
+          "name": "Midway Cerro Torre Viewpoint",
+          "km": 4.5,
+          "note": "Panoramic views of Adela Range and Cerro Torre — good rest stop"
+        },
+        {
+          "name": "Campamento De Agostini",
+          "km": 8,
+          "note": "Basic campsite with dry toilet. Last shelter before the lagoon."
+        },
+        {
+          "name": "Laguna Torre",
+          "km": 9,
+          "note": "Glacial lake with floating icebergs. Cerro Torre and Glacier Grande directly ahead."
+        },
+        {
+          "name": "Mirador Maestri (optional)",
+          "km": 9.5,
+          "note": "Ridge viewpoint — best panoramic view of the glacier. Extra 20-min scramble."
+        }
+      ],
+      "links": {
+        "alltrails": "Laguna Torre El Chaltén",
+        "komoot": "Laguna Torre trek El Chaltén Patagonia",
+        "walk_highlands": "",
+        "gpx_download": "gpx/day-2.gpx"
+      },
+      "youtube": "Laguna Torre trek El Chaltén Patagonia hiking",
+      "photos": [
+        "photos/day-2/img1.jpg",
+        "photos/day-2/img2.jpg",
+        "photos/day-2/img3.jpg"
+      ],
+      "location_keywords": [
+        "Laguna Torre Cerro Torre glacier",
+        "El Chaltén Fitz Roy river valley trail",
+        "Glacier Grande icebergs Patagonia"
+      ],
+      "map": "maps/day-2-map.jpg",
+      "elevation_profile": "elevation/day-2-profile.json",
+      "food_stops": [
+        {
+          "name": "Pack your own lunch",
+          "km": 0,
+          "type": "shop",
+          "notes": "No food available on the trail. Buy supplies in El Chaltén the evening before."
+        }
+      ],
+      "toilet_facilities": [
+        {
+          "name": "Dry toilet near Mirador Río Fitz Roy",
+          "km": 1.5,
+          "type": "public",
+          "notes": "Basic composting toilet. Bring your own paper."
+        },
+        {
+          "name": "Dry toilet at Campamento De Agostini",
+          "km": 8,
+          "type": "campsite",
+          "notes": "Basic composting toilet near the campsite."
+        }
+      ],
+      "interesting_links": [
+        {
+          "title": "Cerro Torre — One of the World's Most Difficult Climbs",
+          "type": "history"
+        },
+        {
+          "title": "Laguna Torre & Mirador Maestri — Trail Guide",
+          "type": "blog"
+        },
+        {
+          "title": "Los Glaciares National Park — Entrance Fee and Permits",
+          "type": "other"
+        },
+        {
+          "title": "Glacier Grande — Advancing Glacier Below Cerro Torre",
+          "type": "attraction"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "label": "Cóndores & Águilas Viewpoints + Transfer to El Calafate",
+      "date": "2026-11-24",
+      "distance_km": 7.4,
+      "ascent_m": 366,
+      "descent_m": 376,
+      "estimated_hours": 2.5,
+      "difficulty": "Easy",
+      "terrain_tags": [
+        "Short climb",
+        "Grassy hilltop",
+        "Panoramic viewpoint"
+      ],
+      "description": "A gentle half-day hike to two of El Chaltén's finest viewpoints before the afternoon transfer back to El Calafate. Mirador de los Cóndores sits on a bluff directly above town, offering a sweeping panorama of Monte Fitz Roy, the Cerro Torre range, and the Río de las Vueltas valley far below — all framed by the huge Patagonian sky. As the name suggests, Andean condors frequently ride the thermals here, especially from late morning to mid-afternoon.\n\nThe trail starts at the park ranger station on Ruta 41 at the entrance to El Chaltén. A steady 40-minute climb on a clear path brings you to the Cóndores viewpoint. From there, a mostly flat 1-km extension leads to Mirador de las Águilas, which swaps the mountain view for a completely different perspective — the vast expanse of Lago Viedma and the Patagonian steppe stretching to the horizon. The loop trail returns you to the ranger station.\n\nAfter the hike, return to town to collect your luggage and board the shared transfer back to El Calafate (approximately 3 hours). You'll arrive in the evening with time to settle into your hotel and prepare for tomorrow's glacier day.",
+      "accommodation": {
+        "name": "Hotel in El Calafate",
+        "location": "El Calafate"
+      },
+      "resupply_notes": "El Calafate has supermarkets (La Anónima), ATMs, and outdoor gear shops along Avenida Libertador. Stock up for the glacier day.",
+      "water_sources": [
+        "Carry water from El Chaltén — no water sources on the short trail"
+      ],
+      "escape_routes": [
+        "The trail is short and returns directly to El Chaltén — no bailout needed"
+      ],
+      "warnings": [
+        "Exposed hilltop — wind can be fierce. Bring a windproof layer.",
+        "The final section to Cóndores viewpoint can be slippery on loose rock"
+      ],
+      "waypoints": [
+        {
+          "name": "Park Ranger Station (trailhead)",
+          "km": 0,
+          "note": "Start of trail on Ruta 41, eastern side of El Chaltén"
+        },
+        {
+          "name": "Trail fork",
+          "km": 0.8,
+          "note": "Left for Cóndores, right for Águilas — do Cóndores first"
+        },
+        {
+          "name": "Mirador de los Cóndores",
+          "km": 1.2,
+          "note": "Panoramic views of Fitz Roy, Cerro Torre, and El Chaltén below. Watch for condors."
+        },
+        {
+          "name": "Mirador de las Águilas",
+          "km": 2.3,
+          "note": "Views over Lago Viedma and the steppe. Quieter than Cóndores."
+        },
+        {
+          "name": "Park Ranger Station (return)",
+          "km": 5,
+          "note": "Loop trail returns to start"
+        }
+      ],
+      "links": {
+        "alltrails": "Mirador Condores Aguilas El Chaltén",
+        "komoot": "Mirador Condores Aguilas El Chaltén viewpoint",
+        "walk_highlands": "",
+        "gpx_download": "gpx/day-3.gpx"
+      },
+      "youtube": "Mirador Condores Aguilas El Chaltén hike viewpoint",
+      "photos": [
+        "photos/day-3/img1.jpg",
+        "photos/day-3/img2.jpg",
+        "photos/day-3/img3.jpg"
+      ],
+      "location_keywords": [
+        "Mirador Condores El Chaltén Fitz Roy panorama",
+        "Lago Viedma Patagonian steppe",
+        "Andean condor flying Patagonia"
+      ],
+      "map": "maps/day-3-map.jpg",
+      "elevation_profile": "elevation/day-3-profile.json",
+      "food_stops": [
+        {
+          "name": "PAISA High Mountain Coffee",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Excellent coffee shop in El Chaltén. Great pre-hike stop."
+        },
+        {
+          "name": "La Anónima supermarket",
+          "km": 0,
+          "type": "shop",
+          "notes": "In El Calafate on arrival. Open daily."
+        }
+      ],
+      "toilet_facilities": [
+        {
+          "name": "Park Ranger Station toilets",
+          "km": 0,
+          "type": "public",
+          "notes": "At the trailhead. Free."
+        },
+        {
+          "name": "El Chaltén town facilities",
+          "km": 5,
+          "type": "public",
+          "notes": "Public toilets near the bus station"
+        }
+      ],
+      "interesting_links": [
+        {
+          "title": "Andean Condor — Largest Flying Bird in the World",
+          "type": "attraction"
+        },
+        {
+          "title": "Lago Viedma — Patagonia's Third-Largest Lake",
+          "type": "attraction"
+        },
+        {
+          "title": "El Chaltén to El Calafate — Route and Scenic Stops",
+          "type": "blog"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "label": "Perito Moreno Glacier — Walkways, Boat Safari & Kayaking",
+      "date": "2026-11-25",
+      "distance_km": 3.6,
+      "ascent_m": 174,
+      "descent_m": 291,
+      "estimated_hours": 8,
+      "difficulty": "Easy",
+      "terrain_tags": [
+        "Metal walkways",
+        "Stairs",
+        "Boat excursion",
+        "Kayaking"
+      ],
+      "description": "A packed day experiencing one of the world's great natural wonders from three different perspectives. The Perito Moreno Glacier is 30 km long, 5 km wide at its face, and rises 60-70 metres above the waterline — and unlike most glaciers, it is still advancing at roughly 2 metres per day. The constant cracking, groaning, and thunderous calving of house-sized ice blocks into Lago Argentino is a spectacle you feel as much as see.\n\nThe morning begins with the 80 km drive from El Calafate to the glacier inside Los Glaciares National Park. The walkway network on the Magallanes Peninsula consists of 4.7 km of elevated metal boardwalks divided into colour-coded circuits at different heights and angles, each offering a distinct perspective of the north and south faces. Budget at least 90 minutes to walk the main circuits. Mid-morning, the Nautical Safari boat takes you across the Canal de los Témpanos to within 300 metres of the glacier's towering north wall — a completely different scale from water level. The afternoon brings sunset kayaking on Lago Argentino's Brazo Rico arm, paddling among small icebergs with the glacier as your backdrop.\n\nExpect to be on your feet for much of the day between the walkways, boat boarding, and kayaking put-in, but none of it is physically demanding. Bring layers — the glacier generates its own cold microclimate.",
+      "accommodation": {
+        "name": "Hotel in El Calafate",
+        "location": "El Calafate"
+      },
+      "resupply_notes": "A restaurant, snack bar, and gift shop are at the walkway parking area. Bring a packed lunch or buy food on-site.",
+      "water_sources": [
+        "Potable water in the restrooms at the walkway visitor area",
+        "Cafe and restaurant at the walkway parking area"
+      ],
+      "escape_routes": [
+        "The walkways are fully accessible and return to the parking area — no exposure",
+        "Boat and kayak excursions have safety briefings and life jackets provided"
+      ],
+      "warnings": [
+        "Do not cross safety barriers on the walkways — falling ice can send waves and debris at the shore",
+        "Glacier generates cold winds — dress in warm layers and bring a windproof jacket even on sunny days",
+        "Strong sun combined with cold wind is deceptive — wear sunscreen and sunglasses",
+        "National park entrance fee required — purchase online in advance to avoid queues"
+      ],
+      "waypoints": [
+        {
+          "name": "El Calafate (departure)",
+          "km": 0,
+          "note": "Private transfer, 80 km drive to glacier, approx. 1.5 hours"
+        },
+        {
+          "name": "Curva de los Suspiros",
+          "km": 0,
+          "note": "First panoramic viewpoint of the glacier from the road. Photo stop."
+        },
+        {
+          "name": "Walkway Network — Sendero Central",
+          "km": 1.5,
+          "note": "Main boardwalk to the closest glacier viewing balconies"
+        },
+        {
+          "name": "Walkway — Sendero Inferior",
+          "km": 3,
+          "note": "Lower walkway along the lakeshore with unique angles"
+        },
+        {
+          "name": "Nautical Safari boat",
+          "km": 4,
+          "note": "One-hour boat ride to the north wall of the glacier"
+        },
+        {
+          "name": "Sunset Kayaking put-in (Brazo Rico)",
+          "km": 5,
+          "note": "Kayaking among icebergs at the south face. Approx. 1.5 hours on the water."
+        }
+      ],
+      "links": {
+        "alltrails": "Perito Moreno Glacier walkways El Calafate",
+        "komoot": "Perito Moreno Glacier boardwalk trail",
+        "walk_highlands": "",
+        "gpx_download": "gpx/day-4.gpx"
+      },
+      "youtube": "Perito Moreno Glacier walkways boat kayaking El Calafate",
+      "photos": [
+        "photos/day-4/img1.jpg",
+        "photos/day-4/img2.jpg",
+        "photos/day-4/img3.jpg"
+      ],
+      "location_keywords": [
+        "Perito Moreno Glacier calving ice",
+        "Perito Moreno walkways boardwalk",
+        "Lago Argentino glacier kayaking Patagonia"
+      ],
+      "map": "maps/day-4-map.jpg",
+      "elevation_profile": "elevation/day-4-profile.json",
+      "food_stops": [
+        {
+          "name": "Glacier Visitor Centre Restaurant",
+          "km": 1,
+          "type": "restaurant",
+          "notes": "Hot meals, sandwiches, and drinks at the walkway parking area. Open during park hours."
+        },
+        {
+          "name": "Glacier Visitor Centre Snack Bar",
+          "km": 1,
+          "type": "cafe",
+          "notes": "Quick snacks, hot drinks, and souvenirs."
+        }
+      ],
+      "toilet_facilities": [
+        {
+          "name": "Glacier Visitor Centre toilets",
+          "km": 1,
+          "type": "public",
+          "notes": "Free. Near the parking area and restaurant."
+        },
+        {
+          "name": "Walkway area restrooms",
+          "km": 2.5,
+          "type": "public",
+          "notes": "Additional restrooms along the walkway network"
+        }
+      ],
+      "interesting_links": [
+        {
+          "title": "Perito Moreno Glacier — One of the World's Only Advancing Glaciers",
+          "type": "attraction"
+        },
+        {
+          "title": "Los Glaciares National Park — UNESCO World Heritage Site",
+          "type": "attraction"
+        },
+        {
+          "title": "Glaciarium Ice Museum — El Calafate",
+          "type": "attraction"
+        },
+        {
+          "title": "Lago Argentino — Argentina's Largest Freshwater Lake",
+          "type": "attraction"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "label": "El Calafate to Hotel Las Torres (Torres del Paine)",
+      "date": "2026-11-26",
+      "distance_km": 0,
+      "ascent_m": 0,
+      "descent_m": 0,
+      "estimated_hours": 0,
+      "difficulty": "Easy",
+      "terrain_tags": [
+        "Transfer day",
+        "International border crossing"
+      ],
+      "description": "A full-day transfer from Argentina to Chile, crossing the international border at Cancha Carrera (Argentina) and Cerro Castillo (Chile) before arriving at Hotel Las Torres in the heart of Torres del Paine National Park. The Las Torres shuttle departs El Calafate early morning and the journey takes approximately 5-6 hours including border formalities. The route crosses the Patagonian steppe with wide-open views, and the stop in Cerro Castillo offers a chance to stretch your legs and take in the landscape.\n\nUpon arrival at Hotel Las Torres — positioned at the trailhead for the Base Torres trek — you'll have the afternoon free to settle in, explore the hotel's self-guided Conservation Trail (about 30 minutes), and attend the evening excursion briefing where guides present the next day's options. The hotel sits on a working estancia with 200 horses, and you may spot guanacos grazing on the surrounding plains. Dinner is included and served in the hotel restaurant.",
+      "accommodation": {
+        "name": "Hotel Las Torres",
+        "location": "Torres del Paine National Park"
+      },
+      "resupply_notes": "No shops inside Torres del Paine. The hotel provides all meals (packed lunch for excursions). Buy any last-minute items in El Calafate before departure.",
+      "water_sources": [],
+      "escape_routes": [],
+      "warnings": [
+        "Bring your passport — this is an international border crossing between Argentina and Chile",
+        "Border processing can take 30-60 minutes depending on queues",
+        "Chile has strict biosecurity rules — no fresh fruit, vegetables, meat, or dairy products can be brought across the border"
+      ],
+      "waypoints": [
+        {
+          "name": "El Calafate (departure)",
+          "km": 0,
+          "note": "Las Torres shuttle departs early morning. 374 km total drive."
+        },
+        {
+          "name": "Esperanza",
+          "km": 0,
+          "note": "First rest stop, approximately 1 hour from El Calafate"
+        },
+        {
+          "name": "Cancha Carrera border (Argentina)",
+          "km": 0,
+          "note": "Argentine exit immigration and customs"
+        },
+        {
+          "name": "Cerro Castillo border (Chile)",
+          "km": 0,
+          "note": "Chilean entry immigration and biosecurity check"
+        },
+        {
+          "name": "Hotel Las Torres (arrival)",
+          "km": 0,
+          "note": "Arrive early afternoon. Time for Conservation Trail walk and excursion briefing."
+        }
+      ],
+      "links": {
+        "alltrails": "",
+        "komoot": "",
+        "walk_highlands": "",
+        "gpx_download": "gpx/day-5.gpx"
+      },
+      "youtube": "El Calafate to Torres del Paine road trip border crossing",
+      "photos": [
+        "photos/day-5/img1.jpg",
+        "photos/day-5/img2.jpg",
+        "photos/day-5/img3.jpg"
+      ],
+      "location_keywords": [
+        "Hotel Las Torres Torres del Paine",
+        "Torres del Paine entrance Patagonia",
+        "Patagonian steppe Chile Argentina border"
+      ],
+      "map": "maps/day-5-map.jpg",
+      "elevation_profile": "elevation/day-5-profile.json",
+      "food_stops": [
+        {
+          "name": "Esperanza rest stop",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Basic food and drinks at the roadside stop."
+        },
+        {
+          "name": "Hotel Las Torres Restaurant",
+          "km": 0,
+          "type": "restaurant",
+          "notes": "Dinner included with stay. Traditional Patagonian cuisine."
+        }
+      ],
+      "toilet_facilities": [
+        {
+          "name": "Esperanza rest stop",
+          "km": 0,
+          "type": "public",
+          "notes": "Basic facilities at the roadside stop"
+        },
+        {
+          "name": "Cerro Castillo border station",
+          "km": 0,
+          "type": "public",
+          "notes": "Toilets available during border processing"
+        },
+        {
+          "name": "Hotel Las Torres",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Full facilities on arrival"
+        }
+      ],
+      "interesting_links": [
+        {
+          "title": "Hotel Las Torres — Historic Estancia in Torres del Paine",
+          "type": "accommodation"
+        },
+        {
+          "title": "Torres del Paine National Park — UNESCO Biosphere Reserve",
+          "type": "attraction"
+        },
+        {
+          "title": "Cerro Castillo Border Crossing — Chile-Argentina",
+          "type": "other"
+        },
+        {
+          "title": "Pionero Bar at Las Torres — Sustainable Patagonian Cocktails",
+          "type": "restaurant"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "label": "Base of the Towers Trek",
+      "date": "2026-11-27",
+      "distance_km": 19.1,
+      "ascent_m": 1144,
+      "descent_m": 1141,
+      "estimated_hours": 9,
+      "difficulty": "Strenuous",
+      "terrain_tags": [
+        "Forest trail",
+        "River valley",
+        "Boulder field",
+        "Glacial moraine",
+        "Exposed ridge"
+      ],
+      "description": "The crown jewel of Torres del Paine — an 18 km round-trip trek from Hotel Las Torres to the Mirador Base de las Torres, the iconic viewpoint beneath the park's three granite towers. These spires soar to nearly 2,850 metres and the turquoise glacial lake at their base is one of the most photographed sights in South America. This is a demanding but deeply rewarding day.\n\nThe trail starts directly from the hotel, crossing a suspension bridge over the Ascencio River before climbing steeply through lenga forest for about 2 km. The gradient eases as you reach the Windy Pass — appropriately named — where the valley opens up with mountain views on both sides. From here the trail follows the Ascencio River valley through forest to Refugio Chileno (5.5 km from the hotel), which has basic facilities and a small cafe. Beyond Chileno, the trail continues through forest to Campamento Torres, where you leave the trees behind.\n\nThe final kilometre is the hardest: a 400-metre scramble up a steep glacial moraine of loose boulders and scree. Footing is uncertain and the wind can be ferocious. But when you crest the moraine and see the three towers reflected in the emerald lake below, every step is justified. Allow 45 minutes to an hour for this final push, and plan to spend time at the top for lunch and photos before retracing your steps to the hotel.",
+      "accommodation": {
+        "name": "Hotel Las Torres",
+        "location": "Torres del Paine National Park"
+      },
+      "resupply_notes": "Hotel provides a packed lunch box for excursions (sandwich, fruit, nuts, cereal bars). Fill your water bottles at the hotel before departure.",
+      "water_sources": [
+        "Streams throughout the Ascencio Valley — drinkable without treatment",
+        "Refugio Chileno — potable water available",
+        "Campamento Torres — stream water"
+      ],
+      "escape_routes": [
+        "Turn back at Refugio Chileno (5.5 km) if weather deteriorates or fatigue sets in — still a beautiful forest walk",
+        "Campamento Torres (8 km) is the last sheltered spot before the exposed moraine"
+      ],
+      "warnings": [
+        "The final moraine scramble is steep and exposed — loose boulders require careful footing and strong ankles",
+        "Wind at the Windy Pass and at the viewpoint can exceed 80 km/h — brace yourself and secure all gear",
+        "Start early — trail officially closes at Guardería Torres at 3:45 PM and at the viewpoint by 4:30 PM",
+        "Weather changes rapidly. Carry waterproof layers even if the morning is clear.",
+        "Suggested minimum age is 12 years for this trek"
+      ],
+      "waypoints": [
+        {
+          "name": "Hotel Las Torres (trailhead)",
+          "km": 0,
+          "note": "Depart with your guide after breakfast. Elevation ~90m."
+        },
+        {
+          "name": "Ascencio River Bridge",
+          "km": 1.3,
+          "note": "Suspension bridge — two-person limit. Steep climb begins after crossing."
+        },
+        {
+          "name": "Windy Pass",
+          "km": 3.5,
+          "note": "Valley opens up. Often very windy. First big mountain views."
+        },
+        {
+          "name": "Refugio Chileno",
+          "km": 5.5,
+          "note": "Small refugio with basic cafe and toilets. Good rest stop. Elevation ~500m."
+        },
+        {
+          "name": "Campamento Torres",
+          "km": 8,
+          "note": "Campsite at the treeline. Last shelter. Dry toilet available."
+        },
+        {
+          "name": "Moraine scramble begins",
+          "km": 8.5,
+          "note": "400m elevation gain in ~1 km over loose boulders. Slow going."
+        },
+        {
+          "name": "Mirador Base de las Torres",
+          "km": 9,
+          "note": "The viewpoint. Lago Torres and the three granite towers. Elevation ~870m."
+        }
+      ],
+      "links": {
+        "alltrails": "Base Torres Torres del Paine day hike",
+        "komoot": "Base de las Torres trek Torres del Paine",
+        "walk_highlands": "",
+        "gpx_download": "gpx/day-6.gpx"
+      },
+      "youtube": "Base Torres Torres del Paine day hike Patagonia",
+      "photos": [
+        "photos/day-6/img1.jpg",
+        "photos/day-6/img2.jpg",
+        "photos/day-6/img3.jpg"
+      ],
+      "location_keywords": [
+        "Torres del Paine base towers viewpoint",
+        "Ascencio Valley lenga forest trek",
+        "Lago Torres granite towers Patagonia"
+      ],
+      "map": "maps/day-6-map.jpg",
+      "elevation_profile": "elevation/day-6-profile.json",
+      "food_stops": [
+        {
+          "name": "Hotel Las Torres (packed lunch)",
+          "km": 0,
+          "type": "restaurant",
+          "notes": "Packed lunch box provided by the hotel for your excursion."
+        },
+        {
+          "name": "Refugio Chileno cafe",
+          "km": 5.5,
+          "type": "cafe",
+          "notes": "Basic snacks and hot drinks. A welcome rest stop on the ascent."
+        }
+      ],
+      "toilet_facilities": [
+        {
+          "name": "Hotel Las Torres",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Use before departure"
+        },
+        {
+          "name": "Refugio Chileno",
+          "km": 5.5,
+          "type": "cafe",
+          "notes": "Basic toilets available. May charge a small fee for non-guests."
+        },
+        {
+          "name": "Campamento Torres",
+          "km": 8,
+          "type": "campsite",
+          "notes": "Dry composting toilet at the campsite"
+        }
+      ],
+      "interesting_links": [
+        {
+          "title": "Torres del Paine — The Three Granite Towers at 2,850m",
+          "type": "attraction"
+        },
+        {
+          "title": "Lady Florence Dixie — First European to Describe the Towers (1880)",
+          "type": "history"
+        },
+        {
+          "title": "Ascencio Valley — Lenga Forest and Wildlife",
+          "type": "attraction"
+        },
+        {
+          "title": "W Trek — Torres del Paine's Most Famous Multi-Day Hike",
+          "type": "blog"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "label": "French Valley Hike",
+      "date": "2026-11-28",
+      "distance_km": 39.7,
+      "ascent_m": 702,
+      "descent_m": 706,
+      "estimated_hours": 12,
+      "difficulty": "Strenuous",
+      "terrain_tags": [
+        "Boat crossing",
+        "Lakeshore trail",
+        "Forest ascent",
+        "Alpine valley",
+        "Hanging glaciers"
+      ],
+      "description": "The longest and most dramatic day of the trip takes you deep into the French Valley — the central arm of Torres del Paine's famous W Trek. The excursion begins with a drive to Pudeto, where you board a catamaran across the stunning turquoise Lake Pehoé to Paine Grande. From there, the trail follows the north shore of Lake Skottsberg before turning into the French Valley itself.\n\nThe valley is a natural amphitheatre of staggering proportions: hanging glaciers cling to the walls of Paine Grande (the park's highest peak at 3,050m), while the dark horns of Los Cuernos frame the view to the east. Cascading waterfalls feed into the valley from melting ice above. The trail climbs steeply through lenga forest before emerging above the treeline at the French Valley lookout, where the panorama includes Lakes Nordenskjöld, Pehoé, and Toro spread out below, with Hoja, Máscara, Espada, Fortaleza, and Aleta de Tiburón peaks surrounding you.\n\nThis is a full 12-hour day including the boat crossings. The terrain is demanding, with sustained climbing in the upper valley. Your legs will feel yesterday's Base Torres effort, so pace yourself carefully. The reward is one of the most spectacular mountain vistas in all of Patagonia.",
+      "accommodation": {
+        "name": "Hotel Las Torres",
+        "location": "Torres del Paine National Park"
+      },
+      "resupply_notes": "Hotel provides packed lunch. Carry at least 2L of water — there are refill opportunities from streams in the valley.",
+      "water_sources": [
+        "Streams in the French Valley — drinkable without treatment",
+        "Water available at Refugio Paine Grande (start/end of hike)"
+      ],
+      "escape_routes": [
+        "Turn back at Campamento Italiano (approx. km 7) — the valley entrance — if conditions worsen",
+        "Refugio Paine Grande (near the catamaran dock) is the nearest full-service shelter"
+      ],
+      "warnings": [
+        "Very long day — 12 hours total including transport. Start early and maintain a steady pace.",
+        "Cumulative fatigue from Day 6 will be noticeable — stretch and hydrate well the evening before",
+        "Upper French Valley is exposed to high winds and can receive snow even in November",
+        "Catamaran schedules are fixed — do not miss the return boat from Paine Grande",
+        "Trail above the treeline has some scrambling sections over rock"
+      ],
+      "waypoints": [
+        {
+          "name": "Hotel Las Torres (departure by van)",
+          "km": 0,
+          "note": "Drive to Pudeto dock for the catamaran"
+        },
+        {
+          "name": "Pudeto catamaran dock",
+          "km": 0,
+          "note": "Board catamaran across Lake Pehoé to Paine Grande"
+        },
+        {
+          "name": "Paine Grande (trailhead)",
+          "km": 0,
+          "note": "Start hiking along the north shore of Lake Skottsberg"
+        },
+        {
+          "name": "Lake Skottsberg lakeshore trail",
+          "km": 4,
+          "note": "Relatively flat walking with views across to Los Cuernos"
+        },
+        {
+          "name": "Campamento Italiano",
+          "km": 7,
+          "note": "Valley entrance and junction point. Views of the hanging glacier."
+        },
+        {
+          "name": "Mirador Francés",
+          "km": 9,
+          "note": "Mid-valley viewpoint. Close-up of the French Glacier and surrounding peaks."
+        },
+        {
+          "name": "French Valley Lookout (Mirador Británico area)",
+          "km": 11,
+          "note": "The highest point — 360° panorama of peaks, lakes, and glaciers. Elevation ~780m."
+        },
+        {
+          "name": "Return to Paine Grande",
+          "km": 20,
+          "note": "Retrace route to catch the catamaran back to Pudeto"
+        }
+      ],
+      "links": {
+        "alltrails": "French Valley Torres del Paine hike",
+        "komoot": "Valle del Francés Torres del Paine trekking",
+        "walk_highlands": "",
+        "gpx_download": "gpx/day-7.gpx"
+      },
+      "youtube": "French Valley Torres del Paine hiking Valle del Francés",
+      "photos": [
+        "photos/day-7/img1.jpg",
+        "photos/day-7/img2.jpg",
+        "photos/day-7/img3.jpg"
+      ],
+      "location_keywords": [
+        "French Valley Torres del Paine hanging glacier",
+        "Los Cuernos Torres del Paine horns",
+        "Lake Pehoé catamaran Paine Grande"
+      ],
+      "map": "maps/day-7-map.jpg",
+      "elevation_profile": "elevation/day-7-profile.json",
+      "food_stops": [
+        {
+          "name": "Hotel Las Torres (packed lunch)",
+          "km": 0,
+          "type": "restaurant",
+          "notes": "Packed lunch box provided for the excursion."
+        },
+        {
+          "name": "Refugio Paine Grande cafe",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Near the catamaran dock. Hot drinks and snacks available before/after the hike."
+        }
+      ],
+      "toilet_facilities": [
+        {
+          "name": "Pudeto dock facilities",
+          "km": 0,
+          "type": "public",
+          "notes": "Toilets at the catamaran boarding area"
+        },
+        {
+          "name": "Refugio Paine Grande",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Full toilet facilities at the refugio"
+        },
+        {
+          "name": "Campamento Italiano",
+          "km": 7,
+          "type": "campsite",
+          "notes": "Basic dry toilets at the campsite"
+        }
+      ],
+      "interesting_links": [
+        {
+          "title": "French Valley — The Heart of the W Trek",
+          "type": "attraction"
+        },
+        {
+          "title": "Paine Grande — Torres del Paine's Highest Peak at 3,050m",
+          "type": "attraction"
+        },
+        {
+          "title": "Los Cuernos — The Iconic Horns of Patagonia",
+          "type": "attraction"
+        },
+        {
+          "title": "Lake Pehoé Catamaran — Scenic Crossing to Paine Grande",
+          "type": "other"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "label": "Full Paine Grand Tour",
+      "date": "2026-11-29",
+      "distance_km": 9.0,
+      "ascent_m": 178,
+      "descent_m": 164,
+      "estimated_hours": 8,
+      "difficulty": "Moderate",
+      "terrain_tags": [
+        "Van-supported tour",
+        "Short hikes",
+        "Lakeside trails",
+        "Waterfall viewpoint",
+        "Glacier viewpoint"
+      ],
+      "description": "After two strenuous trekking days, today offers a gentler pace while still covering the park's greatest hits. The Full Paine tour travels by van to a series of viewpoints and short hikes across the park, giving you perspectives that the trekking routes don't reach. It's a sampler of Torres del Paine's extraordinary diversity — from the desert-like steppe to turquoise lakes, roaring waterfalls, and the massive Grey Glacier.\n\nThe route includes stops at Puente Negro (Black Bridge) for a view into the Ascencio Valley, Mirador Nordenskjöld with its sweeping panorama of the lake and Los Cuernos, and Mirador Sarmiento overlooking the prehistoric-blue waters of Lake Sarmiento with its thrombolite rock formations. At Lake Pehoé, you'll walk to the thundering Salto Grande waterfall, which channels water between Lakes Nordenskjöld and Pehoé. The final highlight is a choice between a hike along the southern shore of Lake Grey — where icebergs from Grey Glacier float past in otherworldly blues — or a catamaran ride across the lake to the glacier's face.\n\nWith about 10 km of walking spread across several short hikes and plenty of van time between stops, this is a welcome recovery day that still delivers world-class scenery.",
+      "accommodation": {
+        "name": "Hotel Las Torres",
+        "location": "Torres del Paine National Park"
+      },
+      "resupply_notes": "Hotel provides packed lunch. The Grey Glacier area has a small cafe/shop near the catamaran dock.",
+      "water_sources": [
+        "Water available at each van stop — carry a bottle",
+        "Cafe at Grey Glacier area"
+      ],
+      "escape_routes": [
+        "Van-based tour — you are never far from the vehicle",
+        "The guide can adjust the itinerary if weather deteriorates"
+      ],
+      "warnings": [
+        "Lake Grey can be very windy — the catamaran may be cancelled in extreme conditions",
+        "Wear layers — conditions vary significantly between sheltered valleys and exposed lakeshores",
+        "Guanaco herds frequently cross the road — keep a respectful distance"
+      ],
+      "waypoints": [
+        {
+          "name": "Hotel Las Torres (departure)",
+          "km": 0,
+          "note": "Depart by van with guide after breakfast"
+        },
+        {
+          "name": "Puente Negro (Black Bridge)",
+          "km": 1,
+          "note": "Views into the Ascencio Valley and towards the Towers"
+        },
+        {
+          "name": "Mirador Nordenskjöld",
+          "km": 2.5,
+          "note": "Panoramic view of the lake with Los Cuernos rising behind"
+        },
+        {
+          "name": "Mirador Sarmiento",
+          "km": 4,
+          "note": "Lake Sarmiento and its unique thrombolite rock formations"
+        },
+        {
+          "name": "Salto Grande Waterfall",
+          "km": 6,
+          "note": "Powerful cascade between Lakes Nordenskjöld and Pehoé. Short walk from parking."
+        },
+        {
+          "name": "Lake Grey viewpoint / Grey Glacier",
+          "km": 9,
+          "note": "Hike along the lakeshore with floating icebergs, or catamaran to the glacier face."
+        },
+        {
+          "name": "Hotel Las Torres (return)",
+          "km": 10,
+          "note": "Return by van in the late afternoon"
+        }
+      ],
+      "links": {
+        "alltrails": "Torres del Paine full day tour highlights",
+        "komoot": "Torres del Paine Full Paine tour",
+        "walk_highlands": "",
+        "gpx_download": "gpx/day-8.gpx"
+      },
+      "youtube": "Torres del Paine full day tour Grey Glacier Salto Grande",
+      "photos": [
+        "photos/day-8/img1.jpg",
+        "photos/day-8/img2.jpg",
+        "photos/day-8/img3.jpg"
+      ],
+      "location_keywords": [
+        "Salto Grande waterfall Torres del Paine",
+        "Grey Glacier icebergs Lake Grey Patagonia",
+        "Lake Sarmiento thrombolites Torres del Paine"
+      ],
+      "map": "maps/day-8-map.jpg",
+      "elevation_profile": "elevation/day-8-profile.json",
+      "food_stops": [
+        {
+          "name": "Hotel Las Torres (packed lunch)",
+          "km": 0,
+          "type": "restaurant",
+          "notes": "Packed lunch provided for the excursion."
+        },
+        {
+          "name": "Grey Glacier area cafe",
+          "km": 9,
+          "type": "cafe",
+          "notes": "Small cafe near the catamaran dock. Hot drinks and snacks."
+        }
+      ],
+      "toilet_facilities": [
+        {
+          "name": "Hotel Las Torres",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Use before departure"
+        },
+        {
+          "name": "Salto Grande parking area",
+          "km": 6,
+          "type": "public",
+          "notes": "Basic public toilet near the waterfall parking"
+        },
+        {
+          "name": "Grey Glacier area",
+          "km": 9,
+          "type": "cafe",
+          "notes": "Toilets near the catamaran dock and cafe"
+        }
+      ],
+      "interesting_links": [
+        {
+          "title": "Grey Glacier — 6 km Wide, Fed by the Southern Patagonian Ice Field",
+          "type": "attraction"
+        },
+        {
+          "title": "Salto Grande — Raging Waterfall Between Two Lakes",
+          "type": "attraction"
+        },
+        {
+          "title": "Lake Sarmiento Thrombolites — Ancient Microbial Rock Formations",
+          "type": "history"
+        },
+        {
+          "title": "Guanacos of Torres del Paine — Wild Relatives of the Llama",
+          "type": "attraction"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "label": "Hotel Las Torres to Puerto Natales",
+      "date": "2026-11-30",
+      "distance_km": 0,
+      "ascent_m": 0,
+      "descent_m": 0,
+      "estimated_hours": 0,
+      "difficulty": "Easy",
+      "terrain_tags": [
+        "Transfer day",
+        "Scenic drive"
+      ],
+      "description": "The final morning at Hotel Las Torres. After breakfast, board the shared shuttle for the 2-hour drive south to Puerto Natales, the gateway town on the shore of Última Esperanza Sound. The road passes through open steppe with views back towards the Paine massif gradually receding behind you — a last look at the granite towers and ice-capped peaks that defined the past four days.\n\nPuerto Natales is a colourful, walkable town with a strong frontier feel. It serves as the hub for Torres del Paine tourism and has a good selection of restaurants, cafes, and shops. Depending on your onward travel plans, you can catch a flight from Puerto Natales airport, take a bus to Punta Arenas (3 hours), or continue exploring the Última Esperanza Province.",
+      "accommodation": {
+        "name": "Hotel in Puerto Natales",
+        "location": "Puerto Natales"
+      },
+      "resupply_notes": "Puerto Natales has supermarkets, ATMs, gear shops, and pharmacies along its main streets. Good place to buy souvenirs and restock.",
+      "water_sources": [],
+      "escape_routes": [],
+      "warnings": [],
+      "waypoints": [
+        {
+          "name": "Hotel Las Torres (departure)",
+          "km": 0,
+          "note": "Farewell. Las Torres shuttle departs after breakfast."
+        },
+        {
+          "name": "Puerto Natales (arrival)",
+          "km": 0,
+          "note": "Approximately 2-hour drive. Drop-off at your hotel or bus station."
+        }
+      ],
+      "links": {
+        "alltrails": "",
+        "komoot": "",
+        "walk_highlands": "",
+        "gpx_download": "gpx/day-9.gpx"
+      },
+      "youtube": "Puerto Natales Patagonia Chile town guide",
+      "photos": [
+        "photos/day-9/img1.jpg",
+        "photos/day-9/img2.jpg",
+        "photos/day-9/img3.jpg"
+      ],
+      "location_keywords": [
+        "Puerto Natales waterfront Chile",
+        "Última Esperanza Sound Patagonia",
+        "Torres del Paine from distance panorama"
+      ],
+      "map": "maps/day-9-map.jpg",
+      "elevation_profile": "elevation/day-9-profile.json",
+      "food_stops": [
+        {
+          "name": "Hotel Las Torres (breakfast)",
+          "km": 0,
+          "type": "restaurant",
+          "notes": "Final breakfast at the hotel before departure."
+        },
+        {
+          "name": "Puerto Natales restaurants",
+          "km": 0,
+          "type": "restaurant",
+          "notes": "Many options on the waterfront and main streets. Try the local king crab (centolla)."
+        }
+      ],
+      "toilet_facilities": [
+        {
+          "name": "Hotel Las Torres",
+          "km": 0,
+          "type": "cafe",
+          "notes": "Use before departure"
+        },
+        {
+          "name": "Puerto Natales bus station",
+          "km": 0,
+          "type": "public",
+          "notes": "Toilets at the Terminal Rodoviario"
+        }
+      ],
+      "interesting_links": [
+        {
+          "title": "Puerto Natales — Gateway to Torres del Paine",
+          "type": "attraction"
+        },
+        {
+          "title": "Última Esperanza Sound — Named by 19th-Century Explorers",
+          "type": "history"
+        },
+        {
+          "title": "Cueva del Milodón — Giant Ground Sloth Fossil Cave Near Puerto Natales",
+          "type": "history"
+        },
+        {
+          "title": "Centolla (King Crab) — Patagonia's Signature Dish",
+          "type": "restaurant"
+        }
+      ]
+    }
+  ],
+  "weather": {
+    "month": "November",
+    "temp_min_c": 2,
+    "temp_max_c": 15,
+    "precipitation_probability": 0.35,
+    "daylight_hours": 16,
+    "wind_kmh": "20-80",
+    "description": "Late November marks the beginning of the Patagonian summer. Expect long days with up to 16 hours of daylight, but conditions are highly variable. Temperatures range from near-freezing at dawn to a pleasant 15°C in the afternoon sun. The defining feature of Patagonian weather is the wind — sustained winds of 30-50 km/h are normal, with gusts exceeding 80 km/h at exposed viewpoints and passes. Rain and even snow can arrive without warning, often followed by sunshine within the hour. The key to comfort is layering: you may need sunscreen and a down jacket in the same morning. El Chaltén tends to be slightly warmer and less windy than Torres del Paine, which sits in a more exposed position.",
+    "alerts": [
+      "Wind is the biggest challenge — gusts can knock you off balance on exposed ridges and passes",
+      "UV radiation is high due to thin ozone layer in southern latitudes — wear SPF 50+ sunscreen and quality sunglasses",
+      "Weather changes rapidly — always carry waterproof layers, even if the morning is clear",
+      "Snow is possible above 600m, even in November"
+    ]
+  },
+  "gear_checklist": [
+    {
+      "category": "Footwear & Clothing",
+      "item": "Broken-in waterproof hiking boots",
+      "essential": true
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Merino wool hiking socks (2-3 pairs)",
+      "essential": true
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Lightweight camp shoes or sandals",
+      "essential": false
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Moisture-wicking base layer top and bottom",
+      "essential": true
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Insulating mid-layer (fleece or light down)",
+      "essential": true
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Waterproof and windproof shell jacket (Gore-Tex or similar)",
+      "essential": true
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Waterproof overtrousers",
+      "essential": true
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Quick-dry hiking trousers",
+      "essential": true
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Warm hat and buff/neck gaiter",
+      "essential": true
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Windproof gloves",
+      "essential": true
+    },
+    {
+      "category": "Footwear & Clothing",
+      "item": "Sun hat with chin strap",
+      "essential": true
+    },
+    {
+      "category": "Equipment",
+      "item": "Daypack (25-30L)",
+      "essential": true
+    },
+    {
+      "category": "Equipment",
+      "item": "Trekking poles (highly recommended for the moraine on Base Torres)",
+      "essential": false
+    },
+    {
+      "category": "Equipment",
+      "item": "Waterproof dry bag or pack liner",
+      "essential": true
+    },
+    {
+      "category": "Equipment",
+      "item": "Headlamp with spare batteries",
+      "essential": true
+    },
+    {
+      "category": "Equipment",
+      "item": "Reusable water bottle or hydration bladder (1.5-2L)",
+      "essential": true
+    },
+    {
+      "category": "Equipment",
+      "item": "Thermos flask for hot drinks",
+      "essential": false
+    },
+    {
+      "category": "Equipment",
+      "item": "Lightweight sitting pad",
+      "essential": false
+    },
+    {
+      "category": "Navigation & Safety",
+      "item": "Offline maps downloaded (AllTrails, Maps.me, or Wikiloc)",
+      "essential": true
+    },
+    {
+      "category": "Navigation & Safety",
+      "item": "Portable power bank",
+      "essential": true
+    },
+    {
+      "category": "Navigation & Safety",
+      "item": "Basic first aid kit (blister plasters, painkillers, anti-chafing)",
+      "essential": true
+    },
+    {
+      "category": "Navigation & Safety",
+      "item": "Emergency whistle",
+      "essential": true
+    },
+    {
+      "category": "Personal",
+      "item": "SPF 50+ sunscreen",
+      "essential": true
+    },
+    {
+      "category": "Personal",
+      "item": "Quality sunglasses (UV protection)",
+      "essential": true
+    },
+    {
+      "category": "Personal",
+      "item": "Lip balm with SPF",
+      "essential": true
+    },
+    {
+      "category": "Personal",
+      "item": "Toilet paper and waste bags (for trail toilets)",
+      "essential": true
+    },
+    {
+      "category": "Personal",
+      "item": "Passport and copies of travel insurance",
+      "essential": true
+    },
+    {
+      "category": "Personal",
+      "item": "Camera with spare battery (cold drains batteries fast)",
+      "essential": false
+    },
+    {
+      "category": "Personal",
+      "item": "Binoculars (for wildlife and glacier viewing)",
+      "essential": false
+    },
+    {
+      "category": "Food & Drink",
+      "item": "Trail snacks (energy bars, nuts, dried fruit, chocolate)",
+      "essential": true
+    },
+    {
+      "category": "Food & Drink",
+      "item": "Electrolyte tablets or powder",
+      "essential": false
+    }
+  ],
+  "preparation": {
+    "overview": "This trip combines moderate-to-strenuous day hikes with substantial driving and boat transfers. The two hardest days — Base Torres (Day 6) and French Valley (Day 7) — come back-to-back in the second half of the trip, so arriving with a solid fitness base is important. The physical demands are not extreme for experienced hikers, but the Patagonian wind, unpredictable weather, and cumulative fatigue over nine days mean that preparation pays off significantly in comfort and enjoyment.",
+    "training_schedule": [
+      {
+        "weeks_before": "8-6 weeks before",
+        "title": "Build Base Endurance",
+        "description": "Focus on building aerobic endurance and getting your legs accustomed to sustained walking. Include hills wherever possible — the Base Torres trek involves 850m of elevation gain, with a steep final moraine section.",
+        "activities": [
+          "Walk 10-15 km twice per week, including at least one hilly route",
+          "One longer walk of 15-20 km on weekends",
+          "Include stair climbing or incline treadmill sessions 2-3 times per week",
+          "Begin wearing your hiking boots on all training walks to break them in"
+        ]
+      },
+      {
+        "weeks_before": "5-3 weeks before",
+        "title": "Build Trek-Specific Fitness",
+        "description": "Increase intensity and simulate the demands of back-to-back hiking days. The French Valley (Day 7) follows immediately after Base Torres (Day 6), so your body needs to handle consecutive strenuous days.",
+        "activities": [
+          "Two back-to-back long walks of 15-20 km over a weekend",
+          "Add a weighted daypack (8-10 kg) to simulate carrying water, lunch, and layers",
+          "Include one hike with 600-800m elevation gain per week if terrain is available",
+          "Practise walking on rocky/uneven terrain to prepare for the moraine"
+        ]
+      },
+      {
+        "weeks_before": "2-1 weeks before",
+        "title": "Sharpen and Taper",
+        "description": "Maintain fitness but reduce volume. Focus on feeling fresh and confident for departure day.",
+        "activities": [
+          "One moderate hike of 10-12 km mid-week",
+          "Light walks of 5-8 km on other days",
+          "Stretch and foam roll daily — focus on calves, quads, and hip flexors",
+          "Finalise gear and test all equipment on a short training walk"
+        ]
+      },
+      {
+        "weeks_before": "Final week",
+        "title": "Rest and Prepare",
+        "description": "Prioritise rest, hydration, and logistics. Your fitness is locked in — now focus on arriving well-rested and organised.",
+        "activities": [
+          "Light walks only — 3-5 km maximum",
+          "Hydrate well and focus on nutrition",
+          "Pack your bag and check all gear against the checklist",
+          "Download offline maps and confirm all bookings"
+        ]
+      }
+    ],
+    "physical_demands": "The trip includes two strenuous hiking days back-to-back (18 km with 850m gain, followed by 20 km with 750m gain), with the added challenge of Patagonian wind that can turn a moderate trail into an exhausting slog. You need to be comfortable walking 18-20 km on rough terrain in a single day, and able to repeat it the following day. The moraine scramble on Base Torres requires reasonable agility on loose boulders. Transfer days provide welcome rest, but the overall pace across nine days is sustained.",
+    "recommended_training": [
+      "Build to comfortably walking 18-20 km in a single day with 800m elevation gain",
+      "Practise two consecutive long walking days to prepare for Days 6 and 7",
+      "Train with a weighted daypack (8-10 kg) to simulate carrying water, food, and layers",
+      "Include rocky or uneven terrain in your training to prepare for the Base Torres moraine",
+      "Strengthen your ankles — the moraine and Patagonian trails have plenty of loose rock",
+      "Break in your hiking boots completely before the trip — blisters on Day 2 will ruin everything"
+    ],
+    "what_to_expect": [
+      "Day 1: Transfer day — no physical demands. Use the afternoon to walk around El Chaltén and acclimatise to the Patagonian wind.",
+      "Day 2: Laguna Torre (18 km, 490m gain). A solid full-day hike but manageable for anyone with reasonable fitness. The initial climb is the hardest part; the valley walk is relatively flat. Expect tired legs by evening.",
+      "Day 3: Cóndores & Águilas (5 km, 215m gain) + transfer. A gentle morning hike — perfect for recovery. Short and steep but over quickly. Legs may feel the previous day on the climb.",
+      "Day 4: Perito Moreno Glacier day. Mostly walking on flat metal walkways — no real physical demand. Kayaking requires basic upper body effort. A good recovery day for your legs.",
+      "Day 5: Transfer day — no physical demands. Long drive but restful. Use the evening to stretch and prepare mentally for the big days ahead.",
+      "Day 6: Base Torres (18 km, 850m gain). The most demanding day. The first 8 km are steady but manageable. The final moraine scramble is a 400m climb over loose boulders that will test your legs, lungs, and patience. Expect deep fatigue in the evening.",
+      "Day 7: French Valley (20 km, 750m gain, 12 hours). Back-to-back with Base Torres — this is the trip's toughest test. Your legs will be heavy from Day 6. The distance is long, the climb is sustained, and the boat schedule means you cannot take unlimited time. Pace yourself and fuel consistently.",
+      "Day 8: Full Paine Tour (10 km, 300m gain). A welcome relief. Short hikes from the van with rest between stops. Your legs will be grateful for the reduced effort.",
+      "Day 9: Transfer day — no physical demands. Rest, reflect, and enjoy the final Patagonian views from the bus."
+    ]
+  },
+  "general_info": {
+    "visa_info": "Argentina: Citizens of the EU, UK, USA, Canada, Australia, and New Zealand do not require a visa for stays up to 90 days. Chile: Same visa-free access for the above nationalities for stays up to 90 days. Check current requirements for your nationality before travel, as rules can change. You will pass through immigration at the Cancha Carrera (Argentina) and Cerro Castillo (Chile) border crossing on Day 5.",
+    "health_insurance": "Comprehensive travel insurance with medical evacuation cover is essential. The trekking areas are remote and helicopter evacuation to the nearest hospital (El Calafate or Punta Arenas) can be extremely expensive without insurance. Ensure your policy covers hiking up to 3,000m altitude and adventure activities including kayaking. Keep a printed copy of your policy and emergency number with you.",
+    "emergency_contacts": [
+      {
+        "service": "Argentina Emergency Services",
+        "number": "911",
+        "notes": "Police, fire, and ambulance in Argentina"
+      },
+      {
+        "service": "Chile Emergency Services (SAMU)",
+        "number": "131",
+        "notes": "Medical emergencies in Chile"
+      },
+      {
+        "service": "Chile Carabineros (Police)",
+        "number": "133",
+        "notes": "Police emergencies in Chile"
+      },
+      {
+        "service": "CONAF Park Rangers (Torres del Paine)",
+        "number": "+56 61 269 1931",
+        "notes": "Torres del Paine park office for trail emergencies"
+      },
+      {
+        "service": "Hospital El Calafate",
+        "number": "+54 2902 491001",
+        "notes": "Hospital Municipal de El Calafate — nearest hospital during Argentina portion"
+      },
+      {
+        "service": "Hospital Puerto Natales",
+        "number": "+56 61 241 1583",
+        "notes": "Hospital Augusto Essmann — nearest hospital during Chile portion"
+      }
+    ],
+    "transport": {
+      "getting_there": "Fly into El Calafate Airport (FTE) from Buenos Aires (approx. 3.5 hours, Aerolíneas Argentinas or LATAM). The airport is 22 km from El Calafate town centre — taxis and airport shuttles are available. El Calafate is the starting point for the trip.",
+      "getting_back": "The trip ends in Puerto Natales, Chile. From there: fly from Puerto Natales Airport (PNT) to Santiago (LATAM, limited flights), take a bus to Punta Arenas (3 hours, multiple daily services by Bus-Sur) and fly from Punta Arenas Airport (PUQ) to Santiago, or arrange a private transfer back to El Calafate (5-6 hours including border crossing) to fly out from there.",
+      "local_transport": "Day 1 and Day 3: Shared transfer El Calafate–El Chaltén (Caltur, Chaltén Travel — approx. 3 hours, multiple daily services). Day 5: Las Torres hotel shuttle El Calafate–Hotel Las Torres (5-6 hours including border). Day 9: Las Torres shuttle to Puerto Natales (approx. 2 hours). All excursions include transport from accommodations."
+    },
+    "currency": "Argentina uses the Argentine Peso (ARS). Chile uses the Chilean Peso (CLP). US Dollars are widely accepted at hotels and tour agencies in both countries, often at favourable rates. ATMs in El Calafate are available but unreliable — bring backup USD cash. Card payments (Visa/Mastercard) are accepted at hotels, restaurants, and shops in El Calafate and Puerto Natales. Inside Torres del Paine National Park, card is accepted at Hotel Las Torres but cash is useful for small purchases. National park entrance fees for both Los Glaciares (Argentina) and Torres del Paine (Chile) are best purchased online in advance.",
+    "language": "Spanish is the primary language in both Argentina and Chile. English is spoken at hotels and by tour guides throughout the trip. Useful phrases: '¿Cuánto cuesta?' (How much?), 'La cuenta, por favor' (The bill, please), '¿Dónde está...?' (Where is...?), 'No hablo español' (I don't speak Spanish).",
+    "mobile_coverage": "El Chaltén: Limited 4G coverage in town (Movistar and Claro work best). No signal on the trails. El Calafate: Good 4G coverage in town. Patchy signal on the road to Perito Moreno — none at the glacier. Torres del Paine: Very limited to no mobile coverage inside the park. Hotel Las Torres has Wi-Fi for guests (can be slow). Download all maps and information before entering the park. Consider an Argentine SIM card (Movistar or Claro) and a Chilean SIM card (Entel or Movistar) for the respective countries, or use an international eSIM provider (Airalo, Holafly).",
+    "useful_apps": [
+      "AllTrails — offline trail maps for all hikes",
+      "Maps.me — excellent offline maps for Patagonia",
+      "Windy.com — real-time wind and weather forecasting (essential for Patagonia)",
+      "Yr.no — accurate weather forecasts",
+      "Google Translate — offline Spanish translation",
+      "XE Currency — live exchange rates for ARS and CLP"
+    ],
+    "additional_notes": "Los Glaciares National Park (Argentina) now charges an entrance fee for El Chaltén trekking — purchase online at the national parks website before arrival. Torres del Paine (Chile) requires advance ticket purchase at pasesparques.cl — tickets are valid for 3 consecutive days. Chile's strict biosecurity rules mean no fresh food (fruit, meat, dairy) can be brought across the border on Day 5 — consume or dispose of everything before the crossing. Tipping in Argentina and Chile is customary: 10% in restaurants, and a tip for hiking guides is appreciated for good service."
+  }
+}

@@ -1,9 +1,12 @@
 # API / Data Interface — Travel Guide Generator
 
 ## Overview
-This system has no HTTP API. The Travel Guide App is a static HTML file. The "API" is the structured data contract between Claude.ai (producer) and the Travel Guide App (consumer), defined by JSON schemas and file conventions.
+This system has no HTTP API. All apps are static HTML files. The "API" is the structured data contract between Claude.ai (producer) and the consumer tools, defined by JSON schemas and file conventions.
 
-The organizer uploads `trip-template.md` to Claude.ai, which contains these schemas. Claude generates the JSON files. The Travel Guide reads them at runtime.
+The organizer uploads `trip-template.md` to Claude.ai, which contains these schemas. Claude generates the JSON files. Three tools consume `trip-data.json` at runtime:
+- **Travel Guide App** (`index.html`) — renders the full trip guide
+- **Photo Manager** (`photos.html`) — reads day structure for photo assignment
+- **GPX Data Processor** (`gpx-tool.html`) — reads day structure and estimated stats, compares against real GPX data, and can export an updated `trip-data.json` with GPX-derived values
 
 ---
 
