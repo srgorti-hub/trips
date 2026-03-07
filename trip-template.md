@@ -38,7 +38,7 @@ Generate this as a single JSON code block labeled `trip-data.json`. Every field 
     "group_size":         "number -- REQUIRED -- Number of participants (>= 1)",
     "total_distance_km":  "number -- REQUIRED -- Total trail distance in km",
     "total_ascent_m":     "number -- REQUIRED -- Total cumulative ascent in meters",
-    "youtube_overview":   "string -- optional -- YouTube search query for a trip overview video (e.g., 'West Highland Way hiking overview')",
+    "youtube_overview":   "string -- optional -- YouTube video URL (preferred) or search query for a trip overview video",
     "description":        "string -- REQUIRED -- Trip summary paragraph (see Content Guidelines below)",
     "location_keywords":  ["string -- REQUIRED (>= 1) -- Broad search terms for a stock hero photo (e.g., 'Scottish Highlands landscape', 'Dolomites hiking trail')"]
   },
@@ -63,8 +63,13 @@ Generate this as a single JSON code block labeled `trip-data.json`. Every field 
       "terrain_tags":     ["string -- Array of terrain descriptors (e.g., 'Rocky ascent', 'Forest trails', 'Exposed ridge')"],
       "description":      "string -- REQUIRED -- Day description (see Content Guidelines below)",
       "accommodation": {
-        "name":           "string -- REQUIRED -- Accommodation name",
-        "location":       "string -- REQUIRED -- Town or village"
+        "location":       "string -- REQUIRED -- Town or village",
+        "options": [
+          {
+            "name":       "string -- REQUIRED -- Accommodation name",
+            "url":        "string -- optional -- Official website URL (verified working)"
+          }
+        ]
       },
       "resupply_notes":   "string -- optional -- Shop info, opening hours, what's available",
       "water_sources":    ["string -- optional -- Named water sources along the route"],
@@ -78,12 +83,12 @@ Generate this as a single JSON code block labeled `trip-data.json`. Every field 
         }
       ],
       "links": {
-        "alltrails":      "string -- optional -- AllTrails search query for this segment (e.g., 'West Highland Way Milngavie to Drymen')",
-        "komoot":         "string -- optional -- Komoot search query for this segment",
-        "walk_highlands": "string -- optional -- Walk Highlands search query (or equivalent trail site search query)",
+        "alltrails":      "string -- optional -- AllTrails URL (preferred) or search query for this segment",
+        "komoot":         "string -- optional -- Komoot URL (preferred) or search query for this segment",
+        "walk_highlands": "string -- optional -- Walk Highlands URL (preferred) or search query (or equivalent trail site)",
         "gpx_download":   "string -- optional -- Relative path: gpx/day-N.gpx"
       },
-      "youtube":          "string -- optional -- YouTube search query for this day's segment (e.g., 'West Highland Way Milngavie to Drymen hiking')",
+      "youtube":          "string -- optional -- YouTube video URL (preferred) or search query for this day's segment",
       "photos":           ["string -- Array of relative paths: photos/day-N/img1.jpg (leave empty if organizer will add photos later)"],
       "location_keywords":["string -- REQUIRED (>= 1) -- Specific search terms for stock photos of this segment (see guidelines below)"],
       "map":              "string -- optional -- Relative path: maps/day-N-map.jpg",
@@ -100,8 +105,16 @@ Generate this as a single JSON code block labeled `trip-data.json`. Every field 
         {
           "name":  "string -- REQUIRED -- Name or location of the facility",
           "km":    "number -- REQUIRED -- Distance from day start in km",
-          "type":  "string -- REQUIRED -- 'public' | 'cafe' | 'pub' | 'campsite'",
-          "notes": "string -- optional -- Free/paid, opening hours, accessibility"
+          "type":  "string -- REQUIRED -- 'public' | 'cafe' | 'pub' | 'campsite' | 'hotel' | 'hostel' | 'visitor centre' | 'pub/restaurant' | 'pub/hotel' | 'pub/campsite' | 'cafe/shop' | 'hotel/public' | 'hostel/campsite' | 'shop/cafe' | 'bunkhouse'",
+          "notes": "string -- optional -- Free/paid, opening hours, accessibility, seasonal availability"
+        }
+      ],
+      "taxi_services": [
+        {
+          "name":  "string -- REQUIRED -- Taxi company name",
+          "phone": "string -- optional -- Phone number (local format)",
+          "url":   "string -- optional -- Website or Facebook page URL (verified working)",
+          "notes": "string -- optional -- Coverage area, vehicle sizes, pre-booking requirements, WHW specialization"
         }
       ],
       "interesting_links": [
@@ -184,7 +197,7 @@ Generate this as a single JSON code block labeled `trip-data.json`. Every field 
 - All file paths are relative to the trip root folder
 - `location_keywords` must have >= 1 entry at both trip level and each day level
 - `food_stops[].type` must be one of: `restaurant`, `cafe`, `pub`, `shop`, `takeaway`
-- `toilet_facilities[].type` must be one of: `public`, `cafe`, `pub`, `campsite`
+- `toilet_facilities[].type` must be one of: `public`, `cafe`, `pub`, `campsite`, `hotel`, `hostel`, `visitor centre`, `bunkhouse`, or compound types like `pub/restaurant`, `hotel/public`, `cafe/shop`, etc.
 - `interesting_links[].type` must be one of: `restaurant`, `history`, `attraction`, `blog`, `accommodation`, `other`
 - `preparation.training_schedule` should have 3-4 phases
 - `preparation.what_to_expect` should have one entry per day
@@ -328,10 +341,21 @@ The Travel Guide automatically searches **Wikimedia Commons** for relevant photo
 
 ### Toilet Facilities (toilet_facilities)
 
-- Include known public toilets, and toilets available at cafes, pubs, and campsites
+- Include known public toilets, and toilets available at cafes, pubs, hotels, hostels, campsites, and visitor centres
 - Note the distance from day start (`km`) for each
-- Add practical info: free or paid, seasonal availability, accessibility
-- Type must be one of: `public`, `cafe`, `pub`, `campsite`
+- Add practical info: free or paid, seasonal availability, accessibility, customers-only policies
+- Type can be: `public`, `cafe`, `pub`, `campsite`, `hotel`, `hostel`, `visitor centre`, `bunkhouse`, or compound types like `pub/restaurant`, `hotel/public`, `cafe/shop`
+- Note significant gaps between facilities — this is critical safety information for groups
+- On remote stages, explicitly warn about long stretches with no facilities
+
+### Taxi Services (taxi_services)
+
+- Include 1-2 local taxi companies per day, prioritizing those that serve hikers/walkers
+- Provide verified phone numbers and website URLs where available
+- Note coverage area, vehicle capacity (especially for groups), and pre-booking requirements
+- Highland/remote areas often have limited taxi availability — pre-booking is usually essential
+- Companies that specialize in trail walker transport are preferred
+- If a company only accepts online bookings (no phone), note that in `notes` and leave `phone` empty
 
 ### Interesting Links (interesting_links)
 
@@ -350,25 +374,27 @@ The Travel Guide automatically searches **Wikimedia Commons** for relevant photo
 
 ### General Info
 
-- Research real visa requirements, emergency numbers, and transport options for the destination
+- Research real visa requirements, emergency numbers, and transport options for the destination. Include ETA/eVisa requirements where applicable (e.g., UK ETA for US citizens). Mention application fees and validity periods
 - Emergency contacts should include: general emergency number, mountain rescue (if applicable), nearest hospital, local police
 - Transport info should cover: getting to the start (airports, trains, buses), getting home from the end, and any luggage transfer services
 - Currency info should mention whether card payments are widely accepted along the route
 - Mobile coverage should be specific: which carriers work best, where signal drops out, whether Wi-Fi is available at accommodations
 
-### Trail Resource Links (search queries, NOT URLs)
-- **Do NOT provide URLs for AllTrails, Komoot, or Walk Highlands** — provide **search queries** instead. The app converts these into search links on each service automatically
-- For `alltrails`, provide a search query like `"West Highland Way Milngavie to Drymen"`
-- For `komoot`, provide a search query like `"West Highland Way Day 1"`
-- For `walk_highlands` (or equivalent regional trail site), provide a search query like `"Milngavie to Drymen"`
+### Trail Resource Links (verified URLs preferred)
+- Provide **verified, working URLs** for AllTrails, Komoot, Walk Highlands, or equivalent trail sites whenever possible
+- If you cannot verify a URL, provide a **search query** instead — the app can convert these into search links as a fallback
+- For `alltrails`, find the actual trail page URL (e.g., `"https://www.alltrails.com/trail/scotland/glasgow-city-3/west-highland-way-milngavie-to-drymen"`)
+- For `komoot`, find the actual tour URL (e.g., `"https://www.komoot.com/tour/86976515"`)
+- For `walk_highlands` (or equivalent regional trail site), find the actual page URL
 - Set `gpx_download` to the relative path format `gpx/day-N.gpx` so the organizer knows where to place GPX files
 
-### YouTube (search queries, NOT URLs)
-- **Do NOT provide YouTube URLs** — you cannot verify they work. Instead, provide **search queries** that the app will turn into YouTube search links
-- For `youtube_overview`, write a search query for the full trip (e.g., `"West Highland Way complete hiking guide"`)
-- For each day's `youtube`, write a search query for that segment (e.g., `"West Highland Way Milngavie to Drymen hiking"`)
-- Good search queries are specific: include the trail name, segment, and "hiking" or "walking"
-- If no meaningful search query exists for a day, leave it as an empty string
+### YouTube (verified URLs preferred)
+- Provide **verified YouTube URLs** (e.g., `"https://www.youtube.com/watch?v=XXXXX"`) whenever you can confirm the video exists and is relevant
+- If you cannot verify a URL, provide a **search query** instead — the app will convert it into a YouTube search link
+- For `youtube_overview`, find a good full-trip overview or documentary video
+- For each day's `youtube`, find a video covering that specific segment
+- Prioritize videos from hiking/travel channels that show scenery and trail conditions
+- If no meaningful video or search query exists for a day, leave it as an empty string
 
 ---
 
@@ -390,7 +416,14 @@ Here is Day 1 from a West Highland Way trip, showing the exact format expected.
   "difficulty": "Easy",
   "terrain_tags": ["Farmland", "Woodland", "Good paths", "Gentle rolling"],
   "description": "A gentle introduction to the Way, starting from the granite obelisk in Milngavie town centre. The trail winds through Mugdock Country Park's ancient woodland before opening out across farmland and moorland. You'll pass Craigallian Loch and Carbeth, popular with wild swimmers, before descending through fields into the village of Drymen \u2014 your first taste of Highland hospitality.",
-  "accommodation": { "name": "Winnock Hotel", "location": "Drymen" },
+  "accommodation": {
+    "location": "Drymen",
+    "options": [
+      { "name": "Winnock Hotel", "url": "https://winnockhotel.com/" },
+      { "name": "Buchanan Arms", "url": "https://buchanan-arms.co.uk/" },
+      { "name": "Drymen Inn", "url": "https://thedrymeninn.com/" }
+    ]
+  },
   "resupply_notes": "Co-op in Drymen village, open until 10pm. Last major shop before Tyndrum (Day 4).",
   "water_sources": ["Craigallian Loch area", "Drymen village taps"],
   "escape_routes": ["Bus from Drymen to Glasgow (First Bus, hourly)"],
@@ -424,6 +457,10 @@ Here is Day 1 from a West Highland Way trip, showing the exact format expected.
     { "name": "Beech Tree Inn", "km": 12, "type": "pub", "notes": "Available to customers" },
     { "name": "Drymen public toilets", "km": 19.5, "type": "public", "notes": "Free, in village square" }
   ],
+  "taxi_services": [
+    { "name": "Ambassador Taxis", "phone": "0141 956 2956", "url": "https://milngavie.co.uk/businessdirectory/ambassadortaxis/", "notes": "Based in Milngavie, 35+ years of service" },
+    { "name": "Drymen Taxi Services", "phone": "01360 660077", "notes": "Based in Drymen, covers Milngavie to Rowardennan" }
+  ],
   "interesting_links": [
     { "title": "The Clachan Inn — Oldest Pub in Scotland", "type": "restaurant" },
     { "title": "Mugdock Castle — 14th Century Ruins", "type": "history" },
@@ -451,6 +488,6 @@ Note: No elevation profile example is shown because **you do not generate elevat
 
 5. For `gpx_download`, use the format `"gpx/day-N.gpx"`. The organizer will download GPX files from trail sites (AllTrails, Komoot, etc.) and process them through the GPX Data Processor to generate elevation profiles and accurate stats.
 
-6. **YouTube search queries**: For `youtube_overview` and each day's `youtube`, provide descriptive search queries (NOT URLs). The app converts these to YouTube search links. Example: `"Torres del Paine W Trek day 1 hiking"`. If no meaningful query exists for a specific segment, use an empty string.
+6. **YouTube links**: For `youtube_overview` and each day's `youtube`, provide verified YouTube URLs when possible (e.g., `"https://www.youtube.com/watch?v=XXXXX"`). If you cannot verify a URL, provide a descriptive search query instead — the app can handle both. If no meaningful video or query exists for a specific segment, use an empty string.
 
 7. **Distance, ascent, and descent values** in `trip-data.json` are your best estimates from research. The organizer may later replace these with accurate GPX-derived values using the GPX Data Processor. Provide your best estimates — do not leave them as zero or placeholder values.
