@@ -167,36 +167,32 @@
       ],
       "map": "maps/day-1-map.jpg",
       "elevation_profile": "elevation/day-1-profile.json",
-      "toilet_facilities": {
-        "facilities": [
-          {
-            "name": "Milngavie Town Centre / Railway Station",
-            "km": 0,
-            "type": "public",
-            "notes": "Toilets at station (Platform 1) during ticket office hours. Cafes and shops on pedestrianised High Street."
-          },
-          {
-            "name": "Mugdock Country Park Visitor Centre",
-            "km": 3,
-            "type": "visitor centre",
-            "notes": "Toilets in courtyard including accessible toilet. Slight detour off WHW into the park."
-          },
-          {
-            "name": "Beech Tree Inn",
-            "km": 11,
-            "type": "pub/restaurant",
-            "notes": "Customers only. Food Mon–Fri 11am–3pm, Sat–Sun 11am–7pm."
-          },
-          {
-            "name": "Drymen Village",
-            "km": 19,
-            "type": "public",
-            "notes": "Public toilets in village. Clachan Inn, SPAR shop. Village is ~900m off the main trail."
-          }
-        ],
-        "longest_gap_km": 8,
-        "longest_gap_description": "Mugdock Country Park to Beech Tree Inn (~3 km to ~11 km)"
-      }
+      "toilet_facilities": [
+        {
+          "name": "Milngavie Town Centre / Railway Station",
+          "km": 0,
+          "type": "public",
+          "notes": "Toilets at station (Platform 1) during ticket office hours. Cafes and shops on pedestrianised High Street."
+        },
+        {
+          "name": "Mugdock Country Park Visitor Centre",
+          "km": 3,
+          "type": "visitor centre",
+          "notes": "Toilets in courtyard including accessible toilet. Slight detour off WHW into the park."
+        },
+        {
+          "name": "Beech Tree Inn",
+          "km": 11,
+          "type": "pub/restaurant",
+          "notes": "Customers only. Food Mon–Fri 11am–3pm, Sat–Sun 11am–7pm."
+        },
+        {
+          "name": "Drymen Village",
+          "km": 19,
+          "type": "public",
+          "notes": "Public toilets in village. Clachan Inn, SPAR shop. Village is ~900m off the main trail."
+        }
+      ]
     },
     {
       "day": 2,
@@ -287,54 +283,50 @@
       ],
       "map": "maps/day-2-map.jpg",
       "elevation_profile": "elevation/day-2-profile.json",
-      "toilet_facilities": {
-        "facilities": [
-          {
-            "name": "Drymen Village",
-            "km": 0,
-            "type": "public",
-            "notes": "Public toilets, pubs, and cafes in village."
-          },
-          {
-            "name": "Balmaha Village",
-            "km": 11,
-            "type": "public",
-            "notes": "Public toilets at car park/visitor centre. Oak Tree Inn (customers). Multiple cafes, village shop."
-          },
-          {
-            "name": "Milarrochy Bay Car Park",
-            "km": 13.5,
-            "type": "public",
-            "notes": "Public toilets and picnic area."
-          },
-          {
-            "name": "Cashel Campsite",
-            "km": 14.5,
-            "type": "campsite",
-            "notes": "Full toilet and shower blocks. Seasonal (March–October). On the trail."
-          },
-          {
-            "name": "Sallochy Woodland Campsite",
-            "km": 17,
-            "type": "campsite",
-            "notes": "Composting toilets only. No showers. Seasonal (March–October)."
-          },
-          {
-            "name": "Rowardennan Car Park",
-            "km": 22.8,
-            "type": "public",
-            "notes": "Public toilets (seasonal Easter–October). Portable toilets may be available."
-          },
-          {
-            "name": "Rowardennan Hotel",
-            "km": 22.8,
-            "type": "hotel",
-            "notes": "Available if purchasing food/drink."
-          }
-        ],
-        "longest_gap_km": 11,
-        "longest_gap_description": "Drymen to Balmaha (Conic Hill section, no facilities)"
-      }
+      "toilet_facilities": [
+        {
+          "name": "Drymen Village",
+          "km": 0,
+          "type": "public",
+          "notes": "Public toilets, pubs, and cafes in village."
+        },
+        {
+          "name": "Balmaha Village",
+          "km": 11,
+          "type": "public",
+          "notes": "Public toilets at car park/visitor centre. Oak Tree Inn (customers). Multiple cafes, village shop."
+        },
+        {
+          "name": "Milarrochy Bay Car Park",
+          "km": 13.5,
+          "type": "public",
+          "notes": "Public toilets and picnic area."
+        },
+        {
+          "name": "Cashel Campsite",
+          "km": 14.5,
+          "type": "campsite",
+          "notes": "Full toilet and shower blocks. Seasonal (March–October). On the trail."
+        },
+        {
+          "name": "Sallochy Woodland Campsite",
+          "km": 17,
+          "type": "campsite",
+          "notes": "Composting toilets only. No showers. Seasonal (March–October)."
+        },
+        {
+          "name": "Rowardennan Car Park",
+          "km": 22.8,
+          "type": "public",
+          "notes": "Public toilets (seasonal Easter–October). Portable toilets may be available."
+        },
+        {
+          "name": "Rowardennan Hotel",
+          "km": 22.8,
+          "type": "hotel",
+          "notes": "Available if purchasing food/drink."
+        }
+      ]
     },
     {
       "day": 3,
@@ -434,36 +426,32 @@
       ],
       "map": "maps/day-3-map.jpg",
       "elevation_profile": "elevation/day-3-profile.json",
-      "toilet_facilities": {
-        "facilities": [
-          {
-            "name": "Rowardennan Car Park / Hotel",
-            "km": 0,
-            "type": "public",
-            "notes": "Public toilets at car park (seasonal). Hotel bar available."
-          },
-          {
-            "name": "Inversnaid Hotel",
-            "km": 11.5,
-            "type": "hotel",
-            "notes": "Walkers bar with toilets, water tap, snacks. Check seasonal opening hours."
-          },
-          {
-            "name": "Beinglas Farm Campsite",
-            "km": 22,
-            "type": "campsite",
-            "notes": "Toilet/shower block with hot water. Shop 8am–9pm. Stagger Inn bar/restaurant on site."
-          },
-          {
-            "name": "Drovers Inn (Inverarnan)",
-            "km": 22.5,
-            "type": "pub/hotel",
-            "notes": "Toilets open from 9am. Historic pub, ~6 min walk from trail."
-          }
-        ],
-        "longest_gap_km": 11.5,
-        "longest_gap_description": "Rowardennan to Inversnaid — remote lochside path, rough terrain, no facilities"
-      }
+      "toilet_facilities": [
+        {
+          "name": "Rowardennan Car Park / Hotel",
+          "km": 0,
+          "type": "public",
+          "notes": "Public toilets at car park (seasonal). Hotel bar available."
+        },
+        {
+          "name": "Inversnaid Hotel",
+          "km": 11.5,
+          "type": "hotel",
+          "notes": "Walkers bar with toilets, water tap, snacks. Check seasonal opening hours."
+        },
+        {
+          "name": "Beinglas Farm Campsite",
+          "km": 22,
+          "type": "campsite",
+          "notes": "Toilet/shower block with hot water. Shop 8am–9pm. Stagger Inn bar/restaurant on site."
+        },
+        {
+          "name": "Drovers Inn (Inverarnan)",
+          "km": 22.5,
+          "type": "pub/hotel",
+          "notes": "Toilets open from 9am. Historic pub, ~6 min walk from trail."
+        }
+      ]
     },
     {
       "day": 4,
@@ -547,42 +535,38 @@
       ],
       "map": "maps/day-4-map.jpg",
       "elevation_profile": "elevation/day-4-profile.json",
-      "toilet_facilities": {
-        "facilities": [
-          {
-            "name": "Drovers Inn / Beinglas Farm",
-            "km": 0,
-            "type": "pub/campsite",
-            "notes": "Drovers Inn toilets from 9am. Beinglas Farm full toilet block."
-          },
-          {
-            "name": "Crianlarich Village (detour)",
-            "km": 10,
-            "type": "public",
-            "notes": "Public toilets on Glenfalloch Road. Pubs, hotel, shops. DETOUR: ~1.5 km off the main WHW route."
-          },
-          {
-            "name": "Tyndrum — The Green Welly Stop",
-            "km": 20.7,
-            "type": "cafe/shop",
-            "notes": "Public toilets including Changing Places facility, open 7am–10pm. Showers available."
-          },
-          {
-            "name": "Tyndrum — Real Food Cafe",
-            "km": 20.7,
-            "type": "cafe",
-            "notes": "Toilets for customers."
-          },
-          {
-            "name": "Tyndrum — By The Way Hostel/Campsite",
-            "km": 20.7,
-            "type": "hostel/campsite",
-            "notes": "Toilet and shower facilities for guests."
-          }
-        ],
-        "longest_gap_km": 20.7,
-        "longest_gap_description": "Inverarnan to Tyndrum if Crianlarich detour is skipped. With detour: ~10 km gaps."
-      }
+      "toilet_facilities": [
+        {
+          "name": "Drovers Inn / Beinglas Farm",
+          "km": 0,
+          "type": "pub/campsite",
+          "notes": "Drovers Inn toilets from 9am. Beinglas Farm full toilet block."
+        },
+        {
+          "name": "Crianlarich Village (detour)",
+          "km": 10,
+          "type": "public",
+          "notes": "Public toilets on Glenfalloch Road. Pubs, hotel, shops. DETOUR: ~1.5 km off the main WHW route."
+        },
+        {
+          "name": "Tyndrum — The Green Welly Stop",
+          "km": 20.7,
+          "type": "cafe/shop",
+          "notes": "Public toilets including Changing Places facility, open 7am–10pm. Showers available."
+        },
+        {
+          "name": "Tyndrum — Real Food Cafe",
+          "km": 20.7,
+          "type": "cafe",
+          "notes": "Toilets for customers."
+        },
+        {
+          "name": "Tyndrum — By The Way Hostel/Campsite",
+          "km": 20.7,
+          "type": "hostel/campsite",
+          "notes": "Toilet and shower facilities for guests."
+        }
+      ]
     },
     {
       "day": 5,
@@ -678,36 +662,32 @@
       ],
       "map": "maps/day-5-map.jpg",
       "elevation_profile": "elevation/day-5-profile.json",
-      "toilet_facilities": {
-        "facilities": [
-          {
-            "name": "Tyndrum (Green Welly Stop / Real Food Cafe)",
-            "km": 0,
-            "type": "cafe/shop",
-            "notes": "Multiple options. Last substantial facilities before a very long stretch."
-          },
-          {
-            "name": "Bridge of Orchy Hotel",
-            "km": 11,
-            "type": "hotel",
-            "notes": "Toilets for walkers — buy a drink or make a donation."
-          },
-          {
-            "name": "Inveroran Hotel",
-            "km": 14,
-            "type": "hotel",
-            "notes": "Toilets for walkers — buy a drink or make a donation. Bar and food. Last stop before Rannoch Moor."
-          },
-          {
-            "name": "Kingshouse Hotel / Bunkhouse",
-            "km": 31.4,
-            "type": "hotel/public",
-            "notes": "Public toilets and shower block at bunkhouse. Hotel bar and restaurant."
-          }
-        ],
-        "longest_gap_km": 17.4,
-        "longest_gap_description": "Inveroran to Kingshouse across Rannoch Moor — ZERO facilities, most exposed section of entire WHW"
-      }
+      "toilet_facilities": [
+        {
+          "name": "Tyndrum (Green Welly Stop / Real Food Cafe)",
+          "km": 0,
+          "type": "cafe/shop",
+          "notes": "Multiple options. Last substantial facilities before a very long stretch."
+        },
+        {
+          "name": "Bridge of Orchy Hotel",
+          "km": 11,
+          "type": "hotel",
+          "notes": "Toilets for walkers — buy a drink or make a donation."
+        },
+        {
+          "name": "Inveroran Hotel",
+          "km": 14,
+          "type": "hotel",
+          "notes": "Toilets for walkers — buy a drink or make a donation. Bar and food. Last stop before Rannoch Moor."
+        },
+        {
+          "name": "Kingshouse Hotel / Bunkhouse",
+          "km": 31.4,
+          "type": "hotel/public",
+          "notes": "Public toilets and shower block at bunkhouse. Hotel bar and restaurant."
+        }
+      ]
     },
     {
       "day": 6,
@@ -795,42 +775,38 @@
       ],
       "map": "maps/day-6-map.jpg",
       "elevation_profile": "elevation/day-6-profile.json",
-      "toilet_facilities": {
-        "facilities": [
-          {
-            "name": "Kingshouse Hotel / Bunkhouse",
-            "km": 0,
-            "type": "hotel/public",
-            "notes": "Public toilets and showers at bunkhouse. Hotel bar. Use before departing."
-          },
-          {
-            "name": "Kinlochleven — Public Toilets",
-            "km": 14.5,
-            "type": "public",
-            "notes": "Opposite the Ice Factor. Disabled toilet open through the night."
-          },
-          {
-            "name": "Kinlochleven — Tailrace Inn",
-            "km": 14.5,
-            "type": "pub/hotel",
-            "notes": "Centrally located on Riverside Road. Customers."
-          },
-          {
-            "name": "Kinlochleven — Blackwater Hostel & Campsite",
-            "km": 14.5,
-            "type": "hostel/campsite",
-            "notes": "Renovated shower block with toilets."
-          },
-          {
-            "name": "Kinlochleven — Co-op & Cafes",
-            "km": 14.5,
-            "type": "shop/cafe",
-            "notes": "Supermarket and various cafes in town."
-          }
-        ],
-        "longest_gap_km": 14.5,
-        "longest_gap_description": "Entire section from Kingshouse to Kinlochleven including Devil's Staircase — NO facilities"
-      }
+      "toilet_facilities": [
+        {
+          "name": "Kingshouse Hotel / Bunkhouse",
+          "km": 0,
+          "type": "hotel/public",
+          "notes": "Public toilets and showers at bunkhouse. Hotel bar. Use before departing."
+        },
+        {
+          "name": "Kinlochleven — Public Toilets",
+          "km": 14.5,
+          "type": "public",
+          "notes": "Opposite the Ice Factor. Disabled toilet open through the night."
+        },
+        {
+          "name": "Kinlochleven — Tailrace Inn",
+          "km": 14.5,
+          "type": "pub/hotel",
+          "notes": "Centrally located on Riverside Road. Customers."
+        },
+        {
+          "name": "Kinlochleven — Blackwater Hostel & Campsite",
+          "km": 14.5,
+          "type": "hostel/campsite",
+          "notes": "Renovated shower block with toilets."
+        },
+        {
+          "name": "Kinlochleven — Co-op & Cafes",
+          "km": 14.5,
+          "type": "shop/cafe",
+          "notes": "Supermarket and various cafes in town."
+        }
+      ]
     },
     {
       "day": 7,
@@ -924,30 +900,26 @@
       ],
       "map": "maps/day-7-map.jpg",
       "elevation_profile": "elevation/day-7-profile.json",
-      "toilet_facilities": {
-        "facilities": [
-          {
-            "name": "Kinlochleven Town",
-            "km": 0,
-            "type": "public",
-            "notes": "Public toilets opposite Ice Factor. Pubs, cafes, supermarket. USE BEFORE DEPARTING."
-          },
-          {
-            "name": "Glen Nevis Visitor Centre",
-            "km": 23,
-            "type": "visitor centre",
-            "notes": "Public toilets. Located where trail descends to Glen Nevis area near Fort William."
-          },
-          {
-            "name": "Fort William Town Centre",
-            "km": 24.5,
-            "type": "public",
-            "notes": "Public toilets at View Forth. Train station toilets. Numerous pubs, cafes, restaurants."
-          }
-        ],
-        "longest_gap_km": 23,
-        "longest_gap_description": "Kinlochleven to Glen Nevis/Fort William — longest gap on entire WHW, 23 km with ZERO facilities"
-      }
+      "toilet_facilities": [
+        {
+          "name": "Kinlochleven Town",
+          "km": 0,
+          "type": "public",
+          "notes": "Public toilets opposite Ice Factor. Pubs, cafes, supermarket. USE BEFORE DEPARTING."
+        },
+        {
+          "name": "Glen Nevis Visitor Centre",
+          "km": 23,
+          "type": "visitor centre",
+          "notes": "Public toilets. Located where trail descends to Glen Nevis area near Fort William."
+        },
+        {
+          "name": "Fort William Town Centre",
+          "km": 24.5,
+          "type": "public",
+          "notes": "Public toilets at View Forth. Train station toilets. Numerous pubs, cafes, restaurants."
+        }
+      ]
     }
   ],
   "weather": {
