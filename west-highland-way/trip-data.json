@@ -1186,6 +1186,11 @@
       "essential": false
     },
     {
+      "category": "Equipment",
+      "item": "Quick drying towel",
+      "essential": false
+    },
+    {
       "category": "Navigation & Safety",
       "item": "Fully charged mobile phone with offline maps (e.g., Maps.me, OS Maps app)",
       "essential": true
