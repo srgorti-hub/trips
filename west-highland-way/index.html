@@ -2032,6 +2032,18 @@ function renderDayCard(day) {
         </li>`).join('')}</ul>
     </div>` : '';
 
+  // Taxi services
+  const taxiHTML = day.taxi_services && day.taxi_services.length ? `
+    <div class="detail-section">
+      <h4>&#128661; Local Taxi Services</h4>
+      <ul class="facility-list">${day.taxi_services.map(t => `
+        <li class="facility-item">
+          <span class="facility-name">${t.url ? `<a href="${t.url}" target="_blank" rel="noopener">${t.name}</a>` : t.name}</span>
+          ${t.phone ? `<span class="facility-type"><a href="tel:${t.phone.replace(/\s/g, '')}">${t.phone}</a></span>` : '<span class="facility-type">Online booking only</span>'}
+          ${t.notes ? `<span class="facility-notes">— ${t.notes}</span>` : ''}
+        </li>`).join('')}</ul>
+    </div>` : '';
+
   // Escape routes
   const escapeHTML = day.escape_routes && day.escape_routes.length ? `
     <div class="detail-section">
@@ -2161,6 +2173,7 @@ function renderDayCard(day) {
           ${waterHTML}
           ${foodStopsHTML}
           ${toiletHTML}
+          ${taxiHTML}
           ${escapeHTML}
           ${resupplyHTML}
           ${externalLinksHTML}

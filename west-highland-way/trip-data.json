@@ -205,6 +205,20 @@
           "type": "public",
           "notes": "Public toilets in village. Clachan Inn, SPAR shop. Village is ~900m off the main trail."
         }
+      ],
+      "taxi_services": [
+        {
+          "name": "Ambassador Taxis",
+          "phone": "0141 956 2956",
+          "url": "https://milngavie.co.uk/businessdirectory/ambassadortaxis/",
+          "notes": "Based in Milngavie, 35+ years of service"
+        },
+        {
+          "name": "Drymen Taxi Services",
+          "phone": "01360 660077",
+          "url": "https://www.facebook.com/p/Drymen-Taxi-Services-100057504427238/",
+          "notes": "Based in Drymen, covers Milngavie to Rowardennan"
+        }
       ]
     },
     {
@@ -348,6 +362,20 @@
           "type": "hotel",
           "notes": "Available if purchasing food/drink."
         }
+      ],
+      "taxi_services": [
+        {
+          "name": "Drymen Taxi Services",
+          "phone": "01360 660077",
+          "url": "https://www.facebook.com/p/Drymen-Taxi-Services-100057504427238/",
+          "notes": "Covers Drymen, Balmaha, and Rowardennan"
+        },
+        {
+          "name": "Loch Lomond Cabs",
+          "phone": "01389 717104",
+          "url": "https://lochlomondcabs.com/",
+          "notes": "4 and 8-seater vehicles, broader Loch Lomond area"
+        }
       ]
     },
     {
@@ -482,6 +510,20 @@
           "type": "pub/hotel",
           "notes": "Toilets open from 9am. Historic pub, ~6 min walk from trail."
         }
+      ],
+      "taxi_services": [
+        {
+          "name": "Lodge Cars",
+          "phone": "01838 300534",
+          "url": "https://www.lodge-cars.co.uk/",
+          "notes": "Based in Crianlarich, covers Inverarnan and surrounding areas"
+        },
+        {
+          "name": "24/7 Cars",
+          "phone": "01838 300307",
+          "url": "https://247taxis.co.uk/",
+          "notes": "Crianlarich area, pre-booking required"
+        }
       ]
     },
     {
@@ -605,6 +647,20 @@
           "km": 20.7,
           "type": "hostel/campsite",
           "notes": "Toilet and shower facilities for guests."
+        }
+      ],
+      "taxi_services": [
+        {
+          "name": "Lodge Cars",
+          "phone": "01838 300534",
+          "url": "https://www.lodge-cars.co.uk/",
+          "notes": "Based in Crianlarich, covers Tyndrum and beyond"
+        },
+        {
+          "name": "BOO Cars",
+          "phone": "",
+          "url": "https://www.boocars.co.uk/",
+          "notes": "Based in Bridge of Orchy, online booking only, covers Tyndrum to Kingshouse"
         }
       ]
     },
@@ -731,6 +787,20 @@
           "km": 31.4,
           "type": "hotel/public",
           "notes": "Public toilets and shower block at bunkhouse. Hotel bar and restaurant."
+        }
+      ],
+      "taxi_services": [
+        {
+          "name": "BOO Cars",
+          "phone": "",
+          "url": "https://www.boocars.co.uk/",
+          "notes": "Based in Bridge of Orchy, covers Inveroran and Kingshouse. Pre-book only"
+        },
+        {
+          "name": "Glencoe Taxis",
+          "phone": "01855 811764",
+          "url": "https://glencoetaxis.uk/",
+          "notes": "Two 8-seater minibuses, covers Glencoe to Kingshouse area"
         }
       ]
     },
@@ -860,6 +930,20 @@
           "type": "shop/cafe",
           "notes": "Supermarket and various cafes in town."
         }
+      ],
+      "taxi_services": [
+        {
+          "name": "West Highland Taxis",
+          "phone": "01855 831495",
+          "url": "https://www.westhighlandtaxis.com/",
+          "notes": "Based in Kinlochleven, specialises in WHW walker transport. 20+ years experience"
+        },
+        {
+          "name": "Glencoe Taxis",
+          "phone": "01855 811764",
+          "url": "https://glencoetaxis.uk/",
+          "notes": "Covers Kinlochleven from Ballachulish base, two 8-seater minibuses"
+        }
       ]
     },
     {
@@ -981,6 +1065,20 @@
           "km": 24.5,
           "type": "public",
           "notes": "Public toilets at View Forth. Train station toilets. Numerous pubs, cafes, restaurants."
+        }
+      ],
+      "taxi_services": [
+        {
+          "name": "Alistair's Taxis",
+          "phone": "01397 252525",
+          "url": "https://www.alistairstaxis.co.uk/west-highland-way-taxi-transfers",
+          "notes": "Fort William, two minibuses up to 16 passengers. Offers WHW return transfers to Milngavie"
+        },
+        {
+          "name": "Lochaber Taxis",
+          "phone": "01397 703334",
+          "url": "https://www.lochabertaxis.com/",
+          "notes": "Fort William and Lochaber area, long-distance walker support"
         }
       ]
     }
@@ -1230,7 +1328,7 @@
     ]
   },
   "general_info": {
-    "visa_info": "UK entry requirements depend on nationality. US, EU, Canadian, and Australian citizens can visit visa-free for up to 6 months. Check gov.uk/check-uk-visa for your specific nationality. Ensure your passport is valid for the duration of your trip.",
+    "visa_info": "US citizens do not need a visa for visits up to 6 months, but must obtain a UK Electronic Travel Authorisation (ETA) before travel. The ETA costs £16 per person, is valid for 2 years, and is linked to your passport. Apply at gov.uk/apply-electronic-travel-authorisation. EU, Canadian, and Australian citizens also qualify for visa-free entry (ETA requirements vary by nationality). Your passport must be valid for the duration of your stay.",
     "health_insurance": "The UK has excellent emergency medical services via the NHS. EU citizens may use a GHIC/EHIC card for reduced-cost treatment. All other nationalities should carry comprehensive travel insurance that covers mountain rescue and helicopter evacuation — Scottish Mountain Rescue is volunteer-run and free, but hospital treatment may not be. Ensure your policy covers hiking and remote trail walking.",
     "currency": "British Pound Sterling (GBP/£). Cards (contactless) widely accepted in towns and hotels, but carry cash (£50–100) for remote stops like Inversnaid, Inveroran, and Kingshouse where card machines can be unreliable. ATMs available in Milngavie, Drymen, Tyndrum, Kinlochleven, and Fort William.",
     "language": "English. You'll encounter Scottish English and occasionally Scots dialect. Place names are often Gaelic — locals are happy to help with pronunciation. Key Gaelic: 'loch' (lake), 'ben/beinn' (mountain), 'glen' (valley), 'strath' (wide valley), 'bealach' (pass).",
