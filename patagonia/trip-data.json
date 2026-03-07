@@ -7,8 +7,8 @@
       "end": "2026-11-30"
     },
     "group_size": 21,
-    "total_distance_km": 96.8,
-    "total_ascent_m": 3054,
+    "total_distance_km": 75.4,
+    "total_ascent_m": 2664,
     "youtube_overview": "Patagonia El Chaltén El Calafate Torres del Paine hiking guide",
     "description": "A nine-day journey through the heart of Patagonia, spanning Argentine and Chilean highlights. The trip begins in El Chaltén — Argentina's trekking capital — with hikes to Laguna Torre beneath the spires of Cerro Torre, and panoramic viewpoints above the Río de las Vueltas valley. It then moves to El Calafate for a full day at the Perito Moreno Glacier, one of the only advancing glaciers on Earth, combining walkway viewing, boat safari, and sunset kayaking. The final four nights are spent at Hotel Las Torres inside Torres del Paine National Park, with guided day hikes to the iconic Base of the Towers, the dramatic French Valley, and a van-supported grand tour of the park's lakes, waterfalls, and Grey Glacier. Expect big winds, bigger mountains, and some of the most dramatic scenery on the planet.",
     "location_keywords": [
@@ -256,9 +256,9 @@
       "day": 3,
       "label": "Cóndores & Águilas Viewpoints + Transfer to El Calafate",
       "date": "2026-11-24",
-      "distance_km": 7.4,
-      "ascent_m": 366,
-      "descent_m": 376,
+      "distance_km": 4.8,
+      "ascent_m": 220,
+      "descent_m": 220,
       "estimated_hours": 2.5,
       "difficulty": "Easy",
       "terrain_tags": [
@@ -520,6 +520,7 @@
       "description": "A full-day transfer from Argentina to Chile, crossing the international border at Cancha Carrera (Argentina) and Cerro Castillo (Chile) before arriving at Hotel Las Torres in the heart of Torres del Paine National Park. The Las Torres shuttle departs El Calafate early morning and the journey takes approximately 5-6 hours including border formalities. The route crosses the Patagonian steppe with wide-open views, and the stop in Cerro Castillo offers a chance to stretch your legs and take in the landscape.\n\nUpon arrival at Hotel Las Torres — positioned at the trailhead for the Base Torres trek — you'll have the afternoon free to settle in, explore the hotel's self-guided Conservation Trail (about 30 minutes), and attend the evening excursion briefing where guides present the next day's options. The hotel sits on a working estancia with 200 horses, and you may spot guanacos grazing on the surrounding plains. Dinner is included and served in the hotel restaurant.",
       "accommodation": {
         "name": "Hotel Las Torres",
+        "url": "https://lastorres.com/en/",
         "location": "Torres del Paine National Park"
       },
       "resupply_notes": "No shops inside Torres del Paine. The hotel provides all meals (packed lunch for excursions). Buy any last-minute items in El Calafate before departure.",
@@ -633,9 +634,9 @@
       "day": 6,
       "label": "Base of the Towers Trek",
       "date": "2026-11-27",
-      "distance_km": 19.1,
-      "ascent_m": 1144,
-      "descent_m": 1141,
+      "distance_km": 20.0,
+      "ascent_m": 900,
+      "descent_m": 900,
       "estimated_hours": 9,
       "difficulty": "Strenuous",
       "terrain_tags": [
@@ -648,6 +649,7 @@
       "description": "The crown jewel of Torres del Paine — an 18 km round-trip trek from Hotel Las Torres to the Mirador Base de las Torres, the iconic viewpoint beneath the park's three granite towers. These spires soar to nearly 2,850 metres and the turquoise glacial lake at their base is one of the most photographed sights in South America. This is a demanding but deeply rewarding day.\n\nThe trail starts directly from the hotel, crossing a suspension bridge over the Ascencio River before climbing steeply through lenga forest for about 2 km. The gradient eases as you reach the Windy Pass — appropriately named — where the valley opens up with mountain views on both sides. From here the trail follows the Ascencio River valley through forest to Refugio Chileno (5.5 km from the hotel), which has basic facilities and a small cafe. Beyond Chileno, the trail continues through forest to Campamento Torres, where you leave the trees behind.\n\nThe final kilometre is the hardest: a 400-metre scramble up a steep glacial moraine of loose boulders and scree. Footing is uncertain and the wind can be ferocious. But when you crest the moraine and see the three towers reflected in the emerald lake below, every step is justified. Allow 45 minutes to an hour for this final push, and plan to spend time at the top for lunch and photos before retracing your steps to the hotel.",
       "accommodation": {
         "name": "Hotel Las Torres",
+        "url": "https://lastorres.com/en/",
         "location": "Torres del Paine National Park"
       },
       "resupply_notes": "Hotel provides a packed lunch box for excursions (sandwich, fruit, nuts, cereal bars). Fill your water bottles at the hotel before departure.",
@@ -780,10 +782,10 @@
       "day": 7,
       "label": "French Valley Hike",
       "date": "2026-11-28",
-      "distance_km": 39.7,
+      "distance_km": 20.0,
       "ascent_m": 702,
       "descent_m": 706,
-      "estimated_hours": 12,
+      "estimated_hours": 10,
       "difficulty": "Strenuous",
       "terrain_tags": [
         "Boat crossing",
@@ -795,6 +797,7 @@
       "description": "The longest and most dramatic day of the trip takes you deep into the French Valley — the central arm of Torres del Paine's famous W Trek. The excursion begins with a drive to Pudeto, where you board a catamaran across the stunning turquoise Lake Pehoé to Paine Grande. From there, the trail follows the north shore of Lake Skottsberg before turning into the French Valley itself.\n\nThe valley is a natural amphitheatre of staggering proportions: hanging glaciers cling to the walls of Paine Grande (the park's highest peak at 3,050m), while the dark horns of Los Cuernos frame the view to the east. Cascading waterfalls feed into the valley from melting ice above. The trail climbs steeply through lenga forest before emerging above the treeline at the French Valley lookout, where the panorama includes Lakes Nordenskjöld, Pehoé, and Toro spread out below, with Hoja, Máscara, Espada, Fortaleza, and Aleta de Tiburón peaks surrounding you.\n\nThis is a full 12-hour day including the boat crossings. The terrain is demanding, with sustained climbing in the upper valley. Your legs will feel yesterday's Base Torres effort, so pace yourself carefully. The reward is one of the most spectacular mountain vistas in all of Patagonia.",
       "accommodation": {
         "name": "Hotel Las Torres",
+        "url": "https://lastorres.com/en/",
         "location": "Torres del Paine National Park"
       },
       "resupply_notes": "Hotel provides packed lunch. Carry at least 2L of water — there are refill opportunities from streams in the valley.",
@@ -946,6 +949,7 @@
       "description": "After two strenuous trekking days, today offers a gentler pace while still covering the park's greatest hits. The Full Paine tour travels by van to a series of viewpoints and short hikes across the park, giving you perspectives that the trekking routes don't reach. It's a sampler of Torres del Paine's extraordinary diversity — from the desert-like steppe to turquoise lakes, roaring waterfalls, and the massive Grey Glacier.\n\nThe route includes stops at Puente Negro (Black Bridge) for a view into the Ascencio Valley, Mirador Nordenskjöld with its sweeping panorama of the lake and Los Cuernos, and Mirador Sarmiento overlooking the prehistoric-blue waters of Lake Sarmiento with its thrombolite rock formations. At Lake Pehoé, you'll walk to the thundering Salto Grande waterfall, which channels water between Lakes Nordenskjöld and Pehoé. The final highlight is a choice between a hike along the southern shore of Lake Grey — where icebergs from Grey Glacier float past in otherworldly blues — or a catamaran ride across the lake to the glacier's face.\n\nWith about 10 km of walking spread across several short hikes and plenty of van time between stops, this is a welcome recovery day that still delivers world-class scenery.",
       "accommodation": {
         "name": "Hotel Las Torres",
+        "url": "https://lastorres.com/en/",
         "location": "Torres del Paine National Park"
       },
       "resupply_notes": "Hotel provides packed lunch. The Grey Glacier area has a small cafe/shop near the catamaran dock.",
@@ -1392,9 +1396,9 @@
         ]
       }
     ],
-    "physical_demands": "The trip includes two strenuous hiking days back-to-back (18 km with 850m gain, followed by 20 km with 750m gain), with the added challenge of Patagonian wind that can turn a moderate trail into an exhausting slog. You need to be comfortable walking 18-20 km on rough terrain in a single day, and able to repeat it the following day. The moraine scramble on Base Torres requires reasonable agility on loose boulders. Transfer days provide welcome rest, but the overall pace across nine days is sustained.",
+    "physical_demands": "The trip includes two strenuous hiking days back-to-back (20 km with 900m gain, followed by 20 km with 700m gain), with the added challenge of Patagonian wind that can turn a moderate trail into an exhausting slog. You need to be comfortable walking 18-20 km on rough terrain in a single day, and able to repeat it the following day. The moraine scramble on Base Torres requires reasonable agility on loose boulders. Transfer days provide welcome rest, but the overall pace across nine days is sustained.",
     "recommended_training": [
-      "Build to comfortably walking 18-20 km in a single day with 800m elevation gain",
+      "Build to comfortably walking 20 km in a single day with 900m elevation gain",
       "Practise two consecutive long walking days to prepare for Days 6 and 7",
       "Train with a weighted daypack (8-10 kg) to simulate carrying water, food, and layers",
       "Include rocky or uneven terrain in your training to prepare for the Base Torres moraine",
@@ -1407,8 +1411,8 @@
       "Day 3: Cóndores & Águilas (5 km, 215m gain) + transfer. A gentle morning hike — perfect for recovery. Short and steep but over quickly. Legs may feel the previous day on the climb.",
       "Day 4: Perito Moreno Glacier day. Mostly walking on flat metal walkways — no real physical demand. Kayaking requires basic upper body effort. A good recovery day for your legs.",
       "Day 5: Transfer day — no physical demands. Long drive but restful. Use the evening to stretch and prepare mentally for the big days ahead.",
-      "Day 6: Base Torres (18 km, 850m gain). The most demanding day. The first 8 km are steady but manageable. The final moraine scramble is a 400m climb over loose boulders that will test your legs, lungs, and patience. Expect deep fatigue in the evening.",
-      "Day 7: French Valley (20 km, 750m gain, 12 hours). Back-to-back with Base Torres — this is the trip's toughest test. Your legs will be heavy from Day 6. The distance is long, the climb is sustained, and the boat schedule means you cannot take unlimited time. Pace yourself and fuel consistently.",
+      "Day 6: Base Torres (20 km, 900m gain). The most demanding day. The first 8 km are steady but manageable. The final moraine scramble is a 400m climb over loose boulders that will test your legs, lungs, and patience. Expect deep fatigue in the evening.",
+      "Day 7: French Valley (20 km, 700m gain, 10 hours). Back-to-back with Base Torres — this is the trip's toughest test. Your legs will be heavy from Day 6. The distance is long, the climb is sustained, and the boat schedule means you cannot take unlimited time. Pace yourself and fuel consistently.",
       "Day 8: Full Paine Tour (10 km, 300m gain). A welcome relief. Short hikes from the van with rest between stops. Your legs will be grateful for the reduced effort.",
       "Day 9: Transfer day — no physical demands. Rest, reflect, and enjoy the final Patagonian views from the bus."
     ]
