@@ -1197,7 +1197,7 @@
     },
     {
       "category": "Navigation & Safety",
-      "item": "Basic first aid kit (blister plasters, painkillers, antiseptic)",
+      "item": "Basic first aid kit (blister plasters, painkillers, antiseptic, antihistamines)",
       "essential": true
     },
     {
@@ -1253,6 +1253,11 @@
     {
       "category": "Food & Drink",
       "item": "Water purification tablets or filter",
+      "essential": false
+    },
+    {
+      "category": "Food & Drink",
+      "item": "Electrolytes (tablets or powder sachets)",
       "essential": false
     }
   ],
