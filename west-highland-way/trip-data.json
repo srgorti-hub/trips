@@ -1172,16 +1172,6 @@
     },
     {
       "category": "Equipment",
-      "item": "Headtorch with spare batteries",
-      "essential": true
-    },
-    {
-      "category": "Equipment",
-      "item": "Sit mat or lightweight sit pad",
-      "essential": false
-    },
-    {
-      "category": "Equipment",
       "item": "Dry bags or zip-lock bags for electronics",
       "essential": false
     },
@@ -1204,21 +1194,6 @@
       "category": "Navigation & Safety",
       "item": "Basic first aid kit (blister plasters, painkillers, antiseptic, antihistamines)",
       "essential": true
-    },
-    {
-      "category": "Navigation & Safety",
-      "item": "Emergency whistle",
-      "essential": true
-    },
-    {
-      "category": "Navigation & Safety",
-      "item": "Paper map or guidebook as backup",
-      "essential": false
-    },
-    {
-      "category": "Navigation & Safety",
-      "item": "Compass",
-      "essential": false
     },
     {
       "category": "Personal",
