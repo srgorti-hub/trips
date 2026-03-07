@@ -193,8 +193,8 @@
         }
       ],
       "links": {
-        "alltrails": "Laguna Torre El Chaltén",
-        "komoot": "Laguna Torre trek El Chaltén Patagonia",
+        "alltrails": "https://www.alltrails.com/trail/argentina/santa-cruz/laguna-torre-y-mirador-maestri",
+        "komoot": "https://www.komoot.com/highlight/205031",
         "walk_highlands": "",
         "gpx_download": "gpx/day-2.gpx"
       },
@@ -310,8 +310,8 @@
         }
       ],
       "links": {
-        "alltrails": "Mirador Condores Aguilas El Chaltén",
-        "komoot": "Mirador Condores Aguilas El Chaltén viewpoint",
+        "alltrails": "https://www.alltrails.com/trail/argentina/santa-cruz/mirador-de-los-condores-mirador-de-las-aguilas",
+        "komoot": "https://www.komoot.com/smarttour/e2680368201/mirador-de-los-condores-y-mirador-de-las-aguilas-circular-en-el-parque-nacional-los-glaciares",
         "walk_highlands": "",
         "gpx_download": "gpx/day-3.gpx"
       },
@@ -439,8 +439,8 @@
         }
       ],
       "links": {
-        "alltrails": "Perito Moreno Glacier walkways El Calafate",
-        "komoot": "Perito Moreno Glacier boardwalk trail",
+        "alltrails": "https://www.alltrails.com/trail/argentina/santa-cruz/sendero-glaciar-perito-moreno",
+        "komoot": "https://www.komoot.com/highlight/6331989",
         "walk_highlands": "",
         "gpx_download": "gpx/day-4.gpx"
       },
@@ -705,8 +705,8 @@
         }
       ],
       "links": {
-        "alltrails": "Base Torres Torres del Paine day hike",
-        "komoot": "Base de las Torres trek Torres del Paine",
+        "alltrails": "https://www.alltrails.com/trail/chile/magallanes/mirador-torres-del-paine-via-sendero-las-torres-a-chileno",
+        "komoot": "https://www.komoot.com/highlight/235301",
         "walk_highlands": "",
         "gpx_download": "gpx/day-6.gpx"
       },
@@ -856,7 +856,7 @@
         }
       ],
       "links": {
-        "alltrails": "French Valley Torres del Paine hike",
+        "alltrails": "https://www.alltrails.com/trail/chile/magallanes/mirador-britanico-via-valle-frances",
         "komoot": "Valle del Francés Torres del Paine trekking",
         "walk_highlands": "",
         "gpx_download": "gpx/day-7.gpx"
@@ -1000,8 +1000,8 @@
         }
       ],
       "links": {
-        "alltrails": "Torres del Paine full day tour highlights",
-        "komoot": "Torres del Paine Full Paine tour",
+        "alltrails": "https://www.alltrails.com/trail/chile/magallanes/mirador-salto-grande",
+        "komoot": "https://www.komoot.com/tour/1032637103",
         "walk_highlands": "",
         "gpx_download": "gpx/day-8.gpx"
       },
