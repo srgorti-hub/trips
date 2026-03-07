@@ -97,8 +97,21 @@
       ],
       "description": "A gentle introduction to the West Highland Way, starting from the granite obelisk in Milngavie town centre. The trail follows the Allander Water before winding through the ancient woodland of Mugdock Country Park, where moss-covered trees filter the light. You'll pass the tranquil Craigallian Loch and the cottages of Carbeth before the landscape opens out into rolling farmland beneath the Campsie Fells.\n\nThe walking is straightforward throughout — good paths, no technical terrain, and only modest undulations. After passing the distinctive volcanic plug of Dumgoyne, which rises dramatically above Glengoyne Distillery (well worth a short detour for a dram), the trail follows an old railway line and quiet lanes before descending through fields into Drymen.\n\nDrymen is a charming village with a good range of pubs, restaurants, and a SPAR shop — your last reliable resupply point before Tyndrum on Day 4. The Clachan Inn claims to be the oldest licensed pub in Scotland. Make the most of the village atmosphere tonight; the wild Highlands are calling from tomorrow.",
       "accommodation": {
-        "name": "Winnock Hotel / Buchanan Arms / Drymen Inn",
-        "location": "Drymen"
+        "location": "Drymen",
+        "options": [
+          {
+            "name": "Winnock Hotel",
+            "url": "https://winnockhotel.com/"
+          },
+          {
+            "name": "Buchanan Arms",
+            "url": "https://buchanan-arms.co.uk/"
+          },
+          {
+            "name": "Drymen Inn",
+            "url": "https://thedrymeninn.com/"
+          }
+        ]
       },
       "resupply_notes": "SPAR shop in Drymen, open daily. Last major resupply before Tyndrum (Day 4). Stock up on snacks and any essentials.",
       "water_sources": [
@@ -211,8 +224,17 @@
       ],
       "description": "Today delivers the first genuine highlight of the Way: the ascent of Conic Hill (361m). After passing through Garadhban Forest, the trail climbs steadily to a summit that sits directly on the Highland Boundary Fault — the geological dividing line between the Scottish Lowlands and the Highlands. From the top, the panorama over Loch Lomond and its scattered islands is breathtaking, and you can literally see the change in landscape from the gentle south to the rugged north.\n\nThe descent from Conic Hill into Balmaha is steep and rocky in places — take care, especially if wet. Balmaha is a bustling little village on the loch shore with the Oak Tree Inn providing excellent food and a welcome rest stop. From Balmaha, the trail follows the eastern shore of Loch Lomond through mixed woodland, passing beautiful pebble beaches and oak-fringed bays with views across the water to Ben Lomond (974m).\n\nThis is a longer day at 24 km with meaningful ascent over Conic Hill and constant ups and downs along the lochside. The terrain is generally good but includes some rocky and rooty sections toward Rowardennan. Accommodation in Rowardennan is limited — the Rowardennan Hotel and SYHA Youth Hostel are the main options, plus the Oak Tree Inn back in Balmaha.",
       "accommodation": {
-        "name": "Rowardennan Hotel / Oak Tree Inn Balmaha",
-        "location": "Rowardennan / Balmaha"
+        "location": "Rowardennan / Balmaha",
+        "options": [
+          {
+            "name": "Rowardennan Hotel",
+            "url": "https://www.rowardennanhotel.co.uk/"
+          },
+          {
+            "name": "Oak Tree Inn",
+            "url": "https://www.theoaktreeinn.co.uk/"
+          }
+        ]
       },
       "resupply_notes": "Small shop in Balmaha (seasonal hours). No shops in Rowardennan. Stock up in Drymen before leaving.",
       "water_sources": [
@@ -346,8 +368,17 @@
       ],
       "description": "This is widely regarded as the toughest day on the West Highland Way — not for the distance or ascent, but for the relentless terrain along the eastern shore of Loch Lomond. The path is a constant obstacle course of exposed tree roots, slippery rocks, muddy hollows, and scrambles over boulders, demanding continuous concentration on your footing. Allow significantly more time than the distance alone would suggest.\n\nThe first half to Inversnaid is the most demanding section. The trail clings to the steep, wooded lochside, with frequent ups and downs that are exhausting in aggregate. At Inversnaid, you'll find the historic Inversnaid Hotel (seasonal) and the dramatic Inversnaid Falls — a waterfall immortalised by Gerard Manley Hopkins. The second half from Inversnaid to Inverarnan follows the River Falloch through increasingly Highland scenery, with the terrain gradually improving.\n\nDespite the difficulty, this is one of the most beautiful stages. The ancient oak woodland, the lapping waters of the loch, and the sense of isolation create an unforgettable atmosphere. Arrive at Inverarnan grateful for the Drovers Inn — a wonderfully eccentric 300-year-old Highland inn with stuffed animals on the walls and live music on many evenings.",
       "accommodation": {
-        "name": "Drovers Inn / Ardlui Hotel",
-        "location": "Inverarnan / Ardlui"
+        "location": "Inverarnan / Ardlui",
+        "options": [
+          {
+            "name": "Drovers Inn",
+            "url": "https://www.droversinn.co.uk/"
+          },
+          {
+            "name": "Ardlui Hotel",
+            "url": "https://ardlui.com/"
+          }
+        ]
       },
       "resupply_notes": "No shops between Rowardennan and Inverarnan. Carry all food and water for the day. Drovers Inn serves meals. Small shop at Ardlui marina (seasonal).",
       "water_sources": [
@@ -470,8 +501,17 @@
       ],
       "description": "A welcome change of pace after yesterday's lochside scramble. The trail follows Glen Falloch northward through increasingly Highland scenery, with the River Falloch crashing through rocky gorges and over waterfalls beside the path. The terrain is far better underfoot — mostly good tracks and paths through open glen and forested hillside.\n\nThe route climbs gradually through the glen, passing the Falls of Falloch (a worthwhile short detour) before reaching Crianlarich, a small Highlands village just off the main trail. Crianlarich has a train station, a small shop, and cafes — a useful resupply point. Beyond Crianlarich, the trail follows old military roads and farm tracks through Strath Fillan, passing the atmospheric ruins of St Fillan's Priory, before reaching Tyndrum.\n\nTyndrum is a welcome oasis with two hotels, a bunkhouse, the famous Green Welly Stop, a fish and chip van, and the Real Food Cafe. There's a Co-op for supplies — your last proper shop before Fort William. The village sits in a spectacular bowl of mountains and marks the transition into the true Highland wilderness ahead.",
       "accommodation": {
-        "name": "Tyndrum Lodges / Tyndrum Inn",
-        "location": "Tyndrum"
+        "location": "Tyndrum",
+        "options": [
+          {
+            "name": "Tyndrum Lodges",
+            "url": "https://tyndrumlodges.co.uk/"
+          },
+          {
+            "name": "Tyndrum Inn",
+            "url": "https://thetyndruminn.co.uk/"
+          }
+        ]
       },
       "resupply_notes": "Small shop in Crianlarich (off-route, 1.5 km detour). Co-op in Tyndrum — last shop before Fort William. Green Welly Stop for outdoor gear and snacks. Real Food Cafe for excellent fish and chips.",
       "water_sources": [
@@ -585,8 +625,13 @@
       ],
       "description": "The longest day on the Way, but arguably the most spectacular. The route traverses the full grandeur of the central Highlands, from the wooded flanks of Ben Dorain to the vast, treeless expanse of Rannoch Moor, before arriving at the iconic Kingshouse Hotel beneath the towering pyramid of Buachaille Etive Mòr.\n\nThe first section climbs alongside the West Highland Railway to Bridge of Orchy, with the sweeping flanks of Ben Dorain (1076m) dominating the view. From Bridge of Orchy, a short stretch over old drovers' roads leads to the Inveroran Hotel — a historic coaching inn that makes a perfect lunch stop. Beyond Inveroran, the trail crosses the shoulder of the Black Mount before descending onto Rannoch Moor itself. This vast, peat-bog wilderness stretches to the horizon in every direction — one of the last true wilderness areas in Europe. The old military road provides solid footing across the moor.\n\nThe day culminates with the approach to Kingshouse, where Buachaille Etive Mòr rises suddenly from the moor like a giant sentinel guarding the entrance to Glencoe. The recently renovated Kingshouse Hotel, in this location since 1750, is the perfect reward. Start early today — this is a long day but the scenery justifies every step.",
       "accommodation": {
-        "name": "Kingshouse Hotel",
-        "location": "Glencoe"
+        "location": "Glencoe",
+        "options": [
+          {
+            "name": "Kingshouse Hotel",
+            "url": "https://www.kingshousehotel.co.uk/"
+          }
+        ]
       },
       "resupply_notes": "No shops between Tyndrum and Kingshouse. Inveroran Hotel serves lunch (check seasonal hours). Kingshouse Hotel has a bar and restaurant. Carry all food and snacks for the full day.",
       "water_sources": [
@@ -707,8 +752,17 @@
       ],
       "description": "A shorter but dramatic day featuring the most famous climb on the West Highland Way: the Devil's Staircase. Despite its fearsome name, this is a well-graded zigzag path climbing 250 metres to the highest point on the entire trail at 549 metres. The effort is spectacularly rewarded with views south over Glencoe's great ridges, east across Rannoch Moor, and north toward the Mamores and Ben Nevis.\n\nFrom Kingshouse, the trail follows the old military road to the base of the Staircase. The climb is steady rather than brutal — the zigzags were originally engineered for soldiers and pack horses. At the summit cairn, take time to savour the panorama before beginning the long descent toward Kinlochleven. The path drops through a scenic Highland landscape of heather moorland and scattered birch, with the Mamores ridge line filling the northern horizon.\n\nKinlochleven is a sizeable town at the head of Loch Leven, with a Co-op, several pubs and restaurants, and the Ice Factor — the world's largest indoor ice climbing facility. After the minimalism of Kingshouse, the town's amenities feel luxurious. Enjoy the shorter day and rest your legs for the final push to Fort William tomorrow.",
       "accommodation": {
-        "name": "MacDonald Hotel / Tailrace Inn",
-        "location": "Kinlochleven"
+        "location": "Kinlochleven",
+        "options": [
+          {
+            "name": "MacDonald Hotel",
+            "url": "https://macdonaldhotel.co.uk/"
+          },
+          {
+            "name": "Tailrace Inn",
+            "url": "https://thetailraceinn.co.uk/"
+          }
+        ]
       },
       "resupply_notes": "No food or shops between Kingshouse and Kinlochleven — carry packed lunch. Co-op supermarket in Kinlochleven for final day resupply. Multiple restaurants, cafes, and takeaways in town.",
       "water_sources": [
@@ -826,8 +880,17 @@
       ],
       "description": "The final day is a fitting climax to the West Highland Way. The route climbs out of Kinlochleven through birch woodland into the Lairigmor — a dramatic mountain pass flanked by the Mamores to the east and the Grey Corries to the north. Walking through this pass on the old military road, surrounded by some of the finest mountain scenery in Scotland, is one of the trail's defining moments.\n\nBeyond the pass, the trail descends through forestry plantations before reaching the magnificent Glen Nevis, where the imposing bulk of Ben Nevis (1345m) — the highest mountain in the British Isles — dominates the skyline. The sense of approaching journey's end, with Britain's greatest mountain as the backdrop, is deeply satisfying.\n\nThe final stretch follows the glen's access road into Fort William, where the trail ends at a statue of a walker in Gordon Square. This is the moment to celebrate with your group — 154 km of Scotland's finest landscapes conquered together. Fort William has an excellent range of restaurants and pubs for a well-deserved celebration dinner. No accommodation or resupply along the route today, so carry everything you need.",
       "accommodation": {
-        "name": "Bank Street Lodge / Distillery Lodge",
-        "location": "Fort William"
+        "location": "Fort William",
+        "options": [
+          {
+            "name": "Bank Street Lodge",
+            "url": "https://www.bankstreetlodge.co.uk/"
+          },
+          {
+            "name": "Distillery Guest House",
+            "url": "http://www.distilleryguesthouse.com/"
+          }
+        ]
       },
       "resupply_notes": "No shops or services between Kinlochleven and Fort William — carry all food and water. Fort William has full town facilities: supermarkets, outdoor shops, restaurants, and pubs.",
       "water_sources": [

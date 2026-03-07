@@ -1773,12 +1773,16 @@ function renderOverview() {
   // Accommodations
   const accomHTML = days.map(d => {
     const diffClass = d.difficulty.toLowerCase();
+    const accom = d.accommodation;
+    const accomName = accom.options
+      ? accom.options.map(o => o.url ? `<a href="${o.url}" target="_blank" rel="noopener">${o.name}</a>` : o.name).join(' / ')
+      : accom.name;
     return `
       <li class="accommodation-item">
         <div class="accom-day-badge day-badge ${diffClass}">${d.day}</div>
         <div class="accom-info">
-          <div class="accom-name">${d.accommodation.name}</div>
-          <div class="accom-location">${d.accommodation.location}</div>
+          <div class="accom-name">${accomName}</div>
+          <div class="accom-location">${accom.location}</div>
         </div>
         <div class="accom-segment">${d.label}</div>
       </li>`;
@@ -2093,7 +2097,7 @@ function renderDayCard(day) {
             <span class="day-label">${day.label}</span>
             <span class="difficulty-pill ${diffClass}">${day.difficulty}</span>
           </div>
-          <div class="day-date">${dateStr} &middot; ${day.accommodation.name}, ${day.accommodation.location}</div>
+          <div class="day-date">${dateStr} &middot; ${day.accommodation.options ? day.accommodation.options.map(o => o.name).join(' / ') : day.accommodation.name}, ${day.accommodation.location}</div>
         </div>
       </div>
 
@@ -2125,7 +2129,7 @@ function renderDayCard(day) {
         </div>
         <div class="day-accommodation">
           <span>&#127968;</span>
-          <span><strong>${day.accommodation.name}</strong> &middot; ${day.accommodation.location}</span>
+          <span><strong>${day.accommodation.options ? day.accommodation.options.map(o => o.url ? `<a href="${o.url}" target="_blank" rel="noopener" style="color:var(--green)">${o.name}</a>` : o.name).join(' / ') : day.accommodation.name}</strong> &middot; ${day.accommodation.location}</span>
         </div>
         ${photoSlots ? `
           <div class="photo-strip-wrapper" id="day-${day.day}-photo-strip">
