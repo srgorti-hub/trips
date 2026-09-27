@@ -163,6 +163,19 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 }
 .hero-stat-value { font-size: 22px; font-weight: 700; font-family: 'Fraunces', serif; }
 .hero-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+.hero-credit {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  z-index: 2;
+  max-width: 60%;
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* ═══════════════════════════════
    TAB BAR
@@ -405,6 +418,20 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 }
 .photo-thumb:hover { transform: scale(1.03); }
 .photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.photo-caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px 6px 4px;
+  font-size: 10px;
+  line-height: 1.3;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  pointer-events: none;
+}
 .photo-placeholder {
   font-size: 11px;
   color: var(--muted);
@@ -855,7 +882,10 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
   background: rgba(0,0,0,0.5);
   padding: 6px 16px;
   border-radius: 20px;
+  max-width: 90vw;
+  text-align: center;
 }
+.lightbox-credit { display: block; font-size: 11px; opacity: 0.75; }
 
 /* ═══════════════════════════════
    LOADING / ERROR
@@ -1112,6 +1142,19 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
   flex-shrink: 0;
 }
 .facility-notes { color: var(--muted); font-size: 12px; }
+.food-item { flex-wrap: wrap; row-gap: 4px; }
+.food-area { color: var(--muted); font-size: 12px; }
+.diet-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-light);
+  border: 1px solid var(--green-mid);
+  padding: 1px 6px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.food-check { color: var(--muted); font-size: 11px; font-style: italic; }
 
 /* ═══════════════════════════════
    INTERESTING LINKS (Deep Dive)
@@ -1289,6 +1332,7 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
     <div class="hero-dates" id="heroDates"></div>
     <div class="hero-stats" id="heroStats"></div>
   </div>
+  <div class="hero-credit" id="heroCredit" style="display:none;"></div>
 </section>
 
 <!-- ═══ TAB BAR ═══ -->
@@ -1469,24 +1513,80 @@ function rerenderAllUnits() {
    Caches results in sessionStorage to avoid re-fetching
 ═══════════════════════════════ */
 
+// v2 entries carry caption + credit; bump the key when the entry shape changes
+const PHOTO_CACHE_KEY = 'photo-cache-v2';
+
 function getPhotoCache() {
-  try { return JSON.parse(sessionStorage.getItem('photo-cache') || '{}'); }
+  try { return JSON.parse(sessionStorage.getItem(PHOTO_CACHE_KEY) || '{}'); }
   catch { return {}; }
 }
 
 function setPhotoCache(key, value) {
   const cache = getPhotoCache();
   cache[key] = value;
-  try { sessionStorage.setItem('photo-cache', JSON.stringify(cache)); }
+  try { sessionStorage.setItem(PHOTO_CACHE_KEY, JSON.stringify(cache)); }
   catch { /* sessionStorage full or unavailable */ }
+}
+
+/** Plain text from an HTML fragment (DOMParser is inert: no scripts, no image loads). */
+function stripHtml(s) {
+  if (!s) return '';
+  const text = new DOMParser().parseFromString(String(s), 'text/html').body.textContent || '';
+  return text.replace(/\s+/g, ' ').trim();
+}
+
+/** Shortens to about n characters, cutting at a word boundary. */
+function trimText(s, n = 70) {
+  if (!s || s.length <= n) return s || '';
+  const cut = s.slice(0, n);
+  const sp = cut.lastIndexOf(' ');
+  return (sp > n * 0.6 ? cut.slice(0, sp) : cut).replace(/[\s,.;:–-]+$/, '') + '…';
+}
+
+/** Drops upload noise from Commons titles: Flickr IDs, "- panoramio", "(by …)", long trailing numbers. */
+function cleanCaption(s) {
+  return (s || '')
+    .replace(/\s*\(by [^)]*\)/gi, '')
+    .replace(/\s*-\s*panoramio(\s*\(\d+\))?/gi, '')
+    .replace(/\s*\(\d{5,}\)/g, '')
+    .replace(/[\s_-]+\d{5,}$/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** "File:Cuernos_del_Paine.jpg" or a (thumbnail) URL -> "Cuernos del Paine". Camera-style names give ''. */
+function captionFromFileName(nameOrUrl) {
+  if (!nameOrUrl) return '';
+  let name = String(nameOrUrl).split(/[?#]/)[0].split('/').pop();
+  try { name = decodeURIComponent(name); } catch { /* keep as-is */ }
+  name = name.replace(/^File:/i, '').replace(/^\d+px-/, '').replace(/\.[a-z0-9]{2,5}$/i, '').replace(/_/g, ' ').trim();
+  if (!/[a-z]{3}/i.test(name) || /^(img|dsc|dscn|dcim|pxl|gopr|p)[\s_-]?\d+/i.test(name)) return '';
+  return trimText(cleanCaption(name));
+}
+
+/** Short caption from Wikimedia extmetadata: ObjectName, else a short first sentence of the description, else the file title. */
+function wikimediaCaption(page, meta) {
+  const val = k => stripHtml(meta[k] && meta[k].value);
+  const objectName = cleanCaption(val('ObjectName'));
+  if (objectName) return trimText(objectName);
+  const firstSentence = (val('ImageDescription').match(/^.*?[.!?](\s|$)/) || [val('ImageDescription')])[0].trim();
+  if (firstSentence && firstSentence.length < 90) return trimText(firstSentence.replace(/[.!?]$/, ''));
+  return captionFromFileName(page.title);
+}
+
+/** "Photo: <artist> · <license> · Wikimedia Commons" when the metadata has them. */
+function wikimediaCredit(meta) {
+  const artist = trimText(stripHtml(meta.Artist && meta.Artist.value), 40);
+  const license = stripHtml(meta.LicenseShortName && meta.LicenseShortName.value);
+  return [artist, license].filter(Boolean).join(' · ');
 }
 
 /**
  * Searches Wikimedia Commons for a JPEG/PNG image matching the query.
- * Returns the first usable thumbnail URL, or null if nothing found.
+ * Returns { url, caption, credit } for the first usable image, or null if nothing found.
  */
 async function searchWikimediaPhoto(query, width = 800) {
-  const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url|mime&iiurlwidth=${width}&format=json&origin=*`;
+  const apiUrl = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url|mime|extmetadata&iiextmetadatafilter=ObjectName|ImageDescription|Artist|LicenseShortName&iiurlwidth=${width}&format=json&origin=*`;
   try {
     const res = await fetch(apiUrl);
     if (!res.ok) return null;
@@ -1500,7 +1600,8 @@ async function searchWikimediaPhoto(query, width = 800) {
       if (!info) continue;
       // Only use JPEG or PNG images
       if (info.mime && (info.mime === 'image/jpeg' || info.mime === 'image/png')) {
-        return info.thumburl || info.url;
+        const meta = info.extmetadata || {};
+        return { url: info.thumburl || info.url, caption: wikimediaCaption(page, meta), credit: wikimediaCredit(meta) };
       }
     }
     return null;
@@ -1540,13 +1641,14 @@ function resolveServiceLink(value, searchBase) {
  * @param {string} keywords - Search keywords for Wikimedia Commons
  * @param {string} cacheKey - Unique key for sessionStorage cache
  * @param {string|null} dataUrl - Public image URL supplied in the trip data
- * @returns {Promise<{url: string, source: 'local'|'data'|'wikimedia'}|null>}
+ * @param {string|null} [dataCaption] - Caption supplied in the trip data (wins over derived captions)
+ * @returns {Promise<{url: string, source: 'local'|'data'|'wikimedia', caption: string, credit: string}|null>}
  */
-async function resolvePhoto(localPath, keywords, cacheKey, dataUrl) {
-  // Check sessionStorage cache first
+async function resolvePhoto(localPath, keywords, cacheKey, dataUrl, dataCaption) {
+  // Check sessionStorage cache first; a caption in the data always wins over the cached one
   const cached = getPhotoCache()[cacheKey];
   if (cached) {
-    return { url: cached.url, source: cached.source };
+    return { url: cached.url, source: cached.source, caption: dataCaption || cached.caption || '', credit: cached.credit || '' };
   }
 
   // Step 1: Try local file
@@ -1554,8 +1656,9 @@ async function resolvePhoto(localPath, keywords, cacheKey, dataUrl) {
     try {
       const res = await fetch(localPath, { method: 'HEAD' });
       if (res.ok) {
-        setPhotoCache(cacheKey, { url: localPath, source: 'local' });
-        return { url: localPath, source: 'local' };
+        const entry = { url: localPath, source: 'local', caption: dataCaption || '', credit: '' };
+        setPhotoCache(cacheKey, entry);
+        return entry;
       }
     } catch { /* local file not available */ }
   }
@@ -1563,16 +1666,18 @@ async function resolvePhoto(localPath, keywords, cacheKey, dataUrl) {
   // Step 2: Use the URL supplied in the trip data
   if (dataUrl) {
     const source = isWikimediaUrl(dataUrl) ? 'wikimedia' : 'data';
-    setPhotoCache(cacheKey, { url: dataUrl, source });
-    return { url: dataUrl, source };
+    const entry = { url: dataUrl, source, caption: dataCaption || captionFromFileName(dataUrl), credit: '' };
+    setPhotoCache(cacheKey, entry);
+    return entry;
   }
 
   // Step 3: Search Wikimedia Commons
   if (keywords) {
-    const wikimediaUrl = await searchWikimediaPhoto(keywords);
-    if (wikimediaUrl) {
-      setPhotoCache(cacheKey, { url: wikimediaUrl, source: 'wikimedia' });
-      return { url: wikimediaUrl, source: 'wikimedia' };
+    const found = await searchWikimediaPhoto(keywords);
+    if (found) {
+      const entry = { url: found.url, source: 'wikimedia', caption: dataCaption || found.caption, credit: found.credit };
+      setPhotoCache(cacheKey, entry);
+      return entry;
     }
   }
 
@@ -1589,10 +1694,11 @@ async function resolvePhoto(localPath, keywords, cacheKey, dataUrl) {
  * @param {string} alt - Alt text
  * @param {string} source - 'local', 'data' or 'wikimedia'
  * @param {Function} [onClickFn] - Optional click handler
+ * @param {string} [caption] - Short "what it is" line shown over the bottom of the thumbnail
  */
-function loadImageIntoContainer(container, url, alt, source, onClickFn) {
+function loadImageIntoContainer(container, url, alt, source, onClickFn, caption) {
   const img = new Image();
-  img.alt = alt;
+  img.alt = caption || alt;
   img.style.width = '100%';
   img.style.height = '100%';
   img.style.objectFit = 'cover';
@@ -1601,6 +1707,13 @@ function loadImageIntoContainer(container, url, alt, source, onClickFn) {
     const skeleton = container.querySelector('.photo-skeleton');
     if (skeleton) skeleton.remove();
     container.prepend(img);
+    if (caption) {
+      const cap = document.createElement('div');
+      cap.className = 'photo-caption';
+      cap.textContent = caption;
+      container.title = caption;
+      container.appendChild(cap);
+    }
     if (onClickFn) container.onclick = onClickFn;
   };
   img.onerror = () => {
@@ -1761,15 +1874,16 @@ function renderHero() {
 
   // Resolve hero image asynchronously
   const heroKeywords = (t.location_keywords || []).join(', ');
-  resolvePhoto('photos/hero/hero-1.jpg', heroKeywords, 'hero', t.hero_photo_url || null).then(result => {
+  resolvePhoto('photos/hero/hero-1.jpg', heroKeywords, 'hero', t.hero_photo_url || null, t.hero_photo_caption || null).then(result => {
     skeleton.remove();
     if (result) {
       const img = new Image();
       img.src = result.url;
-      img.alt = t.name;
+      img.alt = result.caption || t.name;
       img.className = 'hero-img';
       img.onload = () => {
         hero.prepend(img);
+        showHeroCredit(result);
       };
       img.onerror = () => {
         // Stock photo URL failed — use gradient fallback
@@ -1804,6 +1918,20 @@ function renderHero() {
     h.count && h.count < allDays ? heroStat(h.count, 'Hiking Days') : '',
     t.group_size ? heroStat(t.group_size, 'Travellers') : '',
   ].join('');
+}
+
+/** Hero photo line: "<caption> · Photo: <artist> · <license> · Wikimedia Commons" (local photos: caption only). */
+function showHeroCredit(result) {
+  const el = document.getElementById('heroCredit');
+  if (!el) return;
+  let credit = '';
+  if (result.source === 'wikimedia') credit = `Photo: ${[result.credit, 'Wikimedia Commons'].filter(Boolean).join(' · ')}`;
+  else if (result.source === 'data') {
+    try { credit = `Photo: ${new URL(result.url, location.href).hostname.replace(/^www\./, '')}`; } catch { /* ignore */ }
+  }
+  const text = [result.caption, credit].filter(Boolean).join(' · ');
+  el.textContent = text;
+  el.style.display = text ? '' : 'none';
 }
 
 /* ═══════════════════════════════
@@ -2101,10 +2229,12 @@ async function resolveDayPhotos(day) {
   const photos = day.photos || [];
   const keywords = day.location_keywords || [];
   const dataUrls = day.photo_urls || [];
+  const captions = day.photo_captions || [];
   let hasWikimedia = false;
+  const wikiCredits = new Set();
   const otherHosts = new Set();
   let allHidden = true;
-  const resolvedUrls = [];
+  const resolvedPhotos = [];
 
   for (let i = 0; i < photos.length; i++) {
     const container = document.getElementById(`day-${day.day}-photo-${i}`);
@@ -2114,15 +2244,18 @@ async function resolveDayPhotos(day) {
     const kw = keywords[i] || keywords[0] || day.label;
     const cacheKey = `day-${day.day}-photo-${i}`;
 
-    const result = await resolvePhoto(localPath, kw, cacheKey, dataUrls[i] || null);
+    const result = await resolvePhoto(localPath, kw, cacheKey, dataUrls[i] || null, captions[i] || null);
 
     if (result) {
       allHidden = false;
-      if (result.source === 'wikimedia' || result.source === 'stock') hasWikimedia = true;
-      else if (result.source === 'data') {
+      if (result.source === 'wikimedia' || result.source === 'stock') {
+        hasWikimedia = true;
+        if (result.credit) wikiCredits.add(result.credit);
+      } else if (result.source === 'data') {
         try { otherHosts.add(new URL(result.url, location.href).hostname.replace(/^www\./, '')); } catch { /* ignore */ }
       }
-      resolvedUrls[i] = result.url;
+      const lightboxCredit = result.source === 'wikimedia' && result.credit ? `${result.credit} · Wikimedia Commons` : '';
+      resolvedPhotos[i] = { url: result.url, caption: result.caption, credit: lightboxCredit };
 
       const photoIndex = i;
       loadImageIntoContainer(
@@ -2131,11 +2264,12 @@ async function resolveDayPhotos(day) {
         `Day ${day.day} - ${day.label}`,
         result.source,
         () => {
-          // Build array of resolved URLs for lightbox
-          const lbPhotos = resolvedUrls.filter(u => u);
-          const lbIndex = lbPhotos.indexOf(resolvedUrls[photoIndex]);
+          // Build array of resolved photos for lightbox
+          const lbPhotos = resolvedPhotos.filter(p => p);
+          const lbIndex = lbPhotos.indexOf(resolvedPhotos[photoIndex]);
           openLightbox(lbPhotos, lbIndex >= 0 ? lbIndex : 0);
-        }
+        },
+        result.caption
       );
     } else {
       // Hide this photo slot gracefully
@@ -2144,7 +2278,9 @@ async function resolveDayPhotos(day) {
   }
 
   // Show attribution based on photo source
-  const credits = [...(hasWikimedia ? ['Wikimedia Commons'] : []), ...otherHosts];
+  // "Photo: <artist> · <license>; <artist> · <license> · Wikimedia Commons, <other host>"
+  const wikiCredit = hasWikimedia ? [[...wikiCredits].join('; '), 'Wikimedia Commons'].filter(Boolean).join(' · ') : '';
+  const credits = [...(wikiCredit ? [wikiCredit] : []), ...otherHosts];
   if (credits.length) {
     const attr = document.getElementById(`day-${day.day}-attribution`);
     if (attr) {
@@ -2187,7 +2323,7 @@ async function resolveDayMap(day) {
         mapContainer.appendChild(img);
         // Make map clickable in lightbox
         img.style.cursor = 'pointer';
-        img.onclick = () => openLightbox([day.map], 0);
+        img.onclick = () => openLightbox([{ url: day.map, caption: `Day ${day.day} route map` }], 0);
       };
       img.onerror = () => {
         mapContainer.style.display = 'none';
@@ -2219,6 +2355,9 @@ async function resolveGpxLink(day) {
     gpxContainer.style.display = 'none';
   }
 }
+
+const MEAL_LABELS = { breakfast: 'Breakfast', lunch: 'Lunch', dinner: 'Dinner', drinks: 'Drinks', snack: 'Snack', 'trail-lunch': 'Trail lunch' };
+const DIET_LABELS = { vegetarian: 'Vegetarian', vegan: 'Vegan', 'vegetarian-friendly': 'Veg-friendly', 'vegan-options': 'Vegan options' };
 
 function renderDayCard(day) {
   const hike = isHikeDay(day);
@@ -2264,17 +2403,25 @@ function renderDayCard(day) {
       <ul>${day.water_sources.map(w => `<li>${w}</li>`).join('')}</ul>
     </div>` : '';
 
-  // Food stops (km shown only on hiking days)
+  // Food stops: km on hiking days when it's a number, otherwise the area
   const foodStopsHTML = day.food_stops && day.food_stops.length ? `
     <div class="detail-section">
-      <h4>&#127860; Food & Drink</h4>
-      <ul class="facility-list">${day.food_stops.map(f => `
-        <li class="facility-item">
-          ${hike && f.km != null ? `<span class="facility-km">${formatDist(f.km)}</span>` : ''}
+      <h4>&#127860; Food &amp; drink</h4>
+      <ul class="facility-list">${day.food_stops.map(f => {
+        const showKm = hike && typeof f.km === 'number';
+        const diet = Array.isArray(f.diet) ? f.diet : [];
+        return `
+        <li class="facility-item food-item">
+          ${showKm ? `<span class="facility-km">${formatDist(f.km)}</span>` : ''}
           <span class="facility-name">${f.url && f.url.startsWith('http') ? `<a href="${f.url}" target="_blank" rel="noopener">${f.name}</a>` : f.name}</span>
+          ${!showKm && f.area ? `<span class="food-area">${f.area}</span>` : ''}
           ${f.type ? `<span class="facility-type">${f.type}</span>` : ''}
+          ${f.meal ? `<span class="facility-type">${MEAL_LABELS[f.meal] || f.meal}</span>` : ''}
+          ${diet.map(d => `<span class="diet-tag">${DIET_LABELS[d] || d}</span>`).join('')}
           ${f.notes ? `<span class="facility-notes">— ${f.notes}</span>` : ''}
-        </li>`).join('')}</ul>
+          ${f.unconfirmed ? `<span class="food-check">Check it's open</span>` : ''}
+        </li>`;
+      }).join('')}</ul>
     </div>` : '';
 
   // Toilet facilities
@@ -2429,8 +2576,10 @@ function renderDayCard(day) {
 
   // On city/travel days the warnings are logistics (border forms, flight times), so keep them visible
   const bodyWarningsHTML = hike ? '' : warningsHTML;
+  // Same for food: on city/travel days it's where to eat today, so show it in the body
+  const bodyFoodHTML = hike ? '' : foodStopsHTML;
   const deepDiveInner = [
-    elevationHTML, mapHTML, gpxHTML, hike ? warningsHTML : '', waypointsHTML, waterHTML, foodStopsHTML,
+    elevationHTML, mapHTML, gpxHTML, hike ? warningsHTML : '', waypointsHTML, waterHTML, hike ? foodStopsHTML : '',
     toiletHTML, taxiHTML, escapeHTML, resupplyHTML, externalLinksHTML, interestingLinksHTML,
   ].join('').trim();
 
@@ -2473,6 +2622,7 @@ function renderDayCard(day) {
         ${mealsHTML}
         ${renderOptions(day)}
         ${bodyWarningsHTML}
+        ${bodyFoodHTML}
         ${photoSlots ? `
           <div class="photo-strip-wrapper" id="day-${day.day}-photo-strip">
             <div class="photo-strip">${photoSlots}</div>
@@ -2886,6 +3036,16 @@ function renderGeneralInfo() {
       </div>`;
   }
 
+  // Vegetarian / vegan tips
+  const foodTips = info.food_tips && typeof info.food_tips === 'object' ? Object.entries(info.food_tips) : [];
+  if (foodTips.length) {
+    cards += `
+      <div class="card info-card info-card-full">
+        <h4>&#129367; Eating vegetarian and vegan</h4>
+        <ul>${foodTips.map(([k, v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('')}</ul>
+      </div>`;
+  }
+
   // Additional notes
   if (info.additional_notes) {
     cards += `<div class="card info-card info-card-full"><h4>&#128221; Additional Notes</h4><p>${info.additional_notes}</p></div>`;
@@ -2955,8 +3115,9 @@ function initLightbox() {
   });
 }
 
+/** @param {Array<string|{url: string, caption?: string, credit?: string}>} photos */
 function openLightbox(photos, index) {
-  lightboxPhotos = photos;
+  lightboxPhotos = photos.map(p => (typeof p === 'string' ? { url: p } : p));
   lightboxIndex = index;
   showLightboxPhoto();
   document.getElementById('lightbox').classList.add('open');
@@ -2980,9 +3141,19 @@ function showLightboxPhoto() {
     img.src = '';
     closeLightbox();
   };
-  img.src = lightboxPhotos[lightboxIndex];
-  img.alt = `Photo ${lightboxIndex + 1} of ${lightboxPhotos.length}`;
-  document.getElementById('lightboxCaption').textContent = `${lightboxIndex + 1} / ${lightboxPhotos.length}`;
+  const photo = lightboxPhotos[lightboxIndex];
+  img.src = photo.url;
+  img.alt = photo.caption || `Photo ${lightboxIndex + 1} of ${lightboxPhotos.length}`;
+  const counter = lightboxPhotos.length > 1 ? `${lightboxIndex + 1} / ${lightboxPhotos.length}` : '';
+  const capEl = document.getElementById('lightboxCaption');
+  capEl.textContent = [photo.caption, counter].filter(Boolean).join(' · ');
+  if (photo.credit) {
+    const credit = document.createElement('span');
+    credit.className = 'lightbox-credit';
+    credit.textContent = photo.credit;
+    capEl.appendChild(credit);
+  }
+  capEl.style.display = capEl.textContent ? '' : 'none';
   // Hide nav if only one photo
   document.getElementById('lightboxPrev').style.display = lightboxPhotos.length > 1 ? '' : 'none';
   document.getElementById('lightboxNext').style.display = lightboxPhotos.length > 1 ? '' : 'none';
