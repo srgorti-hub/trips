@@ -42,7 +42,8 @@ def load_json(p):
 
 
 def is_hike(day):
-    return day.get("day_type", "hike") == "hike"
+    # Same rule as the app's isHikeDay: missing, null or "" all count as a hike
+    return not day.get("day_type") or day["day_type"] == "hike"
 
 
 def check_schema(data):
@@ -244,15 +245,19 @@ def main():
     except Exception as e:  # noqa: BLE001 - report any parse failure
         print(f"FAIL [A1] trip-data.json does not parse: {e}")
         return 1
-    check_schema(data)
-    check_dates(data)
-    check_totals(data)
-    check_profiles(data, root)
-    check_km_ranges(data)
-    check_files(data, root)
-    check_stale(root, args.stale)
-    check_prose_numbers(data)
-    check_privacy(root)
+    checks = [
+        ("A1", lambda: check_schema(data)), ("A2", lambda: check_dates(data)),
+        ("A3", lambda: check_totals(data)), ("A4", lambda: check_profiles(data, root)),
+        ("A5", lambda: check_km_ranges(data)), ("A6", lambda: check_files(data, root)),
+        ("A7", lambda: check_stale(root, args.stale)), ("A8", lambda: check_prose_numbers(data)),
+        ("A9", lambda: check_privacy(root)),
+    ]
+    for name, run in checks:
+        try:
+            run()
+        except (KeyError, IndexError, TypeError, ValueError) as e:
+            # incomplete data: report it and keep going so the other results still print
+            report("FAIL", name, f"could not run, missing or malformed field: {e!r}")
     for level in ("FAIL", "WARN"):
         for line in results[level]:
             print(f"{level} {line}")

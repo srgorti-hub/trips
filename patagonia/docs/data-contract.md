@@ -8,7 +8,7 @@ It starts from the existing per-day schema (see `trip-template.md`), keeps the w
 
 | Day | Date | `day_type` | Label | GPX / profile |
 |---|---|---|---|---|
-| 1 | 2026-11-19 | travel | Austin → Santiago | — |
+| 1 | 2026-11-19 | travel | Home city → Santiago | — |
 | 2 | 2026-11-20 | city | Santiago | — |
 | 3 | 2026-11-21 | city | Santiago | — |
 | 4 | 2026-11-22 | travel | Santiago → Buenos Aires | — |
@@ -39,10 +39,10 @@ It starts from the existing per-day schema (see `trip-template.md`), keeps the w
   "meals": "B / L / D",                             // NEW, optional. What's included, e.g. "Breakfast", "Full board + open bar".
 
   "flights": [                                      // NEW, optional. No confirmation codes, seats or prices, ever.
-    { "airline": "Delta", "flight": "DL 147",
-      "from": "Atlanta", "from_code": "ATL", "depart": "20:30",
-      "to": "Santiago", "to_code": "SCL", "arrive": "07:40", "arrive_day_offset": 1,
-      "notes": "Overnight." }
+    { "airline": "LATAM", "flight": "LA 455",
+      "from": "Santiago", "from_code": "SCL", "depart": "11:28",
+      "to": "Buenos Aires Aeroparque", "to_code": "AEP", "arrive": "14:40", "arrive_day_offset": 0,
+      "notes": "Recheck the time in the LATAM app." }
   ],
 
   "transport_to_start": {                            // whw-chill field, extended. Optional.
@@ -60,7 +60,17 @@ It starts from the existing per-day schema (see `trip-template.md`), keeps the w
     { "name": "...", "duration": "...", "time_of_day": "...", "operator": "...", "url": "...", "departure": "...",
       "status": "suggested" | "likely" | "optional" | "alternative", "notes": "..." } ],
 
-  "taxi_services": [ { "name": "...", "phone": "...", "url": "...", "notes": "..." } ]   // whw-chill field. Optional.
+  "taxi_services": [ { "name": "...", "phone": "...", "url": "...", "notes": "..." } ],  // whw-chill field. Optional.
+
+  "stats_note": {                                    // NEW (review round 1). Hike days: where the numbers come from.
+    "source": "...", "source_url": "...", "processing": "...", "operator": "..." },
+
+  "food_stops": [                                    // EXTENDED (review round 2). km only on hike days, else null.
+    { "name": "...", "type": "restaurant|cafe|pub|shop|takeaway", "meal": "breakfast|lunch|dinner|drinks|snack|trail-lunch",
+      "km": null, "area": "...", "url": "...", "diet": ["vegetarian"|"vegan"|"vegetarian-friendly"|"vegan-options"],
+      "notes": "...", "unconfirmed": true } ],
+
+  "photo_captions": ["..."]                          // NEW, optional. Overrides the automatic Wikimedia caption per photo.
 }
 ```
 
@@ -75,6 +85,9 @@ The lists `water_sources`, `escape_routes`, `waypoints`, `toilet_facilities` and
 - `trip.total_distance_km` / `total_ascent_m` = sums over **hike days only**.
 - `preparation.what_to_expect`: 16 entries, one per day, each starting "Day N:".
 - `general_info.emergency_contacts` includes the Say Hueque travel specialist.
+- `general_info.food_tips`: optional {heading: text} shown as "Eating vegetarian and vegan" on General Info.
+- `trip.hero_photo_caption`: optional caption for the hero photo.
+- `trip-data-comprehensive.json` is a full backup of the data before any simplifying. The app does not read it.
 
 ## Never in any published file
 Traveller names (anyone's), booking/confirmation codes, Hotels.com/Expedia numbers, seat numbers, prices paid.

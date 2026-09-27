@@ -137,3 +137,14 @@ Still open:
 - Desierto Suites has no working website (Instagram used); Calafate Parque's phone is the chain's central line.
 - Unverified: Las Torres alternative excursions (from a reseller), Puerto Natales hospital phone, Torres del Paine climate figures.
 - Final screenshot pass after your dry run.
+
+## Review rounds (2026-09-27)
+
+Round 1 (committed 197fbf9): day 1 "Home city to Santiago" with no personal flights; dates in the overview lists; "About these numbers" on hike days; drive distance and time on drive days; "Hiking · <difficulty>" pills.
+
+Round 2 (committed 2e75830): food & drink for days 2-16 with vegetarian/vegan tags (research in three parts; 27 places marked "check it's open"); photo captions and credits; preparation wording fixes; 8 gear additions (poles in checked bags per DGAC/PSA; SAG soil declaration); `trip-data-comprehensive.json` backup. Say Hueque photos not used (copyright; decided against).
+
+Open after review:
+- Some automatic Wikimedia photos are poor picks; pin photos or add `photo_captions` per day as needed.
+- Web search limit (200/session) was hit during food research: 9 Buenos Aires and 11 El Chaltén/Calafate places unconfirmed.
+- Final screenshot pass after the user's dry run.
