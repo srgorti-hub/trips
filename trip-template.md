@@ -39,6 +39,7 @@ Generate this as a single JSON code block labeled `trip-data.json`. Every field 
     "total_distance_km":  "number -- REQUIRED -- Total trail distance in km",
     "total_ascent_m":     "number -- REQUIRED -- Total cumulative ascent in meters",
     "youtube_overview":   "string -- optional -- YouTube video URL (preferred) or search query for a trip overview video",
+    "hero_photo_url":     "string -- optional -- A Wikimedia Commons file URL you have opened and checked; otherwise omit",
     "description":        "string -- REQUIRED -- Trip summary paragraph (see Content Guidelines below)",
     "location_keywords":  ["string -- REQUIRED (>= 1) -- Broad search terms for a stock hero photo (e.g., 'Scottish Highlands landscape', 'Dolomites hiking trail')"]
   },
@@ -67,10 +68,14 @@ Generate this as a single JSON code block labeled `trip-data.json`. Every field 
         "options": [
           {
             "name":       "string -- REQUIRED -- Accommodation name",
-            "url":        "string -- optional -- Official website URL (verified working)"
+            "url":        "string -- optional -- Official website URL (verified working)",
+            "address":    "string -- optional",
+            "phone":      "string -- optional -- shown as a tap-to-call link",
+            "notes":      "string -- optional -- basis, nights, check-in/out times"
           }
         ]
       },
+      "_accommodation_null": "accommodation may be null (overnight flight, departure day)",
       "resupply_notes":   "string -- optional -- Shop info, opening hours, what's available",
       "water_sources":    ["string -- optional -- Named water sources along the route"],
       "escape_routes":    ["string -- optional -- Bailout options with transport info"],
@@ -115,6 +120,28 @@ Generate this as a single JSON code block labeled `trip-data.json`. Every field 
           "phone": "string -- optional -- Phone number (local format)",
           "url":   "string -- optional -- Website or Facebook page URL (verified working)",
           "notes": "string -- optional -- Coverage area, vehicle sizes, pre-booking requirements, WHW specialization"
+        }
+      ],
+      "day_type":         "string -- optional -- 'hike' (default) | 'city' | 'travel'. For city/travel days set distance/ascent/descent/hours to 0, difficulty 'Easy', and leave elevation_profile, map and links.gpx_download empty; the app hides stats, elevation, map and trail links for them, and trip totals count hike days only",
+      "meals":            "string -- optional -- What's included today, e.g. 'Breakfast' or 'Full board + open bar'",
+      "flights": [
+        {
+          "airline": "string -- REQUIRED", "flight": "string -- REQUIRED -- e.g. 'LA 455'",
+          "from": "string", "from_code": "string -- IATA", "depart": "string -- HH:MM local",
+          "to": "string", "to_code": "string -- IATA", "arrive": "string -- HH:MM local",
+          "arrive_day_offset": "number -- optional -- 1 if it lands the next day",
+          "notes": "string -- optional. NEVER include confirmation codes, seats or prices"
+        }
+      ],
+      "transport_to_start": {
+        "type": "string -- e.g. 'Private transfer', 'Taxi'", "from": "string", "to": "string",
+        "duration": "string -- optional", "distance_km": "number -- optional", "time": "string -- optional", "notes": "string -- optional"
+      },
+      "transport_after_hike": [ { "leg": "number", "type": "string", "from": "string", "to": "string", "duration": "string", "distance_km": "number", "time": "string", "notes": "string" } ],
+      "optional_activities": [
+        {
+          "name": "string -- REQUIRED", "status": "string -- 'suggested' | 'likely' | 'optional' | 'alternative'",
+          "duration": "string", "time_of_day": "string", "operator": "string", "url": "string", "departure": "string", "notes": "string"
         }
       ],
       "interesting_links": [
@@ -327,8 +354,9 @@ The Travel Guide automatically searches **Wikimedia Commons** for relevant photo
 
 - Use specific, descriptive keywords that name real places, landmarks, and features
 - The app searches Wikimedia Commons for JPEG/PNG images matching each keyword
-- Fallback chain: local organizer photos → Wikimedia Commons keyword search → hide gracefully
-- **Do NOT provide photo URLs** — you cannot verify they exist. The keyword search handles this automatically
+- Fallback chain: local organizer photos → URL in the data (`trip.hero_photo_url`) → Wikimedia Commons keyword search → hide gracefully
+- **Only provide a photo URL you have fetched and checked** (e.g. a Wikimedia Commons file). If you can't check it, leave it out; the keyword search handles the rest
+- Run `python tools/validate_trip.py <trip-folder>` after generating data; it checks dates, totals, profiles vs stats, file references and a privacy scan
 
 ### Food Stops (food_stops)
 
