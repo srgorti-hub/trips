@@ -9,55 +9,55 @@
       "elevation_m": 130
     },
     {
-      "km": 1.0,
-      "elevation_m": 124
+      "km": 1,
+      "elevation_m": 125
     },
     {
       "km": 1.5,
       "elevation_m": 125
     },
     {
-      "km": 2.0,
+      "km": 2,
       "elevation_m": 132
     },
     {
       "km": 2.5,
-      "elevation_m": 184
+      "elevation_m": 181
     },
     {
-      "km": 3.0,
-      "elevation_m": 241
+      "km": 3,
+      "elevation_m": 239
     },
     {
       "km": 3.5,
       "elevation_m": 331
     },
     {
-      "km": 4.0,
-      "elevation_m": 445
+      "km": 4,
+      "elevation_m": 446
     },
     {
       "km": 4.5,
       "elevation_m": 455
     },
     {
-      "km": 5.0,
-      "elevation_m": 452
+      "km": 5,
+      "elevation_m": 449
     },
     {
       "km": 5.5,
-      "elevation_m": 420
+      "elevation_m": 421
     },
     {
-      "km": 6.0,
+      "km": 6,
       "elevation_m": 451
     },
     {
       "km": 6.5,
-      "elevation_m": 492
+      "elevation_m": 491
     },
     {
-      "km": 7.0,
+      "km": 7,
       "elevation_m": 515
     },
     {
@@ -65,87 +65,87 @@
       "elevation_m": 547
     },
     {
-      "km": 8.0,
-      "elevation_m": 593
+      "km": 8,
+      "elevation_m": 589
     },
     {
       "km": 8.5,
-      "elevation_m": 627
+      "elevation_m": 628
     },
     {
-      "km": 9.0,
-      "elevation_m": 803
+      "km": 9,
+      "elevation_m": 802
     },
     {
       "km": 9.5,
-      "elevation_m": 862
+      "elevation_m": 863
     },
     {
-      "km": 10.0,
-      "elevation_m": 843
+      "km": 10,
+      "elevation_m": 847
     },
     {
       "km": 10.5,
-      "elevation_m": 651
+      "elevation_m": 654
     },
     {
-      "km": 11.0,
-      "elevation_m": 577
+      "km": 11,
+      "elevation_m": 579
     },
     {
       "km": 11.5,
       "elevation_m": 553
     },
     {
-      "km": 12.0,
-      "elevation_m": 521
+      "km": 12,
+      "elevation_m": 520
     },
     {
       "km": 12.5,
       "elevation_m": 480
     },
     {
-      "km": 13.0,
-      "elevation_m": 465
+      "km": 13,
+      "elevation_m": 462
     },
     {
       "km": 13.5,
       "elevation_m": 428
     },
     {
-      "km": 14.0,
-      "elevation_m": 436
+      "km": 14,
+      "elevation_m": 437
     },
     {
       "km": 14.5,
-      "elevation_m": 453
+      "elevation_m": 452
     },
     {
-      "km": 15.0,
-      "elevation_m": 458
+      "km": 15,
+      "elevation_m": 460
     },
     {
       "km": 15.5,
-      "elevation_m": 346
+      "elevation_m": 352
     },
     {
-      "km": 16.0,
-      "elevation_m": 255
+      "km": 16,
+      "elevation_m": 254
     },
     {
       "km": 16.5,
-      "elevation_m": 199
+      "elevation_m": 197
     },
     {
-      "km": 17.0,
-      "elevation_m": 136
+      "km": 17,
+      "elevation_m": 137
     },
     {
       "km": 17.5,
       "elevation_m": 127
     },
     {
-      "km": 18.0,
+      "km": 18,
       "elevation_m": 125
     },
     {
@@ -153,7 +153,7 @@
       "elevation_m": 129
     },
     {
-      "km": 19.0,
+      "km": 19,
       "elevation_m": 137
     },
     {
@@ -161,6 +161,6 @@
       "elevation_m": 137
     }
   ],
-  "summit_label": "862m",
+  "summit_label": "863m",
   "summit_km": 9.5
 }
