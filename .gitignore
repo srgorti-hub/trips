@@ -1,3 +1,7 @@
 .DS_Store
 Thumbs.db
 *.zip
+
+# Personal booking data (codes, names) - never publish
+patagonia/pre_patagonia_trip.json
+patagonia/private-terms.txt
