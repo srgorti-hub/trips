@@ -10,7 +10,7 @@
     "total_distance_km": 75.2,
     "total_ascent_m": 2782,
     "youtube_overview": "https://www.youtube.com/watch?v=hZ2nbVpkoyk",
-    "description": "Sixteen days from Austin to the south of Chile and Argentina. Two nights in Santiago and three in Buenos Aires, then a flight to El Calafate. From 26 November the group of 19 travels with Say Hueque: two nights in El Chaltén for Laguna Torre and the Cóndores viewpoints, two in El Calafate for the Perito Moreno Glacier, and four at Hotel Las Torres in Torres del Paine for Base Torres, a park tour with Lago Grey, and the French Valley. The guide ends with the flight from Puerto Natales to Santiago on 4 December.",
+    "description": "Sixteen days from your home city to the south of Chile and Argentina. Two nights in Santiago and three in Buenos Aires, then a flight to El Calafate. From 26 November the group of 19 travels with Say Hueque: two nights in El Chaltén for Laguna Torre and the Cóndores viewpoints, two in El Calafate for the Perito Moreno Glacier, and four at Hotel Las Torres in Torres del Paine for Base Torres, a park tour with Lago Grey, and the French Valley. The guide ends with the flight from Puerto Natales to Santiago on 4 December.",
     "location_keywords": [
       "Torres del Paine granite towers",
       "Cerro Torre El Chaltén",
@@ -22,7 +22,7 @@
   "days": [
     {
       "day": 1,
-      "label": "Austin to Santiago",
+      "label": "Home city to Santiago",
       "date": "2026-11-19",
       "day_type": "travel",
       "distance_km": 0,
@@ -31,37 +31,10 @@
       "estimated_hours": 0,
       "difficulty": "Easy",
       "terrain_tags": [
-        "Flight",
-        "Overnight flight"
+        "Flight"
       ],
       "meals": "On board",
-      "description": "Two Delta flights: Austin to Atlanta in the afternoon, then the overnight flight from Atlanta to Santiago, landing at 07:40 the next morning.\n\nSantiago is 3 hours ahead of Austin in late November (Chile is on summer time, UTC-3). Before you fly: fill in Chile's SAG agricultural declaration (it also applies at Santiago airport), send the hotel your arrival details, and download the LATAM and Aerolíneas Argentinas apps for the later flights.",
-      "flights": [
-        {
-          "airline": "Delta",
-          "flight": "DL 2011",
-          "from": "Austin",
-          "from_code": "AUS",
-          "depart": "13:50",
-          "to": "Atlanta",
-          "to_code": "ATL",
-          "arrive": "17:03",
-          "arrive_day_offset": 0,
-          "notes": ""
-        },
-        {
-          "airline": "Delta",
-          "flight": "DL 147",
-          "from": "Atlanta",
-          "from_code": "ATL",
-          "depart": "20:30",
-          "to": "Santiago",
-          "to_code": "SCL",
-          "arrive": "07:40",
-          "arrive_day_offset": 1,
-          "notes": "Overnight flight."
-        }
-      ],
+      "description": "Fly from your home city to Santiago. Most of the group lands at Santiago airport (SCL) on the morning of 20 Nov, and overnight flights are common.",
       "accommodation": null,
       "resupply_notes": "",
       "warnings": [
@@ -1068,6 +1041,12 @@
       "ascent_m": 533,
       "descent_m": 533,
       "estimated_hours": 7,
+      "stats_note": {
+        "source": "Trail line from OpenStreetMap, heights from the Copernicus terrain model",
+        "source_url": "https://www.openstreetmap.org/",
+        "processing": "Out-and-back to the lake viewpoint; Mirador Maestri not included (adds about 3.7 km and 180 m).",
+        "operator": "Say Hueque lists 19 km and a high point of 719 m; the difference is likely the walk from the hotel and time around the lake."
+      },
       "difficulty": "Moderate",
       "terrain_tags": [
         "Forest trail",
@@ -1206,6 +1185,12 @@
       "ascent_m": 236,
       "descent_m": 243,
       "estimated_hours": 2.5,
+      "stats_note": {
+        "source": "Hiker GPS recording on Wikiloc",
+        "source_url": "https://www.wikiloc.com/hiking-trails/miradores-de-los-condores-y-de-las-aguilas-163535167",
+        "processing": "Heights smoothed to remove GPS noise. Starts and ends in the town centre.",
+        "operator": "Say Hueque lists 6.99 km and 183 m of climbing."
+      },
       "difficulty": "Easy",
       "terrain_tags": [
         "Short climb",
@@ -1346,6 +1331,12 @@
       "ascent_m": 174,
       "descent_m": 291,
       "estimated_hours": 8,
+      "stats_note": {
+        "source": "Hiker GPS recording on Wikiloc",
+        "source_url": "https://www.wikiloc.com/hiking-trails/perito-moreno-passarelas-163169722",
+        "processing": "Walkway circuit from the upper to the lower walkways; the boat is not counted. Stairs add to the climb.",
+        "operator": "Say Hueque gives no distance for the walkways."
+      },
       "difficulty": "Easy",
       "terrain_tags": [
         "Metal walkways",
@@ -1644,6 +1635,12 @@
       "ascent_m": 975,
       "descent_m": 975,
       "estimated_hours": 9,
+      "stats_note": {
+        "source": "Hiker GPS recording on Wikiloc",
+        "source_url": "https://www.wikiloc.com/hiking-trails/trekking-base-torres-del-paine-mapa-89987018",
+        "processing": "Heights smoothed to remove GPS noise. Hotel Las Torres to the Base Torres lake and back.",
+        "operator": "Las Torres lists about 8 hours, high difficulty."
+      },
       "difficulty": "Strenuous",
       "terrain_tags": [
         "Forest trail",
@@ -1820,6 +1817,12 @@
       "ascent_m": 178,
       "descent_m": 164,
       "estimated_hours": 8,
+      "stats_note": {
+        "source": "Hiker GPS recording on Wikiloc",
+        "source_url": "https://www.wikiloc.com/hiking-trails/torres-del-paine-guarderia-pudeto-salto-grande-mirador-cuernos-200309247",
+        "processing": "Only the walk from Pudeto past Salto Grande to Mirador Cuernos and back; the rest of the day is by van.",
+        "operator": "Las Torres lists 7 to 10 hours for the whole day, easy."
+      },
       "difficulty": "Moderate",
       "terrain_tags": [
         "Van-supported day",
@@ -1997,6 +2000,12 @@
       "ascent_m": 686,
       "descent_m": 688,
       "estimated_hours": 10,
+      "stats_note": {
+        "source": "Hiker GPS recording on Wikiloc",
+        "source_url": "https://www.wikiloc.com/hiking-trails/french-valley-torres-del-paine-map-88478477",
+        "processing": "Paine Grande boat landing to Mirador Francés and back; the boat crossings are removed. Mirador Británico would add about 5–6 km and 250–300 m.",
+        "operator": "Las Torres lists 700–800 m of height change and 12 hours door to door."
+      },
       "difficulty": "Strenuous",
       "terrain_tags": [
         "Boat crossing",
@@ -2546,7 +2555,7 @@
       "Break in your boots fully before you leave"
     ],
     "what_to_expect": [
-      "Day 1: Travel day. Afternoon flight to Atlanta and the overnight flight to Santiago. Sleep where you can.",
+      "Day 1: Travel day. Flight from your home city to Santiago, often overnight. Sleep where you can.",
       "Day 2: Arrive in Santiago at 07:40 after the overnight flight. Keep the day light: a walk up or a ride up San Cristóbal and a quiet afternoon.",
       "Day 3: Full day in Santiago. A lot of city walking, or a relaxed wine day.",
       "Day 4: Morning flight to Buenos Aires, landing mid-afternoon. An easy evening in Palermo.",
@@ -2615,7 +2624,7 @@
       }
     ],
     "transport": {
-      "getting_there": "Delta from Austin via Atlanta to Santiago (19-20 Nov). LATAM LA 455 from Santiago to Buenos Aires Aeroparque on 22 Nov. Aerolíneas Argentinas AR 1852 from Aeroparque to El Calafate on 25 Nov, landing 17:40; taxi from the airport to the Calafate Parque Hotel, about 20 km. The Say Hueque programme starts with the transfer from your El Calafate hotel on 26 Nov.",
+      "getting_there": "Your own flight from your home city to Santiago; most of the group lands on the morning of 20 Nov. LATAM LA 455 from Santiago to Buenos Aires Aeroparque on 22 Nov. Aerolíneas Argentinas AR 1852 from Aeroparque to El Calafate on 25 Nov, landing 17:40; taxi from the airport to the Calafate Parque Hotel, about 20 km. The Say Hueque programme starts with the transfer from your El Calafate hotel on 26 Nov.",
       "getting_back": "The guide ends on 4 Dec with LATAM LA 252 from Puerto Natales (12:00) to Santiago (14:05). Several of the group are on this flight. Onward flights home are booked separately by each traveller.",
       "local_transport": "Santiago and Buenos Aires: taxis and ride-hailing apps; both cities also have a metro (Subte in Buenos Aires). Days 8, 10, 12 and 16: private Say Hueque transfers, driver only; times to be confirmed by Say Hueque. Days 9-11: the guides collect you from the hotel. Days 13-15: Las Torres excursions include all transport, and the Pehoé catamaran on the French Valley day."
     },
@@ -2631,6 +2640,6 @@
       "Uber or Cabify for city taxis",
       "XE Currency: ARS and CLP rates"
     ],
-    "additional_notes": "Time zones: in late November and December Santiago (Chile summer time), Magallanes including Torres del Paine, and Argentina are all UTC-3, 3 hours ahead of Austin. No clock changes during the trip. Power: 220 V in both countries. Chile uses type C and L plugs; Argentina type I, with type C also common. Biosecurity: Chile's SAG rules apply at every entry. Complete the digital declaration (https://djsimple.sag.gob.cl/) within 48 hours before arriving, and do not bring fresh fruit, vegetables, meat, dairy, honey, plants or seeds; declare anything you are unsure of. Operator: days 8-16 are arranged by Say Hueque; the Torres del Paine days are Hotel Las Torres' own programme, and excursions are chosen on site each evening."
+    "additional_notes": "Time zones: in late November and December Santiago (Chile summer time), Magallanes including Torres del Paine, and Argentina are all UTC-3. No clock changes during the trip. Power: 220 V in both countries. Chile uses type C and L plugs; Argentina type I, with type C also common. Biosecurity: Chile's SAG rules apply at every entry. Complete the digital declaration (https://djsimple.sag.gob.cl/) within 48 hours before arriving, and do not bring fresh fruit, vegetables, meat, dairy, honey, plants or seeds; declare anything you are unsure of. Operator: days 8-16 are arranged by Say Hueque; the Torres del Paine days are Hotel Las Torres' own programme, and excursions are chosen on site each evening."
   }
 }

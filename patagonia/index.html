@@ -351,6 +351,11 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 .quick-stat-icon { font-size: 16px; opacity: 0.7; }
 .quick-stat-value { font-weight: 700; }
 .quick-stat-label { color: var(--muted); font-size: 12px; }
+.day-hike .quick-stat-drive { padding-left: 20px; border-left: 1px solid var(--border); }
+.stats-note { font-size: 12px; line-height: 1.6; color: var(--muted); margin-bottom: 16px; }
+.stats-note-lead { font-weight: 600; color: var(--text); }
+.stats-note a { color: inherit; text-decoration: underline; }
+.list-date { width: 72px; flex-shrink: 0; font-size: 12px; color: var(--muted); white-space: nowrap; }
 
 .day-body { padding: 20px 22px; }
 .day-description { font-size: 14px; line-height: 1.75; color: var(--muted); margin-bottom: 16px; }
@@ -1829,9 +1834,37 @@ function dayClass(day) {
   return (day.difficulty || 'moderate').toLowerCase();
 }
 
-/** Pill text: difficulty on hike days, "City" / "Travel" otherwise. */
+/** Pill text: "Hiking · Moderate" on hike days, "City" / "Travel" otherwise. */
 function dayPillText(day) {
-  return isHikeDay(day) ? (day.difficulty || '') : (DAY_TYPE_LABELS[day.day_type] || 'Travel');
+  if (!isHikeDay(day)) return DAY_TYPE_LABELS[day.day_type] || 'Travel';
+  return day.difficulty ? `Hiking &middot; ${day.difficulty}` : 'Hiking';
+}
+
+/** Road legs with a distance: transport_to_start, then transport_after_hike. */
+function driveLegs(day) {
+  return [day.transport_to_start, ...(day.transport_after_hike || [])]
+    .filter(tr => tr && Number(tr.distance_km) > 0);
+}
+
+/** Total road distance for the day, in km (0 if none). */
+function driveKm(day) {
+  return driveLegs(day).reduce((s, tr) => s + Number(tr.distance_km), 0);
+}
+
+/** Quick-stat items for each road leg: car, distance, duration, "drive". */
+function driveStatsHTML(day) {
+  return driveLegs(day).map(tr => `
+        <div class="quick-stat quick-stat-drive">
+          <span class="quick-stat-icon">&#128663;</span>
+          <span class="quick-stat-value">${formatDist(tr.distance_km)}</span>
+          ${tr.duration ? `<span class="quick-stat-value">${tr.duration}</span>` : ''}
+          <span class="quick-stat-label">drive</span>
+        </div>`).join('');
+}
+
+/** "Thu 19 Nov" for the overview lists. */
+function formatShortDate(dateStr) {
+  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
 }
 
 /** Hotel names, optionally linked. Supports options[] and the older single name. */
@@ -1981,6 +2014,7 @@ function renderOverview() {
     return `
       <li class="accommodation-item">
         <div class="accom-day-badge day-badge ${dayClass(d)}">${d.day}</div>
+        <div class="list-date">${formatShortDate(d.date)}</div>
         <div class="accom-info">
           <div class="accom-name">${accomNames(accom, true)}</div>
           <div class="accom-location">${accom.location || ''}</div>
@@ -1993,23 +2027,30 @@ function renderOverview() {
   // Route overview — simple timeline
   const routeHTML = days.map(d => {
     const cls = dayClass(d);
+    const hike = isHikeDay(d);
+    const km = driveKm(d);
+    const drive = km ? `${formatDist(km)} drive` : '';
     let sub;
-    if (isHikeDay(d)) {
-      sub = `${formatDist(d.distance_km)} &middot; ${formatElevShort(d.ascent_m)} ascent &middot; ~${d.estimated_hours}h`;
+    if (hike) {
+      sub = [`${formatDist(d.distance_km)} &middot; ${formatElevShort(d.ascent_m)} ascent &middot; ~${d.estimated_hours}h`, drive].filter(Boolean).join(' &middot; ');
     } else if (d.flights && d.flights.length) {
-      sub = d.flights.map(f => `${f.flight || ''} ${f.from_code || f.from || ''} &rarr; ${f.to_code || f.to || ''}`.trim()).join(' &middot; ');
-    } else if (d.transport_to_start) {
-      sub = [d.transport_to_start.type, d.transport_to_start.duration].filter(Boolean).join(' &middot; ');
+      const flights = d.flights.map(f => `${f.flight || ''} ${f.from_code || f.from || ''} &rarr; ${f.to_code || f.to || ''}`.trim()).join(' &middot; ');
+      sub = [flights, drive].filter(Boolean).join(' &middot; ');
+    } else if (drive) {
+      sub = [drive, d.transport_to_start && d.transport_to_start.duration].filter(Boolean).join(' &middot; ');
     } else {
       sub = d.accommodation ? (d.accommodation.location || '') : '';
     }
+    // Travel labels read "A to B"; show the first "to" as an arrow in this list
+    const label = hike ? d.label : d.label.replace(' to ', ' &rarr; ');
     return `
       <div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--border);">
         <div class="day-badge ${cls}" style="width:30px;height:30px;font-size:12px;">
           ${d.day}
         </div>
+        <div class="list-date">${formatShortDate(d.date)}</div>
         <div style="flex:1;min-width:0;">
-          <div style="font-weight:600;font-size:13px;">${d.label}</div>
+          <div style="font-weight:600;font-size:13px;">${label}</div>
           ${sub ? `<div style="font-size:12px;color:var(--muted);">${sub}</div>` : ''}
         </div>
         <span class="difficulty-pill ${cls}">${dayPillText(d)}</span>
@@ -2371,7 +2412,20 @@ function renderDayCard(day) {
           <span class="quick-stat-icon">&#9201;</span>
           <span class="quick-stat-value">~${day.estimated_hours}h</span>
         </div>
-      </div>` : '';
+        ${driveStatsHTML(day)}
+      </div>` : (driveLegs(day).length ? `
+      <div class="day-quick-stats">${driveStatsHTML(day)}
+      </div>` : '');
+
+  // Where the hike numbers come from (optional stats_note)
+  const sn = hike ? day.stats_note : null;
+  const statsNoteHTML = sn && sn.source ? `
+        <div class="stats-note">
+          <span class="stats-note-lead">About these numbers.</span>
+          ${sn.source_url ? `<a href="${sn.source_url}" target="_blank" rel="noopener">${sn.source}</a>` : sn.source}.
+          ${sn.processing || ''}
+          ${sn.operator || ''}
+        </div>` : '';
 
   // On city/travel days the warnings are logistics (border forms, flight times), so keep them visible
   const bodyWarningsHTML = hike ? '' : warningsHTML;
@@ -2408,6 +2462,7 @@ function renderDayCard(day) {
       ${quickStatsHTML}
 
       <div class="day-body">
+        ${statsNoteHTML}
         ${renderLogistics(day)}
         <p class="day-description">${day.description}</p>
         ${terrainTags.length ? `
