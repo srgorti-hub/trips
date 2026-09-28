@@ -2445,9 +2445,12 @@ function wireDayCard(day, cardEl) {
         dive.offsetHeight; // reflow so the collapse starts from the current height
         dive.style.maxHeight = '0px';
       } else {
-        dive.addEventListener('transitionend', () => {
+        const done = e => {
+          if (e.target !== dive) return; // ignore transitions bubbling up from the content
+          dive.removeEventListener('transitionend', done);
           if (dive.classList.contains('open')) dive.style.maxHeight = 'none';
-        }, { once: true });
+        };
+        dive.addEventListener('transitionend', done);
       }
       dive.classList.toggle('open');
       btn.classList.toggle('open');
