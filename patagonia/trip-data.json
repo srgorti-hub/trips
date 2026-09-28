@@ -3695,5 +3695,206 @@
       "Las Torres open bar": "Included: 'Open bar, except premium beer, wine, and spirits' (lastorres.com all-inclusive page, 27 Sep 2026). In practice, calafate sour, pisco sour, house cocktails, carménère and other house wines, and the Pionera house beer are included. Only a few items are marked premium on the Bar Pionero menu (certain whiskies, vodkas, piscos and wines); those are charged, as are tips and laundry. Meals at the bar are also covered.",
       "Local drinks": "Calafate sour is the local twist on the pisco sour, made with calafate berry. Both Las Torres and Hotel Lago Grey serve it. Craft beers to look for: Pionera (Las Torres house beer, brewed on site; verified), Austral (a Punta Arenas brewery founded 1896 and now part of CCU; Calafate and Lager varieties; from general knowledge, not checked this session), and Baguales (a Puerto Natales brewpub and brand; from general knowledge, not checked this session). The Grey III ticket includes one pisco sour."
     }
+  },
+  "short_view": {
+    "summary": "Two nights in Santiago and three in Buenos Aires, then eight days in Patagonia with Say Hueque: El Chaltén, El Calafate and the Perito Moreno Glacier, and four nights at Hotel Las Torres in Torres del Paine. Each hiking day has an easier option; pick your level at the top.",
+    "must_know": [
+      {
+        "group": "Before you leave",
+        "items": [
+          {
+            "title": "Passport and entry",
+            "text": "Passport valid for the whole trip. Indian passports: carry a valid US visitor visa, valid until at least early June 2027. The full guide has the details."
+          },
+          {
+            "title": "Travel insurance",
+            "text": "Get a policy with medical evacuation cover that includes guided day hiking. Keep the policy number and emergency line on your phone and on paper."
+          },
+          {
+            "title": "Solace Hotel, Santiago",
+            "text": "Send your arrival details by 17 Nov and ask about early check-in."
+          },
+          {
+            "title": "Food needs",
+            "text": "Vegetarian, vegan or allergies: tell Say Hueque now, so it reaches Hotel Las Torres with the booking."
+          },
+          {
+            "title": "Phone",
+            "text": "Set up an eSIM that covers Chile and Argentina. Install the LATAM and Aerolíneas Argentinas apps and log in. Download offline maps: there's no signal on the trails."
+          }
+        ]
+      },
+      {
+        "group": "On the way",
+        "items": [
+          {
+            "title": "Chile's SAG form",
+            "text": "Everyone fills in Chile's online agricultural declaration within 48 hours before each entry: 20 Nov at Santiago airport and 30 Nov at the border. No fresh fruit, vegetables, meat, dairy, honey or seeds. Clean mud off boots.",
+            "url": "https://djsimple.sag.gob.cl/"
+          },
+          {
+            "title": "Money",
+            "text": "Pay by foreign credit card where you can. Paying for hotel rooms by card with your passport avoids hotel VAT, so keep your entry slips. Bring some clean US dollar notes, and a little local cash for taxis and tips."
+          },
+          {
+            "title": "Flights",
+            "text": "Check times in the airline apps a few days before each flight: LA 455 on 22 Nov, AR 1852 on 25 Nov, LA 252 on 4 Dec. Say Hueque will send the transfer times."
+          },
+          {
+            "title": "Trekking poles",
+            "text": "Checked luggage only, on every flight. Airport security confiscates them from the cabin."
+          }
+        ]
+      },
+      {
+        "group": "In Patagonia",
+        "items": [
+          {
+            "title": "Wind and layers",
+            "text": "Carry a waterproof layer and a warm layer every day, whatever the morning looks like. In strong gusts, stop, crouch and wait. Use sunscreen even when it feels cold."
+          },
+          {
+            "title": "Lunches",
+            "text": "Day 9 lunch isn't included and nothing is sold on the trail: buy it in El Chaltén on the evening of day 8. At Las Torres, box lunches are ordered at the evening briefing."
+          },
+          {
+            "title": "Choosing excursions at Las Torres",
+            "text": "Excursions are booked at the hotel by 20:00 the evening before. Tell the guides which level you're doing."
+          },
+          {
+            "title": "Emergencies",
+            "text": "Argentina: 911. Chile: 131 ambulance, 133 police. Say Hueque (days 8 to 16): +54 9 11 3282 3270."
+          }
+        ]
+      }
+    ],
+    "gear": [
+      {
+        "item": "Waterproof, windproof jacket",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Waterproof overtrousers (also for the Perito Moreno boat)",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Warm mid-layer: fleece or light down",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Warm hat, windproof gloves and a neck gaiter",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Sun hat, sunglasses and SPF 50",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Light clothes for Santiago and Buenos Aires (25-30 °C by day)",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Walking shoes or boots with good grip",
+        "levels": [
+          "easy"
+        ]
+      },
+      {
+        "item": "Broken-in waterproof hiking boots and hiking socks",
+        "levels": [
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Daypack with a rain cover",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Water bottle",
+        "levels": [
+          "easy"
+        ]
+      },
+      {
+        "item": "Water bottles for 2 L, and trail snacks",
+        "levels": [
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Trekking poles, in checked luggage",
+        "levels": [
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Blister plasters and painkillers",
+        "levels": [
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Headlamp",
+        "levels": [
+          "full"
+        ]
+      },
+      {
+        "item": "Plug adapters: Chile type C and L, Argentina type I (both 220 V)",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Power bank",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      },
+      {
+        "item": "Personal medicines, in original packaging",
+        "levels": [
+          "easy",
+          "moderate",
+          "full"
+        ]
+      }
+    ]
   }
 }

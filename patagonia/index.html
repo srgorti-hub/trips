@@ -235,6 +235,47 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 /* ═══════════════════════════════
    OVERVIEW TAB
 ═══════════════════════════════ */
+/* Short view: ?view=short shows Overview, a one-line-per-day list and Before You Go */
+body:not(.view-short) .short-only { display: none; }
+body.view-short .full-only { display: none; }
+.view-link {
+  background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); padding: 6px 14px; border-radius: 8px;
+  font-size: 13px; font-weight: 600; text-decoration: none; margin-right: 8px;
+}
+.view-link:hover { background: rgba(255,255,255,0.2); color: white; }
+.day-list { padding: 0; }
+.day-row {
+  display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 18px; border: none; border-bottom: 1px solid var(--border);
+  background: none; color: inherit; font: inherit; text-align: left; cursor: pointer;
+}
+.day-row:hover { background: var(--bg); }
+.day-row .day-badge { width: 30px; height: 30px; font-size: 12px; flex-shrink: 0; }
+.day-row-main { flex: 1; min-width: 0; }
+.day-row-title { font-weight: 600; font-size: 14px; }
+.day-row-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.day-row-chev { color: var(--muted); font-size: 12px; transition: transform 0.2s; flex-shrink: 0; }
+.day-row[aria-expanded="true"] .day-row-chev { transform: rotate(180deg); }
+.day-row-detail { padding: 16px; border-bottom: 1px solid var(--border); background: var(--bg); }
+.day-row-detail .day-card { box-shadow: none; }
+.before-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.before-card .card-header { padding: 16px 22px; border-bottom: 1px solid var(--border); }
+.before-card .card-header h3 { font-size: 16px; }
+.before-body { padding: 16px 22px; }
+.before-wide { grid-column: 1 / -1; }
+.must-list { list-style: none; margin: 0; padding: 0; }
+.must-list li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.5; }
+.must-list li:last-child { border-bottom: none; }
+.must-title { font-weight: 600; display: block; }
+.must-text a { color: var(--green); }
+.short-gear { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.7; }
+.level-fitness { font-size: 14px; line-height: 1.6; }
+.level-fitness strong { color: var(--green); }
+.before-weather-figs { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
+.before-weather-figs div { font-size: 13px; color: var(--muted); }
+.before-weather-figs strong { display: block; font-size: 20px; color: var(--text); font-family: 'Fraunces', serif; }
+.before-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+.before-note a { color: inherit; }
+
 /* Hiking level picker (hero) and level table (overview) */
 .level-picker { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
 .level-picker-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
@@ -1308,6 +1349,10 @@ button.levels-head.sel { color: var(--green); }
 @media (max-width: 768px) {
   .top-nav { padding: 8px 16px; }
   .hero { min-height: 340px; }
+  .before-grid { grid-template-columns: 1fr; }
+  .day-row { padding: 12px 16px; }
+  .day-row-detail { padding: 8px; }
+  .view-link { padding: 6px 10px; }
   .levels-table { grid-template-columns: 1fr; }
   .levels-table > .levels-head, .levels-table > button.levels-head { display: none; }
   .levels-table > .levels-cell { border-bottom: none; padding: 4px 16px; }
@@ -1357,6 +1402,7 @@ button.levels-head.sel { color: var(--green); }
 <!-- ═══ TOP NAV ═══ -->
 <nav class="top-nav">
   <div class="nav-right">
+    <a class="view-link" id="viewLink" href="?view=short" style="display:none;"></a>
     <button class="unit-toggle" id="unitToggle" aria-label="Toggle units">
       <span class="unit-label">km / m</span>
     </button>
@@ -1385,10 +1431,11 @@ button.levels-head.sel { color: var(--green); }
   <div class="tab-bar-inner">
     <button class="tab-btn active" data-tab="overview">Overview</button>
     <button class="tab-btn" data-tab="days">Day by Day</button>
-    <button class="tab-btn" data-tab="preparation">Preparation</button>
-    <button class="tab-btn" data-tab="weather">Weather</button>
-    <button class="tab-btn" data-tab="gear">Gear</button>
-    <button class="tab-btn" data-tab="general">General Info</button>
+    <button class="tab-btn short-only" data-tab="before">Before You Go</button>
+    <button class="tab-btn full-only" data-tab="preparation">Preparation</button>
+    <button class="tab-btn full-only" data-tab="weather">Weather</button>
+    <button class="tab-btn full-only" data-tab="gear">Gear</button>
+    <button class="tab-btn full-only" data-tab="general">General Info</button>
   </div>
 </div>
 
@@ -1427,11 +1474,6 @@ button.levels-head.sel { color: var(--green); }
         <div class="stats-grid" id="overviewStats"></div>
         <div class="trip-summary" id="tripSummary"></div>
       </div>
-      <div class="card levels-card" id="levelsCard" style="display:none;">
-        <div class="card-header"><h3>Hiking days by level</h3></div>
-        <div class="levels-table" id="levelsTable"></div>
-        <div class="levels-foot" id="levelsFoot"></div>
-      </div>
       <div class="card accommodation-card">
         <div class="card-header"><h3>Accommodations</h3></div>
         <ul class="accommodation-list" id="accommodationList"></ul>
@@ -1440,12 +1482,22 @@ button.levels-head.sel { color: var(--green); }
         <div class="card-header"><h3>Route Overview</h3></div>
         <div id="routeOverview" style="padding: 22px;"></div>
       </div>
+      <div class="card levels-card" id="levelsCard" style="display:none;">
+        <div class="card-header"><h3>Hiking days by level</h3></div>
+        <div class="levels-table" id="levelsTable"></div>
+        <div class="levels-foot" id="levelsFoot"></div>
+      </div>
     </div>
   </div>
 
   <!-- Day by Day Tab -->
   <div class="tab-panel" id="panel-days">
     <div class="day-cards" id="dayCards"></div>
+  </div>
+
+  <!-- Before You Go Tab (short view only) -->
+  <div class="tab-panel" id="panel-before">
+    <div id="beforeContent"></div>
   </div>
 
   <!-- Weather Tab -->
@@ -1555,6 +1607,7 @@ function rerenderAllUnits() {
   renderWeather();
   renderPreparation();
   renderGeneralInfo();
+  renderBefore();
 }
 
 /* ═══════════════════════════════
@@ -1862,6 +1915,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initTheme();
   initUnits();
   initLevel();
+  initView();
   initTabs();
   initLightbox();
   initUploadScreen();
@@ -1906,6 +1960,8 @@ function renderApp() {
   renderGear();
   renderPreparation();
   renderGeneralInfo();
+  renderBefore();
+  updateViewLink();
   // Show first tab
   document.getElementById('panel-overview').classList.add('active');
 }
@@ -2049,6 +2105,8 @@ function setLevel(level) {
   renderHeroStats();
   renderOverview();
   renderDays();
+  renderBefore();
+  updateViewLink();
 }
 
 /**
@@ -2266,7 +2324,8 @@ function renderOverview() {
   ].join('');
 
   // Summary + YouTube
-  let summaryHTML = `<p>${t.description}</p>`;
+  const summary = shortView && tripData.short_view && tripData.short_view.summary ? tripData.short_view.summary : t.description;
+  let summaryHTML = `<p>${summary}</p>`;
   const ytOverviewLink = resolveYoutubeLink(t.youtube_overview);
   if (ytOverviewLink) {
     summaryHTML += `<a href="${ytOverviewLink}" target="_blank" rel="noopener" class="youtube-link">&#9654; Watch Trail Overview</a>`;
@@ -2293,20 +2352,7 @@ function renderOverview() {
   const routeHTML = days.map(d => {
     const cls = dayClass(d);
     const hike = isHikeDay(d);
-    const km = driveKm(d);
-    const drive = km ? `${formatDist(km)} drive` : '';
-    let sub;
-    if (hike) {
-      const p = hikePlan(d);
-      sub = [p.isVariant ? `${p.name} &middot; ${planStatsText(p)}` : planStatsText(p), drive].filter(Boolean).join(' &middot; ');
-    } else if (d.flights && d.flights.length) {
-      const flights = d.flights.map(f => `${f.flight || ''} ${f.from_code || f.from || ''} &rarr; ${f.to_code || f.to || ''}`.trim()).join(' &middot; ');
-      sub = [flights, drive].filter(Boolean).join(' &middot; ');
-    } else if (drive) {
-      sub = [drive, d.transport_to_start && d.transport_to_start.duration].filter(Boolean).join(' &middot; ');
-    } else {
-      sub = d.accommodation ? (d.accommodation.location || '') : '';
-    }
+    const sub = daySubText(d);
     // Travel labels read "A to B"; show the first "to" as an arrow in this list
     const label = hike ? d.label : d.label.replace(' to ', ' &rarr; ');
     return `
@@ -2369,34 +2415,158 @@ function renderLevelsTable() {
    DAY BY DAY TAB
 ═══════════════════════════════ */
 function renderDays() {
+  if (shortView) { renderDayList(); return; }
   const container = document.getElementById('dayCards');
   container.innerHTML = tripData.days.map(day => renderDayCard(day)).join('');
+  tripData.days.forEach(day => wireDayCard(day, document.getElementById(`day-${day.day}`)));
+}
 
-  // Render elevation charts after DOM is ready
-  tripData.days.forEach(day => {
-    if (isHikeDay(day) && elevationData[day.day]) {
-      renderElevationChart(day.day, elevationData[day.day]);
-    }
-  });
+/** After a day card is in the DOM: elevation chart, photos, map, GPX link, deep-dive toggle. */
+function wireDayCard(day, cardEl) {
+  if (isHikeDay(day) && elevationData[day.day]) {
+    renderElevationChart(day.day, elevationData[day.day]);
+  }
+  resolveDayPhotos(day);
+  resolveDayMap(day);
+  resolveGpxLink(day);
 
-  // Resolve day photos asynchronously after DOM insertion
-  tripData.days.forEach(day => {
-    resolveDayPhotos(day);
-    resolveDayMap(day);
-    resolveGpxLink(day);
-  });
-
-  // Deep dive toggles
-  container.querySelectorAll('.deep-dive-toggle').forEach(btn => {
+  const btn = cardEl.querySelector('.deep-dive-toggle');
+  if (btn) {
     btn.addEventListener('click', () => {
-      const card = btn.closest('.day-card');
-      const dive = card.querySelector('.deep-dive');
+      const dive = cardEl.querySelector('.deep-dive');
       const isOpen = dive.classList.contains('open');
       dive.classList.toggle('open');
       btn.classList.toggle('open');
       btn.querySelector('.toggle-text').textContent = isOpen ? 'Deep Dive' : 'Close';
     });
-  });
+  }
+}
+
+/* ═══════════════════════════════
+   SHORT VIEW (?view=short)
+   Same data, less of it: one line per day (tap for the full card) and a
+   Before You Go tab built from trip.short_view.
+═══════════════════════════════ */
+let shortView = false;
+
+function initView() {
+  shortView = new URLSearchParams(location.search).get('view') === 'short';
+  document.body.classList.toggle('view-short', shortView);
+}
+
+/** Nav link to the other view, keeping the level in the URL. Shown only when the trip has short-view content. */
+function updateViewLink() {
+  const link = document.getElementById('viewLink');
+  if (!tripData.short_view) { link.style.display = 'none'; return; }
+  const url = new URL(location.href);
+  if (shortView) url.searchParams.delete('view'); else url.searchParams.set('view', 'short');
+  link.href = url.pathname + url.search;
+  link.textContent = shortView ? 'Full guide' : 'Short version';
+  link.style.display = '';
+}
+
+/** Second line for a day in the lists: the hike at the chosen level, the flights, or the drive. */
+function daySubText(d) {
+  const km = driveKm(d);
+  const drive = km ? `${formatDist(km)} drive` : '';
+  if (isHikeDay(d)) {
+    const p = hikePlan(d);
+    return [p.isVariant ? `${p.name} &middot; ${planStatsText(p)}` : planStatsText(p), drive].filter(Boolean).join(' &middot; ');
+  }
+  if (d.flights && d.flights.length) {
+    const flights = d.flights.map(f => `${f.flight || ''} ${f.from_code || f.from || ''} &rarr; ${f.to_code || f.to || ''}`.trim()).join(' &middot; ');
+    return [flights, drive].filter(Boolean).join(' &middot; ');
+  }
+  if (drive) return [drive, d.transport_to_start && d.transport_to_start.duration].filter(Boolean).join(' &middot; ');
+  return d.accommodation ? (d.accommodation.location || '') : '';
+}
+
+function renderDayList() {
+  const container = document.getElementById('dayCards');
+  container.innerHTML = `<div class="card day-list">${tripData.days.map(d => {
+    const place = d.accommodation ? accomNames(d.accommodation, false) : noAccomText(d);
+    const label = isHikeDay(d) ? d.label : d.label.replace(' to ', ' &rarr; ');
+    return `
+      <button type="button" class="day-row" data-day="${d.day}" aria-expanded="false">
+        <span class="day-badge ${dayClass(d)}">${d.day}</span>
+        <span class="list-date">${formatShortDate(d.date)}</span>
+        <span class="day-row-main">
+          <span class="day-row-title">${label}</span>
+          <span class="day-row-sub" style="display:block;">${[daySubText(d), place].filter(Boolean).join(' &middot; ')}</span>
+        </span>
+        <span class="day-row-chev">&#9660;</span>
+      </button>
+      <div class="day-row-detail" id="day-row-detail-${d.day}" hidden></div>`;
+  }).join('')}</div>`;
+
+  container.querySelectorAll('.day-row').forEach(row => row.addEventListener('click', () => {
+    const day = tripData.days.find(d => String(d.day) === row.dataset.day);
+    const detail = document.getElementById(`day-row-detail-${day.day}`);
+    const open = row.getAttribute('aria-expanded') === 'true';
+    row.setAttribute('aria-expanded', String(!open));
+    detail.hidden = open;
+    if (!open && !detail.firstElementChild) {
+      detail.innerHTML = renderDayCard(day);
+      wireDayCard(day, detail.firstElementChild);
+    }
+  }));
+}
+
+/** Before You Go: fitness at your level, the must-knows, a short gear list and the weather in brief. */
+function renderBefore() {
+  const sv = tripData.short_view;
+  const el = document.getElementById('beforeContent');
+  if (!sv) { el.innerHTML = ''; return; }
+
+  const h = hikeTotals();
+  const longest = h.plans.reduce((m, p) => Math.max(m, Number(p.distance_km) || 0), 0);
+  const climb = h.plans.reduce((m, p) => Math.max(m, Number(p.ascent_m) || 0), 0);
+  const fitnessHTML = h.count ? `
+    <div class="card before-card before-wide">
+      <div class="card-header"><h3>Your level: ${LEVEL_LABELS[hikeLevel]}</h3></div>
+      <div class="before-body level-fitness">
+        ${h.count} hiking days, <strong>${formatDist(h.distance)}</strong> in all.
+        Longest day <strong>${formatDist(longest)}</strong>; biggest climb <strong>${formatElevShort(climb)}</strong>.
+        You can change your level at the top of the page.
+      </div>
+    </div>` : '';
+
+  const mustHTML = (sv.must_know || []).map(g => `
+    <div class="card before-card">
+      <div class="card-header"><h3>${g.group}</h3></div>
+      <div class="before-body">
+        <ul class="must-list">${g.items.map(i => `
+          <li><span class="must-title">${i.title}</span>
+            <span class="must-text">${i.text}${i.url ? ` <a href="${i.url}" target="_blank" rel="noopener">Open</a>` : ''}</span></li>`).join('')}
+        </ul>
+      </div>
+    </div>`).join('');
+
+  const gear = (sv.gear || []).filter(g => !g.levels || g.levels.includes(hikeLevel));
+  const gearHTML = gear.length ? `
+    <div class="card before-card">
+      <div class="card-header"><h3>Pack</h3></div>
+      <div class="before-body">
+        <ul class="short-gear">${gear.map(g => `<li>${g.item}</li>`).join('')}</ul>
+        <div class="before-note">The full guide has the complete list.</div>
+      </div>
+    </div>` : '';
+
+  const w = tripData.weather;
+  const weatherHTML = w ? `
+    <div class="card before-card">
+      <div class="card-header"><h3>Weather</h3></div>
+      <div class="before-body">
+        <div class="before-weather-figs">
+          <div><strong>${w.temp_min_c} to ${w.temp_max_c} °C</strong>Patagonia</div>
+          ${w.wind_kmh ? `<div><strong>${w.wind_kmh} km/h</strong>Wind</div>` : ''}
+          ${w.daylight_hours ? `<div><strong>~${w.daylight_hours} h</strong>Daylight</div>` : ''}
+        </div>
+        <ul class="must-list">${(w.alerts || []).map(a => `<li>${a}</li>`).join('')}</ul>
+      </div>
+    </div>` : '';
+
+  el.innerHTML = `<div class="before-grid">${fitnessHTML}${mustHTML}${gearHTML}${weatherHTML}</div>`;
 }
 
 /**
