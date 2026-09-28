@@ -7,8 +7,8 @@
       "end": "2026-12-04"
     },
     "group_size": 19,
-    "total_distance_km": 75.2,
-    "total_ascent_m": 2782,
+    "total_distance_km": 72.7,
+    "total_ascent_m": 2684,
     "youtube_overview": "https://www.youtube.com/watch?v=hZ2nbVpkoyk",
     "description": "Sixteen days from your home city to the south of Chile and Argentina. Two nights in Santiago and three in Buenos Aires, then a flight to El Calafate. From 26 November the group of 19 travels with Say Hueque: two nights in El Chaltén for Laguna Torre and the Cóndores viewpoints, two in El Calafate for the Perito Moreno Glacier, and four at Hotel Las Torres in Torres del Paine for Base Torres, a park tour with Lago Grey, and the French Valley. The guide ends with the flight from Puerto Natales to Santiago on 4 December.",
     "location_keywords": [
@@ -2502,7 +2502,7 @@
           "name": "Base Torres trail to Chileno",
           "summary": "The same trail as the full group, up the Ascencio Valley over Windy Pass to the Chileno sector, then back the same way. You skip the forest section and the steep boulder slope at the end. If Las Torres can't run this, the Native Lenga Forest walk (8 km, 3 to 4 h) is the fallback.",
           "distance_km": 10.0,
-          "ascent_m": 545,
+          "ascent_m": 450,
           "estimated_hours": 4.5,
           "difficulty": "Moderate",
           "logistics": "Not a separate Las Torres excursion. It needs their agreement and its own guide.",
@@ -2558,7 +2558,7 @@
         },
         {
           "name": "Windy Pass",
-          "km": 3.5,
+          "km": 4.2,
           "note": "The valley opens up. Often very windy."
         },
         {
@@ -2573,7 +2573,7 @@
         },
         {
           "name": "La Morrena begins",
-          "km": 8.5,
+          "km": 8.2,
           "note": "Steep boulder climb, 45 to 60 minutes"
         },
         {
@@ -2691,21 +2691,21 @@
       "label": "Full Paine & Lago Grey",
       "date": "2026-12-02",
       "day_type": "hike",
-      "distance_km": 9.0,
-      "ascent_m": 178,
-      "descent_m": 164,
+      "distance_km": 6.5,
+      "ascent_m": 80,
+      "descent_m": 80,
       "estimated_hours": 8,
       "stats_note": {
-        "source": "Hiker GPS recording on Wikiloc",
-        "source_url": "https://www.wikiloc.com/hiking-trails/torres-del-paine-guarderia-pudeto-salto-grande-mirador-cuernos-200309247",
-        "processing": "Only the walk from Pudeto past Salto Grande to Mirador Cuernos and back; the rest of the day is by van.",
-        "operator": "Las Torres lists 7 to 10 hours for the whole day, easy."
+        "source": "Operator figures and published walk lengths",
+        "source_url": "https://lastorres.com/en/circuitos-por-el-dia/full-paine-glacier-grey/",
+        "processing": "Salto Grande from the car park and back (about 1.3 km) plus the Grey beach and peninsula walk (about 5.3 km). The rest of the day is by van.",
+        "operator": "Las Torres lists about 4 km of walking and 7 to 10 hours for the whole day, easy."
       },
-      "difficulty": "Moderate",
+      "difficulty": "Easy",
       "levels": {
         "easy": {
           "name": "Full Paine, viewpoints only",
-          "summary": "The same van tour, getting out at the roadside stops: Salto Grande, the Nordenskjöld and Sarmiento lookouts and Lago Pehoé. At Lago Grey, stay near the lodge, or take the Grey III boat to the glacier.",
+          "summary": "The same van tour, getting out at the roadside stops: Salto Grande, the Nordenskjöld and Sarmiento lookouts and Lago Pehoé. At Lago Grey, stay near the lodge, or take the Grey III boat to the glacier. With the boat, the beach walk adds about 2.5 km.",
           "distance_km": 2.0,
           "ascent_m": null,
           "estimated_hours": 8,
@@ -2724,7 +2724,7 @@
         "Waterfall"
       ],
       "meals": "Breakfast, lunch, dinner (full board, open bar)",
-      "description": "The recommended excursion today is Full Paine with Lago Grey, a road trip through the park with short walks at each stop. It is an easier day between the two long treks. Las Torres rates it easy and lists 7 to 10 hours; walking adds up to about 9 km.\n\nStops include Puente Negro, the Nordenskjöld and Sarmiento viewpoints, Lago Pehoé and the Salto Grande waterfall between Lago Nordenskjöld and Lago Pehoé. After lunch you choose between two ways to see Grey Glacier: a walk along the south shore of Lago Grey to a point looking over the floating ice, or a boat up the lake to the glacier front.\n\nThe boat is not included in the Las Torres programme. It is run by Hotel Lago Grey on the Grey III catamaran, about 2 h 45 min round trip, reached by a 30 to 45 minute walk across the beach. Places are limited and there is a minimum number of passengers, so book ahead if you want it. The boat runs subject to weather.",
+      "description": "The recommended excursion today is Full Paine with Lago Grey, a road trip through the park with short walks at each stop. It is an easier day between the two long treks. Las Torres rates it easy and lists 7 to 10 hours. The walking is short: about 6 km in total, most of it on the Lago Grey shore.\n\nStops include Puente Negro, the Nordenskjöld and Sarmiento viewpoints, Lago Pehoé and the Salto Grande waterfall between Lago Nordenskjöld and Lago Pehoé. After lunch you choose between two ways to see Grey Glacier: a walk along the south shore of Lago Grey to a point looking over the floating ice (about 5 km there and back, 1.5 hours, flat), or a boat up the lake to the glacier front.\n\nThe boat is not included in the Las Torres programme. It is run by Hotel Lago Grey on the Grey III catamaran, about 2 h 45 min round trip, reached by a 30 to 45 minute walk across the beach. Places are limited and there is a minimum number of passengers, so book ahead if you want it. The boat runs subject to weather.",
       "accommodation": {
         "location": "Torres del Paine National Park",
         "options": [
@@ -2753,32 +2753,26 @@
       "waypoints": [
         {
           "name": "Hotel Las Torres",
-          "km": 0,
           "note": "Leave by van with the guide after breakfast"
         },
         {
           "name": "Puente Negro",
-          "km": 1,
           "note": "Short stop"
         },
         {
           "name": "Mirador Nordenskjöld",
-          "km": 2.5,
           "note": "Lake view with Los Cuernos behind"
         },
         {
           "name": "Mirador Sarmiento",
-          "km": 4,
           "note": "Lago Sarmiento and its white thrombolite formations"
         },
         {
           "name": "Salto Grande",
-          "km": 6,
           "note": "Short walk from the road to the waterfall"
         },
         {
           "name": "Lago Grey",
-          "km": 9,
           "note": "Shore walk to the iceberg viewpoint, or the optional boat to the glacier"
         }
       ],
@@ -2832,13 +2826,13 @@
         },
         {
           "name": "Salto Grande / Pudeto area",
-          "km": 6,
+          "km": null,
           "type": "public",
           "notes": "Toilets near the Pudeto catamaran dock"
         },
         {
           "name": "Lago Grey area",
-          "km": 9,
+          "km": null,
           "type": "cafe",
           "notes": "Toilets at the hotel and boat dock area"
         }
@@ -2898,13 +2892,13 @@
         }
       ],
       "links": {
-        "alltrails": "https://www.alltrails.com/trail/chile/magallanes/mirador-cuernos",
-        "komoot": "https://www.komoot.com/tour/1032637103",
+        "alltrails": "",
+        "komoot": "https://www.komoot.com/tour/2850899788",
         "walk_highlands": "",
-        "gpx_download": "gpx/day-14.gpx"
+        "gpx_download": ""
       },
-      "map": "maps/day-14-map.jpg",
-      "elevation_profile": "elevation/day-14-profile.json",
+      "map": null,
+      "elevation_profile": null,
       "photos": [
         "photos/day-14/img1.jpg",
         "photos/day-14/img2.jpg",
@@ -2923,8 +2917,8 @@
       "stats_note": {
         "source": "Hiker GPS recording on Wikiloc",
         "source_url": "https://www.wikiloc.com/hiking-trails/french-valley-torres-del-paine-map-88478477",
-        "processing": "Paine Grande boat landing to Mirador Francés and back; the boat crossings are removed. Mirador Británico would add about 5–6 km and 250–300 m.",
-        "operator": "Las Torres lists 700–800 m of height change and 12 hours door to door."
+        "processing": "Paine Grande boat landing to Mirador Francés and back; the boat crossings are removed. Mirador Británico would add about 6–7 km and 250–300 m.",
+        "operator": "Las Torres lists 12 hours door to door."
       },
       "difficulty": "Strenuous",
       "levels": {
@@ -2956,7 +2950,7 @@
         "Rocky ground"
       ],
       "meals": "Breakfast, lunch, dinner (full board, open bar)",
-      "description": "The recommended excursion for the last full day is the French Valley, the middle arm of the W Trek. It is a long day: Las Torres lists 12 hours door to door, high difficulty, with 700 to 800 m of height change; about 10 hours of that is walking. The transfer and the Pehoé boat are included.\n\nAfter a 45-minute drive to Pudeto you take the Hielos Patagónicos catamaran across Lago Pehoé (about 30 minutes) to Paine Grande. The first part of the trail is gently rolling along the north side of Lago Skottsberg to the Italiano camp at the mouth of the valley, where there is a break for water and snacks. You can turn back here. The rest continue for about 2.5 km up a steep path through lenga forest and then rock, to a viewpoint below Los Cuernos looking at the French Glacier on the side of Cerro Paine Grande and back down the valley to the lakes. Then back the same way to catch the return boat.\n\nThe boat times are fixed, so the guide sets a turnaround time. Keep a steady pace and eat regularly.",
+      "description": "The recommended excursion for the last full day is the French Valley, the middle arm of the W Trek. It is a long day: Las Torres lists 12 hours door to door, high difficulty; about 7 to 8 hours of it is walking, plus breaks and the wait for the boat. The transfer and the Pehoé boat are included.\n\nAfter a 45-minute drive to Pudeto you take the Hielos Patagónicos catamaran across Lago Pehoé (about 30 minutes) to Paine Grande. The first part of the trail is gently rolling along the north side of Lago Skottsberg to the Italiano camp at the mouth of the valley, where there is a break for water and snacks. You can turn back here. The rest continue for about 2 km up a steep path through lenga forest and then rock, to a viewpoint below Los Cuernos looking at the French Glacier on the side of Cerro Paine Grande and back down the valley to the lakes. Then back the same way to catch the return boat.\n\nThe boat times are fixed, so the guide sets a turnaround time. Keep a steady pace and eat regularly.",
       "accommodation": {
         "location": "Torres del Paine National Park",
         "options": [
@@ -2975,7 +2969,7 @@
         "Refugio Paine Grande at the boat landing"
       ],
       "escape_routes": [
-        "Turn back at the Italiano camp (about km 7), the planned option for a shorter day",
+        "Turn back at the Italiano camp (about km 7.5), the planned option for a shorter day",
         "Refugio Paine Grande, by the boat landing, is the nearest full shelter"
       ],
       "warnings": [
@@ -3007,13 +3001,13 @@
         },
         {
           "name": "Italiano camp",
-          "km": 7,
+          "km": 7.5,
           "note": "Break. Turn-back option."
         },
         {
           "name": "French Valley viewpoint",
-          "km": 9.5,
-          "note": "Below Los Cuernos, facing the French Glacier. About 2.5 km above Italiano."
+          "km": 9.4,
+          "note": "Below Los Cuernos, facing the French Glacier. About 2 km above Italiano."
         },
         {
           "name": "Paine Grande",
@@ -3089,7 +3083,7 @@
         },
         {
           "name": "Italiano camp",
-          "km": 7,
+          "km": 7.5,
           "type": "campsite",
           "notes": "Dry toilets"
         }
@@ -3139,7 +3133,7 @@
         }
       ],
       "links": {
-        "alltrails": "https://www.alltrails.com/trail/chile/magallanes/campamento-paine-grande-mirador-britanico",
+        "alltrails": "https://www.alltrails.com/trail/chile/magallanes/campamento-paine-grande-campamento-italiano-mirador-glaciar-frances",
         "komoot": "https://www.komoot.com/smarttour/e2717163187/w-trek-paine-grande-to-french-valley",
         "walk_highlands": "",
         "gpx_download": "gpx/day-15.gpx"
@@ -3589,7 +3583,7 @@
         ]
       }
     ],
-    "physical_demands": "Three long days: Laguna Torre (about 17 km, 530 m of climbing, 7-8 hours), Base Torres (about 19 km, 975 m, 8-9 hours, with a steep boulder climb at the end) and the French Valley (about 19 km, 690 m, 10 hours of walking inside a 12-hour day). You should be comfortable walking 19 km on rough ground in a day and doing it again two days later. The other hiking days are short. Both long Torres del Paine walks have a turn-back point for anyone who wants a shorter day.",
+    "physical_demands": "Three long days: Laguna Torre (about 17 km, 530 m of climbing, 7-8 hours), Base Torres (about 19 km, 975 m, 8-9 hours, with a steep boulder climb at the end) and the French Valley (about 19 km, 690 m, 7 to 8 hours of walking inside a 12-hour day). You should be comfortable walking 19 km on rough ground in a day and doing it again two days later. The other hiking days are short. Both long Torres del Paine walks have a turn-back point for anyone who wants a shorter day.",
     "recommended_training": [
       "Build to walking 20 km in a day with 1,000 m of climbing",
       "Walk on consecutive days at least once or twice before the trip",
@@ -3612,7 +3606,7 @@
       "Day 11: Perito Moreno. The boat and walkways are gentle, but there are many stairs on the lower circuits and it is cold next to the ice.",
       "Day 12: Long transfer to Torres del Paine with a border crossing. A rest day for the legs.",
       "Day 13: Base Torres (about 19 km, 975 m, 8-9 hours). The hardest day. A steep climb to the Windy Pass early on (about 300 m in 2 km), forest walking past Chileno, then a steep, loose boulder slope for the last 45-60 minutes. Expect tired legs.",
-      "Day 14: Full Paine and Lago Grey (about 9 km of short walks). An easier day in the van between the two long treks.",
+      "Day 14: Full Paine and Lago Grey (about 6 km of short walks). An easier day in the van between the two long treks.",
       "Day 15: French Valley (about 19 km, 690 m, 12 hours door to door). Long rather than steep until the last 2.5 km. The boat times set the pace.",
       "Day 16: Early transfer to Puerto Natales and the 12:00 flight to Santiago. No physical demands."
     ]

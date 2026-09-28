@@ -135,7 +135,11 @@ def check_profiles(data, root):
                 report("FAIL", "A4", f"day {n} ({d['day_type']}) should not have an elevation profile")
             continue
         if not prof:
-            report("FAIL", "A4", f"hike day {n} has no elevation profile")
+            # An explicit null means the day has no single route to profile (e.g. a van tour with short walks)
+            if "elevation_profile" in d and d["elevation_profile"] is None:
+                report("WARN", "A4", f"hike day {n} has no route file (elevation_profile is null)")
+            else:
+                report("FAIL", "A4", f"hike day {n} has no elevation profile")
             continue
         p = root / prof
         if not p.exists():

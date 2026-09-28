@@ -2738,7 +2738,7 @@ function renderDayCard(day) {
       <h4>&#128205; Waypoints</h4>
       <ul>${waypoints.map(wp => `
         <li>
-          <span class="waypoint-km">${formatDist(wp.km)}</span>
+          ${wp.km != null ? `<span class="waypoint-km">${formatDist(wp.km)}</span>` : ''}
           <span class="waypoint-name">${wp.name}</span>
           ${wp.note ? `<span class="waypoint-note">— ${wp.note}</span>` : ''}
         </li>`).join('')}</ul>
