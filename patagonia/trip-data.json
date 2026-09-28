@@ -106,7 +106,7 @@
       "warnings": [
         "Museo Nacional de Bellas Artes and La Chascona are open Tuesday to Sunday, so both are open today and tomorrow.",
         "La Chascona has no advance booking: entry is in order of arrival, with an English audio guide.",
-        "La Moneda guided visits run on weekdays only, so today is the only chance. Register in advance on the presidency's visits site and bring your passport.",
+        "La Moneda guided visits run on weekdays only, so today is the only chance. Register at least a week ahead on the presidency's visits site (the Friday slot is 15:00) and bring your passport.",
         "Pickpocketing is common in crowded parts of central Santiago, on the metro and at café tables. Keep phones and bags in front of you, not on chair backs."
       ],
       "youtube": "Cerro San Cristóbal funicular Santiago",
@@ -149,7 +149,7 @@
           "diet": [
             "vegetarian"
           ],
-          "notes": "Artisan ice cream; try rosa-pistacho or chocolate-albahaca. Sorbet flavours are dairy-free. Open daily 10:00-19:30."
+          "notes": "Artisan ice cream; try rosa-pistacho or chocolate-albahaca. Sorbet flavours are dairy-free. Open daily 09:30-20:30."
         },
         {
           "name": "Bocanáriz",
@@ -171,7 +171,7 @@
           "area": "Bellavista",
           "url": "https://www.instagram.com/peumayenancestralfood/",
           "diet": [],
-          "notes": "Tasting boards based on Mapuche, Rapa Nui and Andean cooking, with native breads and ferments. Mostly meat and seafood; ask when booking about a vegetarian board. Open Fri 13:30-23:30, closed Sundays; book."
+          "notes": "Tasting boards based on Mapuche, Rapa Nui and Andean cooking, with native breads and ferments. Mostly meat and seafood; ask when booking about a vegetarian board. Open Fri 13:30-21:00, closed Sundays and Mondays; book."
         },
         {
           "name": "El Huerto",
@@ -299,7 +299,7 @@
       "resupply_notes": "",
       "warnings": [
         "Museo Chileno de Arte Precolombino is open Tuesday to Sunday 10:00 to 18:00.",
-        "Mercado Central is open until about 19:00 on Saturdays; La Vega is busiest and best in the morning.",
+        "Mercado Central stalls close between 17:00 and 19:00 on Saturdays; La Vega is busiest and best in the morning.",
         "Winery tours need booking in advance, usually at least a day ahead. Arrange a driver or a tour rather than driving yourself.",
         "Keep valuables out of sight around Plaza de Armas and the markets, which are busy on Saturdays."
       ],
@@ -353,7 +353,7 @@
           "area": "Centro, near Mercado Central",
           "url": "https://www.santiagoturismo.cl/en/la-piojera-2/",
           "diet": [],
-          "notes": "Crowded historic cantina two blocks from Mercado Central, known for the terremoto (pipeño wine with pineapple ice cream); one is plenty. Food is meaty; go for the drink. Open Mon-Sat 12:00-20:30."
+          "notes": "Crowded historic cantina two blocks from Mercado Central, known for the terremoto (pipeño wine with pineapple ice cream); one is plenty. Food is meaty; go for the drink. Open Mon-Sat 12:00-00:00."
         },
         {
           "name": "Chipe Libre",
@@ -552,7 +552,7 @@
           "diet": [
             "vegetarian-friendly"
           ],
-          "notes": "The best-known parrilla in the city, a few blocks from the hotel; book online weeks ahead. Vegetarians: provoleta (grilled provolone), grilled vegetables, salads. Open daily 19:00-01:00."
+          "notes": "The best-known parrilla in the city, a few blocks from the hotel; book online weeks ahead. Vegetarians: provoleta (grilled provolone), grilled vegetables, salads. Open daily 11:30-16:00 and 19:00-01:00."
         },
         {
           "name": "Ninina (Borges)",
@@ -649,7 +649,7 @@
       },
       "resupply_notes": "",
       "warnings": [
-        "Public holiday: check opening times the day before. The Rosedal and the Museo Casa Rosada are closed on Mondays.",
+        "Public holiday: check opening times the day before. The Rosedal and the Museo Casa Rosada are closed on Mondays (the museum also on Tuesdays).",
         "Recoleta Cemetery charges foreign visitors an entrance fee, payable by card only. Hours are about 09:00 to 17:00.",
         "Casa Rosada visits need advance booking (opens about 15 days ahead) and a passport on the day.",
         "Pickpocketing and bag snatching happen in busy areas, on the subway and at café tables. Keep phones in hand or zipped away, and bags on your lap."
@@ -1012,7 +1012,7 @@
           "to_code": "FTE",
           "arrive": "17:40",
           "arrive_day_offset": 0,
-          "notes": "About 3 h 20 m."
+          "notes": "About 3 h 20 m. Recheck the time in the Aerolíneas Argentinas app: Wednesday times are not yet published."
         }
       ],
       "transport_after_hike": [
@@ -1082,7 +1082,7 @@
           "diet": [
             "vegetarian-friendly"
           ],
-          "notes": "Bakery-café for a proper breakfast: pastries, toast, eggs and good coffee. Close to the hotel; allow an hour. Open Mon-Fri 08:00-21:00."
+          "notes": "Bakery-café for a proper breakfast: pastries, toast, eggs and good coffee. Close to the hotel; allow an hour. Open weekdays from 08:00."
         },
         {
           "name": "Cuervo Café (Soho)",
@@ -1497,19 +1497,19 @@
         "easy": {
           "name": "Chorrillo del Salto waterfall",
           "summary": "A mostly flat walk through lenga forest to a waterfall north of town, starting from the road parking on RP23. A morning in town is the other choice.",
-          "distance_km": 4.0,
-          "ascent_m": 100,
-          "estimated_hours": 1.5,
+          "distance_km": 1.5,
+          "ascent_m": 30,
+          "estimated_hours": 1,
           "difficulty": "Easy",
           "logistics": "About 10 minutes by van or taxi to the parking, arranged through Say Hueque. No guide; the path is signposted. Park entry fee applies.",
           "to_confirm": true
         },
         "moderate": {
           "name": "Laguna Torre trail to Mirador del Torre",
-          "summary": "Walk out with the full group as far as the Cerro Torre viewpoint, passing Cascada Margarita, then return the same way. Most of the full day's climbing is in this first section, so the distance drops more than the effort.",
-          "distance_km": 7.0,
-          "ascent_m": 290,
-          "estimated_hours": 3.5,
+          "summary": "Walk out with the full group as far as the Cerro Torre viewpoint, passing Cascada Margarita, then return the same way. About 40% of the full day's climbing is in this first section, so the distance drops more than the effort.",
+          "distance_km": 6.0,
+          "ascent_m": 230,
+          "estimated_hours": 3,
           "difficulty": "Moderate",
           "logistics": "Same start as the full group. Walk back in pairs or more on the same trail. Whether a second guide comes with this group is still to be confirmed.",
           "to_confirm": true
@@ -1522,7 +1522,7 @@
         "Rocky sections"
       ],
       "meals": "Breakfast",
-      "description": "A full-day walk with a private English-speaking guide (Walk Patagonia) to Laguna Torre, the glacial lake at the foot of Cerro Torre. The guide meets you at the hotel at 08:30. The route is an out-and-back on the same path. Say Hueque lists it as 19 km, 7 to 8 hours, moderate, with a high point of 719 m; the figures shown here come from the route file.\n\nThe trail leaves from the western edge of the village and follows the Fitz Roy River. After about 20 minutes you reach the river canyon and its waterfalls. Most of the climbing is in the first 2 km. The first viewpoint looks at Cerro Torre, its glaciers and the Adela range; if anyone wants a shorter day, this is the turn-back point, about 3 hours round trip from town. Beyond it the path runs mostly level through lenga woodland and meadows to the De Agostini camp and then over moraine to the lake, where ice from Glaciar Grande floats below Cerro Torre. Lunch is at the lake, then back the same way.\n\nCerro Torre is often in cloud by midday, so the early start helps. Mirador Maestri, a ridge viewpoint about 20 minutes beyond the lake, is possible if the guide judges there is time and the weather allows.",
+      "description": "A full-day walk with a private English-speaking guide (Walk Patagonia) to Laguna Torre, the glacial lake at the foot of Cerro Torre. The guide meets you at the hotel at 08:30. The route is an out-and-back on the same path. Say Hueque lists it as 19 km, 7 to 8 hours, moderate, with a high point of 719 m; the figures shown here come from the route file.\n\nThe trail leaves from the western edge of the village and follows the Fitz Roy River. After about 20 minutes you reach the river canyon and its waterfalls. About 40% of the day's climbing is in the first 3 km. The first viewpoint looks at Cerro Torre, its glaciers and the Adela range; if anyone wants a shorter day, this is the turn-back point, about 3 hours round trip from town. Beyond it the path runs mostly level through lenga woodland and meadows to the De Agostini camp and then over moraine to the lake, where ice from Glaciar Grande floats below Cerro Torre. Lunch is at the lake, then back the same way.\n\nCerro Torre is often in cloud by midday, so the early start helps. Mirador Maestri, a ridge viewpoint about 2 km and 45 minutes beyond the lake with about 190 m more climbing, is possible if the guide judges there is time and the weather allows.",
       "accommodation": {
         "location": "El Chaltén",
         "options": [
@@ -1575,12 +1575,12 @@
         },
         {
           "name": "Laguna Torre",
-          "km": 9,
+          "km": 8.6,
           "note": "Lake with floating ice. Lunch stop. Return the same way."
         },
         {
           "name": "Mirador Maestri (optional)",
-          "km": 9.5,
+          "km": 10.5,
           "note": "Ridge viewpoint beyond the lake, at the guide's discretion"
         }
       ],
@@ -1759,7 +1759,7 @@
           "name": "Los Cóndores viewpoint only",
           "summary": "Walk with the group to the first viewpoint above town, then return while the others go on to Las Águilas. This is the steepest part of the loop; with bad knees, a morning in town is the better choice.",
           "distance_km": 2.6,
-          "ascent_m": 215,
+          "ascent_m": 130,
           "estimated_hours": 1,
           "difficulty": "Easy",
           "logistics": "Same 09:00 start. The way back is short and in sight of town. Meet the others at the transfer to El Calafate.",
@@ -1775,7 +1775,7 @@
         "Viewpoints"
       ],
       "meals": "Breakfast",
-      "description": "A short guided walk to two viewpoints above El Chaltén, then the drive back to El Calafate. The guide (Walk Patagonia, private, English-speaking) meets you at 09:00 at the hotel or an agreed meeting point. Say Hueque lists it as 6.99 km with 183 m of climbing, 2 to 3 hours; the figures shown here are from the route file and depend on where you start and finish.\n\nFrom the bridge over the Fitz Roy River at the entrance to town the path passes the park offices and climbs for about 40 minutes to Mirador de los Cóndores. It looks back over the village to Fitz Roy and Cerro Torre and down the Río de las Vueltas valley; condors are often seen here. About 30 minutes further, Mirador de las Águilas faces the other way, over the steppe to Lago Viedma. The guide leaves you at the end of the walk and you walk back to the hotel on your own.\n\nIn the afternoon a private transfer takes you back to El Calafate, about 200 km and 3 hours.",
+      "description": "A short guided walk to two viewpoints above El Chaltén, then the drive back to El Calafate. The guide (Walk Patagonia, private, English-speaking) meets you at 09:00 at the hotel or an agreed meeting point. Say Hueque lists it as 6.99 km with 183 m of climbing, 2 to 3 hours; the figures shown here are from the route file and depend on where you start and finish.\n\nFrom the bridge over the Fitz Roy River at the entrance to town the path passes the park offices and climbs for about 40 minutes to Mirador de los Cóndores. It looks back over the village to Fitz Roy and Cerro Torre and down the Río de las Vueltas valley; condors are often seen here. About 30 minutes further, Mirador de las Águilas faces the other way, over the steppe to Lago Viedma. The guide leaves you at the end of the walk and you walk back to the hotel on your own.\n\nIn the afternoon a private transfer takes you back to El Calafate, about 215 km and 3 hours.",
       "transport_after_hike": [
         {
           "leg": 1,
@@ -1783,7 +1783,7 @@
           "from": "Desierto Suites, El Chaltén",
           "to": "Glaciares de la Patagonia, El Calafate",
           "duration": "~3 h",
-          "distance_km": 200,
+          "distance_km": 215,
           "time": "Time to be confirmed by Say Hueque",
           "notes": "Check out before the walk and leave bags at reception."
         }
@@ -1810,7 +1810,8 @@
       "warnings": [
         "Exposed hillside: wind can be strong at both viewpoints. Bring a windproof layer.",
         "Loose gravel on the steeper section below Los Cóndores.",
-        "Check-out is before the walk. Confirm luggage storage with the hotel."
+        "Check-out is before the walk. Confirm luggage storage with the hotel.",
+        "The Los Glaciares park fee applies again today at the Los Cóndores entry point (card or online only). A 2-day ticket bought on day 9 gives 50% off the second day."
       ],
       "waypoints": [
         {
@@ -1825,12 +1826,12 @@
         },
         {
           "name": "Mirador de los Cóndores",
-          "km": 1.2,
+          "km": 2.4,
           "note": "View over the village to Fitz Roy and Cerro Torre. About 40 min from the start."
         },
         {
           "name": "Mirador de las Águilas",
-          "km": 2.3,
+          "km": 4.1,
           "note": "View over the steppe to Lago Viedma. About 30 min from Los Cóndores."
         },
         {
@@ -2018,7 +2019,7 @@
         "Boat trip"
       ],
       "meals": "Breakfast",
-      "description": "A full day at the Perito Moreno Glacier with a private English-speaking guide (Huellas del Sur). Hotel pick-up is at 08:00 for the 80 km drive into Los Glaciares National Park; the park entrance and the boat ticket are included.\n\nThe boat leaves at 10:00 from the Bajo las Sombras port, 7 km before the walkways. The one-hour Nautical Safari runs along Brazo Rico beside the south face of the glacier, which stands 60 to 70 m above the water. A bus then takes you up to the walkways on the Magallanes peninsula. After the guide's briefing at the main balcony you have free time on the circuits, which drop in stages towards the lake and look straight across the channel at the glacier's front. Ice falling from the face is common through the day. Return to El Calafate at the meeting time set by the guide. Allow 7 to 8 hours in total.\n\nLunch is not included. There is a restaurant and a café at the walkways, or bring food from town. The boat runs subject to weather.",
+      "description": "A full day at the Perito Moreno Glacier with a private English-speaking guide (Huellas del Sur). Hotel pick-up is at 08:00 for the 80 km drive into Los Glaciares National Park; the park entrance and the boat ticket are included.\n\nThe boat leaves at 10:00 from the Bajo las Sombras port, 7 km before the walkways. The one-hour Nautical Safari runs along Brazo Rico beside the south face of the glacier, which stands about 70 m above the water. A bus then takes you up to the walkways on the Magallanes peninsula. After the guide's briefing at the main balcony you have free time on the circuits, which drop in stages towards the lake and look straight across the channel at the glacier's front. Ice falling from the face is common through the day. Return to El Calafate at the meeting time set by the guide. Allow 7 to 8 hours in total.\n\nLunch is not included. There is a restaurant and a café at the walkways, or bring food from town. The boat runs subject to weather.",
       "accommodation": {
         "location": "El Calafate",
         "options": [
@@ -2242,7 +2243,7 @@
         "type": "Private transfer (driver only)",
         "from": "Glaciares de la Patagonia, El Calafate",
         "to": "Hotel Las Torres, Torres del Paine",
-        "duration": "~4 h plus border",
+        "duration": "~5 h driving, about 6 h door to door",
         "distance_km": 275,
         "time": "Time to be confirmed by Say Hueque",
         "notes": "Booked through Hotel Las Torres. Passport and SAG affidavit needed at the border."
@@ -3289,7 +3290,7 @@
     "precipitation_probability": 0.35,
     "daylight_hours": 16,
     "wind_kmh": "20-80",
-    "description": "Late spring in both countries. Santiago is warm and dry: about 27 °C by day and 10 °C at night in late November. Buenos Aires is warm and more humid, about 26 °C by day and 16 °C at night, with the chance of a thunderstorm.\n\nPatagonia is much cooler. El Calafate averages about 16 °C by day and 4 °C at night in November, a little warmer in December; El Chaltén is similar. Torres del Paine is cooler and windier, often around 10 °C by day and close to freezing at night, and November is its windiest month. Days are long: in El Calafate the sun rises around 05:35 and sets around 21:35 in early December, about 16 hours of daylight. Wind is what defines the weather here: steady wind of 30 to 50 km/h is normal and gusts at passes and viewpoints can go well above that. Rain, sleet and sunshine can all arrive within an hour, so pack layers and carry them every day.",
+    "description": "Late spring in both countries. Santiago is warm and dry: about 27 °C by day and 10 °C at night in late November. Buenos Aires is warm and more humid, about 26 °C by day and 16 °C at night, with the chance of a thunderstorm.\n\nPatagonia is much cooler. El Calafate averages about 16 °C by day and 4 °C at night in November, a little warmer in December; El Chaltén is similar. Torres del Paine is cooler and windier, often around 10 °C by day and close to freezing at night, and November is its windiest month. Days are long: in El Calafate the sun rises around 05:35 and sets around 21:40 in early December, about 16 hours of daylight. Wind is what defines the weather here: steady wind of 30 to 50 km/h is normal and gusts at passes and viewpoints can go well above that. Rain, sleet and sunshine can all arrive within an hour, so pack layers and carry them every day.",
     "alerts": [
       "Wind is the main hazard on the trails. In strong gusts, stop, crouch and wait.",
       "UV is high in southern Patagonia in spring. Use SPF 50 and sunglasses even when it feels cold.",
@@ -3648,7 +3649,7 @@
       {
         "service": "CONAF Magallanes (Torres del Paine)",
         "number": "+56 61 223 8554",
-        "notes": "Regional office, extension 200, weekday office hours. In the park, rangers are reached through your guide or the hotel."
+        "notes": "Regional office, extension 201, weekdays 09:00-13:00. In the park, rangers are reached through your guide or the hotel."
       },
       {
         "service": "Clínica Santa María, Santiago",
@@ -3663,7 +3664,7 @@
     ],
     "transport": {
       "getting_there": "Your own flight from your home city to Santiago; most of the group lands on the morning of 20 Nov. LATAM LA 455 from Santiago to Buenos Aires Aeroparque on 22 Nov. Aerolíneas Argentinas AR 1852 from Aeroparque to El Calafate on 25 Nov, landing 17:40; taxi from the airport to the Calafate Parque Hotel, about 20 km. The Say Hueque programme starts with the transfer from your El Calafate hotel on 26 Nov.",
-      "getting_back": "The guide ends on 4 Dec with LATAM LA 252 from Puerto Natales (12:00) to Santiago (14:05). Several of the group are on this flight. Onward flights home are booked separately by each traveller.",
+      "getting_back": "The guide ends on 4 Dec with LATAM LA 252 from Puerto Natales (12:00) to Santiago (14:05 on the booking; expect about 15:05). Several of the group are on this flight. Onward flights home are booked separately by each traveller.",
       "local_transport": "Santiago and Buenos Aires: taxis and ride-hailing apps; both cities also have a metro (Subte in Buenos Aires). Days 8, 10, 12 and 16: private Say Hueque transfers, driver only; times to be confirmed by Say Hueque. Days 9-11: the guides collect you from the hotel. Days 13-15: Las Torres excursions include all transport, and the Pehoé catamaran on the French Valley day."
     },
     "currency": "Argentina uses the Argentine peso (ARS). Foreign Visa and Mastercard cards are charged at a rate linked to the dólar MEP, a market rate, and in 2026 this is close to what cash dollars fetch, so paying by card is usually simplest. Avoid ATM withdrawals, which carry high fees and low limits. Carry some clean US dollar notes as a backup. Hotel VAT: paying for the room with a foreign-issued card and showing a foreign passport exempts it from the 21% VAT; paying cash does not qualify (AFIP/ARCA rules for foreign tourists). Chile uses the Chilean peso (CLP); cards work almost everywhere in Santiago. Hotel VAT: foreign tourists who pay in foreign currency, or with a foreign card charged in US dollars, and show their passport and PDI entry slip are exempt from the 19% VAT (SII). Park fees: Los Glaciares for El Chaltén is not included (buy online, see day 9); Perito Moreno is included; Torres del Paine is included through Las Torres. Tipping: about 10% in restaurants in both countries; a tip for guides and drivers is customary.",
