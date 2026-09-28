@@ -148,3 +148,21 @@ Open after review:
 - Some automatic Wikimedia photos are poor picks; pin photos or add `photo_captions` per day as needed.
 - Web search limit (200/session) was hit during food research: 9 Buenos Aires and 11 El Chaltén/Calafate places unconfirmed.
 - Final screenshot pass after the user's dry run.
+
+## Levels and short view (2026-09-28, live)
+
+Asked for by the trip coordinator: much of the group won't read everything, and some think the trip is too hard. Built in the same app, not a copy; the version before this is tagged `patagonia-full-v1`.
+
+- Easy / Moderate / Full on each hike day (`levels`, see data-contract.md). Research: `levels-research-*.md`; independent check: `figures-check-*.md`.
+- Short view at `?view=short`: one line per day, Before You Go (13 must-knows, level-based packing list, weather). Both links go to the group.
+- Fixed from the check: day 14 was using the Mirador Cuernos track (now 6.5 km / 80 m), day 15 ends at Mirador Francés, several Easy/Moderate figures, day 10 drive 215 km and park fee, day 12 transfer ~6 h, city opening hours.
+- `estimated_hours` = walking time only (user's decision).
+- Day 10 YouTube replaced with an English video (`youtube-review.md`).
+
+Still open:
+- LA 455 departure (guide 11:28; schedules suggest ~12:35): check the LATAM app.
+- Grey III duration: 2 h 45 or 3 h (the two checks disagree); minimum 25 passengers reported.
+- Questions for Say Hueque, Walk Patagonia, Huellas del Sur and Las Torres about splitting the group (second guide on day 9; Chileno and Italiano turnarounds; Las Torres minimum 6 per excursion): listed in the research notes.
+- Coordinator to review the must-know list.
+- Screenshot and phone-width pass after the user's run-through.
+- Known issue (code review): changing the level rebuilds every day card, which re-runs the photo, map and GPX lookups and closes any open day. Fine at this size; worth fixing if it feels slow.

@@ -1758,9 +1758,9 @@
         "easy": {
           "name": "Los Cóndores viewpoint only",
           "summary": "Walk with the group to the first viewpoint above town, then return while the others go on to Las Águilas. This is the steepest part of the loop; with bad knees, a morning in town is the better choice.",
-          "distance_km": 2.6,
+          "distance_km": 4.8,
           "ascent_m": 130,
-          "estimated_hours": 1,
+          "estimated_hours": 1.5,
           "difficulty": "Easy",
           "logistics": "Same 09:00 start. The way back is short and in sight of town. Meet the others at the transfer to El Calafate.",
           "to_confirm": true

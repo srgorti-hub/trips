@@ -70,9 +70,33 @@ It starts from the existing per-day schema (see `trip-template.md`), keeps the w
       "km": null, "area": "...", "url": "...", "diet": ["vegetarian"|"vegan"|"vegetarian-friendly"|"vegan-options"],
       "notes": "...", "unconfirmed": true } ],
 
-  "photo_captions": ["..."]                          // NEW, optional. Overrides the automatic Wikimedia caption per photo.
+  "photo_captions": ["..."],                         // NEW, optional. Overrides the automatic Wikimedia caption per photo.
+
+  "levels": {                                        // NEW (levels, 2026-09-28). Hike days only. "Full" is the day itself.
+    "easy":     { "name": "...", "summary": "...", "distance_km": 1.5, "ascent_m": 30,   // ascent_m may be null ("little climbing")
+                  "estimated_hours": 1, "difficulty": "Easy", "logistics": "...", "to_confirm": true },
+    "moderate": { "same_as_full": true, "note": "..." }                                   // or a full option like "easy"
+  }
 }
 ```
+
+Hike-day notes:
+- `estimated_hours` is **walking time only**, on the day and in `levels`. The whole-day length goes in the description.
+- `elevation_profile: null` (explicit) means the day has no single route to chart, e.g. day 14, a van tour with two short walks. The validator reports it as a warning, not a failure.
+- `waypoints[].km` may be omitted when the stops are along a drive; the app then shows no distance.
+
+## Trip-level fields
+
+```jsonc
+"short_view": {                                      // NEW (2026-09-28). Content for ?view=short.
+  "summary": "...",                                  // replaces trip.description on the short Overview
+  "must_know": [ { "group": "Before you leave", "items": [ { "title": "...", "text": "...", "url": "optional" } ] } ],
+  "gear": [ { "item": "...", "levels": ["easy", "moderate", "full"] } ]   // short packing list, filtered by level
+}
+```
+
+URL parameters: `?level=easy|moderate|full` (default Full, remembered per browser) and `?view=short`.
+Both can be combined. The full guide at Full level shows everything the guide showed before levels were added.
 
 Unchanged and still used on every day type: `label`, `date`, `description`, `warnings`, `interesting_links`
 (city sights go here, with real `url` where known), `food_stops`, `photos`, `location_keywords`, `youtube`.

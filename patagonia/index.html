@@ -1953,6 +1953,11 @@ document.addEventListener('DOMContentLoaded', async () => {
    RENDER APP
 ═══════════════════════════════ */
 function renderApp() {
+  // ?view=short only works when the trip has short-view content
+  if (shortView && !tripData.short_view) {
+    shortView = false;
+    document.body.classList.remove('view-short');
+  }
   renderHero();
   renderOverview();
   renderDays();
@@ -2559,7 +2564,7 @@ function renderBefore() {
       <div class="before-body">
         <div class="before-weather-figs">
           <div><strong>${w.temp_min_c} to ${w.temp_max_c} °C</strong>Patagonia</div>
-          ${w.wind_kmh ? `<div><strong>${w.wind_kmh} km/h</strong>Wind</div>` : ''}
+          ${w.wind_kmh ? `<div><strong>${formatWindRange(w.wind_kmh)}</strong>Wind</div>` : ''}
           ${w.daylight_hours ? `<div><strong>~${w.daylight_hours} h</strong>Daylight</div>` : ''}
         </div>
         <ul class="must-list">${(w.alerts || []).map(a => `<li>${a}</li>`).join('')}</ul>
