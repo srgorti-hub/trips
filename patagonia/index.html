@@ -2318,7 +2318,7 @@ function renderOverview() {
     h.count ? statCell(formatDist(h.distance), (h.count < days.length ? 'Hiking Distance' : 'Total Distance') + lvSuffix) : '',
     h.count ? statCell(formatElev(h.ascent), 'Total Ascent' + lvSuffix) : '',
     statCell(`${days.length} days`, h.count && h.count < days.length ? `Duration &middot; ${h.count} hiking` : 'Duration'),
-    h.count ? statCell(`~${h.hours.toFixed(0)} hrs`, 'Hiking Time') : '',
+    h.count ? statCell(`~${h.hours.toFixed(0)} hrs`, 'Walking Time' + lvSuffix) : '',
     t.group_size ? statCell(t.group_size, 'Group Size') : '',
     diffStr ? statCell(diffStr, 'Difficulty Mix') : '',
   ].join('');

@@ -30,7 +30,7 @@ It starts from the existing per-day schema (see `trip-template.md`), keeps the w
 ```jsonc
 {
   "day_type": "hike" | "city" | "travel",          // NEW. Required.
-  // hike days: distance_km, ascent_m, descent_m, estimated_hours, difficulty, elevation_profile,
+  // hike days: distance_km, ascent_m, descent_m, estimated_hours (walking time only, not the whole outing), difficulty, elevation_profile,
   //   links.gpx_download as today.
   // city/travel days: distance_km/ascent_m/descent_m/estimated_hours = 0, difficulty = "Easy" (kept for schema),
   //   elevation_profile = "", links.gpx_download = "", map = "". The app must NOT render stats, difficulty,

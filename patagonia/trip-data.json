@@ -1989,7 +1989,7 @@
       "distance_km": 3.6,
       "ascent_m": 174,
       "descent_m": 291,
-      "estimated_hours": 8,
+      "estimated_hours": 3,
       "stats_note": {
         "source": "Hiker GPS recording on Wikiloc",
         "source_url": "https://www.wikiloc.com/hiking-trails/perito-moreno-passarelas-163169722",
@@ -2003,7 +2003,7 @@
           "summary": "The same boat as everyone else. At the walkways, stay on the top level: the Accessible and Central circuits, with a lift and ramps and the full view of the glacier face. Wait at the café or the balconies while others walk the lower levels.",
           "distance_km": 1.2,
           "ascent_m": null,
-          "estimated_hours": 8,
+          "estimated_hours": 1,
           "difficulty": "Easy",
           "logistics": "Same vehicle, guide and boat. The group splits at the walkways and meets at an agreed time and place.",
           "to_confirm": false
@@ -2494,7 +2494,7 @@
           "summary": "A van ride to Laguna Azul on the north-east side of the park, a short flat walk with a full view of the three Towers, and a stop at the Paine waterfall. The Ascencio Valley horse ride (7 km, 3 h) is another easy choice.",
           "distance_km": 1.0,
           "ascent_m": null,
-          "estimated_hours": 4,
+          "estimated_hours": 0.5,
           "difficulty": "Easy",
           "logistics": "On the Las Torres excursion list. Book at the hotel by 20:00 the evening before.",
           "to_confirm": false
@@ -2695,7 +2695,7 @@
       "distance_km": 6.5,
       "ascent_m": 80,
       "descent_m": 80,
-      "estimated_hours": 8,
+      "estimated_hours": 2.5,
       "stats_note": {
         "source": "Operator figures and published walk lengths",
         "source_url": "https://lastorres.com/en/circuitos-por-el-dia/full-paine-glacier-grey/",
@@ -2709,7 +2709,7 @@
           "summary": "The same van tour, getting out at the roadside stops: Salto Grande, the Nordenskjöld and Sarmiento lookouts and Lago Pehoé. At Lago Grey, stay near the lodge, or take the Grey III boat to the glacier. With the boat, the beach walk adds about 2.5 km.",
           "distance_km": 2.0,
           "ascent_m": null,
-          "estimated_hours": 8,
+          "estimated_hours": 1,
           "difficulty": "Easy",
           "logistics": "Same vehicle and guide. The Grey III boat is not included (CLP 120,000 per person) and needs booking ahead; reaching the jetty takes a 30 to 45 minute beach walk each way.",
           "to_confirm": false
@@ -2914,7 +2914,7 @@
       "distance_km": 18.8,
       "ascent_m": 686,
       "descent_m": 688,
-      "estimated_hours": 10,
+      "estimated_hours": 7.5,
       "stats_note": {
         "source": "Hiker GPS recording on Wikiloc",
         "source_url": "https://www.wikiloc.com/hiking-trails/french-valley-torres-del-paine-map-88478477",
@@ -2928,7 +2928,7 @@
           "summary": "A van to Pudeto, then a walk past Salto Grande to a viewpoint on Lago Nordenskjöld facing Los Cuernos and the valley the others are hiking.",
           "distance_km": 6.0,
           "ascent_m": 150,
-          "estimated_hours": 4,
+          "estimated_hours": 2,
           "difficulty": "Easy",
           "logistics": "On the Las Torres excursion list. Book at the hotel by 20:00 the evening before.",
           "to_confirm": false
