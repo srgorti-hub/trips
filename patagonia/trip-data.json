@@ -1493,6 +1493,28 @@
         "operator": "Say Hueque lists 19 km and a high point of 719 m; the difference is likely the walk from the hotel and time around the lake."
       },
       "difficulty": "Moderate",
+      "levels": {
+        "easy": {
+          "name": "Chorrillo del Salto waterfall",
+          "summary": "A mostly flat walk through lenga forest to a waterfall north of town, starting from the road parking on RP23. A morning in town is the other choice.",
+          "distance_km": 4.0,
+          "ascent_m": 100,
+          "estimated_hours": 1.5,
+          "difficulty": "Easy",
+          "logistics": "About 10 minutes by van or taxi to the parking, arranged through Say Hueque. No guide; the path is signposted. Park entry fee applies.",
+          "to_confirm": true
+        },
+        "moderate": {
+          "name": "Laguna Torre trail to Mirador del Torre",
+          "summary": "Walk out with the full group as far as the Cerro Torre viewpoint, passing Cascada Margarita, then return the same way. Most of the full day's climbing is in this first section, so the distance drops more than the effort.",
+          "distance_km": 7.0,
+          "ascent_m": 290,
+          "estimated_hours": 3.5,
+          "difficulty": "Moderate",
+          "logistics": "Same start as the full group. Walk back in pairs or more on the same trail. Whether a second guide comes with this group is still to be confirmed.",
+          "to_confirm": true
+        }
+      },
       "terrain_tags": [
         "Forest trail",
         "River valley",
@@ -1732,6 +1754,21 @@
         "operator": "Say Hueque lists 6.99 km and 183 m of climbing."
       },
       "difficulty": "Easy",
+      "levels": {
+        "easy": {
+          "name": "Los Cóndores viewpoint only",
+          "summary": "Walk with the group to the first viewpoint above town, then return while the others go on to Las Águilas. This is the steepest part of the loop; with bad knees, a morning in town is the better choice.",
+          "distance_km": 2.6,
+          "ascent_m": 215,
+          "estimated_hours": 1,
+          "difficulty": "Easy",
+          "logistics": "Same 09:00 start. The way back is short and in sight of town. Meet the others at the transfer to El Calafate.",
+          "to_confirm": true
+        },
+        "moderate": {
+          "same_as_full": true
+        }
+      },
       "terrain_tags": [
         "Short climb",
         "Open hillside",
@@ -1959,6 +1996,22 @@
         "operator": "Say Hueque gives no distance for the walkways."
       },
       "difficulty": "Easy",
+      "levels": {
+        "easy": {
+          "name": "Boat, then the upper walkways",
+          "summary": "The same boat as everyone else. At the walkways, stay on the top level: the Accessible and Central circuits, with a lift and ramps and the full view of the glacier face. Wait at the café or the balconies while others walk the lower levels.",
+          "distance_km": 1.2,
+          "ascent_m": null,
+          "estimated_hours": 8,
+          "difficulty": "Easy",
+          "logistics": "Same vehicle, guide and boat. The group splits at the walkways and meets at an agreed time and place.",
+          "to_confirm": false
+        },
+        "moderate": {
+          "same_as_full": true,
+          "note": "Skip the lower circuit if you like: it has the most stairs."
+        }
+      },
       "terrain_tags": [
         "Metal walkways",
         "Stairs",
@@ -2434,6 +2487,28 @@
         "operator": "Las Torres lists about 8 hours, high difficulty."
       },
       "difficulty": "Strenuous",
+      "levels": {
+        "easy": {
+          "name": "Laguna Azul half day",
+          "summary": "A van ride to Laguna Azul on the north-east side of the park, a short flat walk with a full view of the three Towers, and a stop at the Paine waterfall. The Ascencio Valley horse ride (7 km, 3 h) is another easy choice.",
+          "distance_km": 1.0,
+          "ascent_m": null,
+          "estimated_hours": 4,
+          "difficulty": "Easy",
+          "logistics": "On the Las Torres excursion list. Book at the hotel by 20:00 the evening before.",
+          "to_confirm": false
+        },
+        "moderate": {
+          "name": "Base Torres trail to Chileno",
+          "summary": "The same trail as the full group, up the Ascencio Valley over Windy Pass to the Chileno sector, then back the same way. You skip the forest section and the steep boulder slope at the end. If Las Torres can't run this, the Native Lenga Forest walk (8 km, 3 to 4 h) is the fallback.",
+          "distance_km": 10.0,
+          "ascent_m": 545,
+          "estimated_hours": 4.5,
+          "difficulty": "Moderate",
+          "logistics": "Not a separate Las Torres excursion. It needs their agreement and its own guide.",
+          "to_confirm": true
+        }
+      },
       "terrain_tags": [
         "Forest trail",
         "River valley",
@@ -2627,6 +2702,21 @@
         "operator": "Las Torres lists 7 to 10 hours for the whole day, easy."
       },
       "difficulty": "Moderate",
+      "levels": {
+        "easy": {
+          "name": "Full Paine, viewpoints only",
+          "summary": "The same van tour, getting out at the roadside stops: Salto Grande, the Nordenskjöld and Sarmiento lookouts and Lago Pehoé. At Lago Grey, stay near the lodge, or take the Grey III boat to the glacier.",
+          "distance_km": 2.0,
+          "ascent_m": null,
+          "estimated_hours": 8,
+          "difficulty": "Easy",
+          "logistics": "Same vehicle and guide. The Grey III boat is not included (CLP 120,000 per person) and needs booking ahead; reaching the jetty takes a 30 to 45 minute beach walk each way.",
+          "to_confirm": false
+        },
+        "moderate": {
+          "same_as_full": true
+        }
+      },
       "terrain_tags": [
         "Van-supported day",
         "Short walks",
@@ -2837,6 +2927,28 @@
         "operator": "Las Torres lists 700–800 m of height change and 12 hours door to door."
       },
       "difficulty": "Strenuous",
+      "levels": {
+        "easy": {
+          "name": "Los Cuernos viewpoint half day",
+          "summary": "A van to Pudeto, then a walk past Salto Grande to a viewpoint on Lago Nordenskjöld facing Los Cuernos and the valley the others are hiking.",
+          "distance_km": 6.0,
+          "ascent_m": 150,
+          "estimated_hours": 4,
+          "difficulty": "Easy",
+          "logistics": "On the Las Torres excursion list. Book at the hotel by 20:00 the evening before.",
+          "to_confirm": false
+        },
+        "moderate": {
+          "name": "French Valley to Campamento Italiano",
+          "summary": "The same van, boat and lakeside trail as the full group, turning back at Campamento Italiano before the steep climb to the viewpoint. It saves the legs, not the hours: the boats back leave Paine Grande at 17:00 or 18:40. For a shorter day, the Patagón walk (9.5 km, flat, 4 h) is the alternative.",
+          "distance_km": 15.0,
+          "ascent_m": 400,
+          "estimated_hours": 5.5,
+          "difficulty": "Moderate",
+          "logistics": "Needs a second guide from Las Torres, or the whole group turning at Italiano. Wait at the Paine Grande refuge for the afternoon boat.",
+          "to_confirm": true
+        }
+      },
       "terrain_tags": [
         "Boat crossing",
         "Lakeshore trail",

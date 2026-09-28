@@ -116,7 +116,7 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 ═══════════════════════════════ */
 .hero {
   position: relative;
-  height: 420px;
+  min-height: 420px;
   background: linear-gradient(135deg, #2C4A1E 0%, #1a3012 50%, #3B4F5C 100%);
   overflow: hidden;
   display: flex;
@@ -235,6 +235,43 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 /* ═══════════════════════════════
    OVERVIEW TAB
 ═══════════════════════════════ */
+/* Hiking level picker (hero) and level table (overview) */
+.level-picker { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+.level-picker-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+.level-seg { display: inline-flex; background: rgba(255,255,255,0.12); border-radius: 8px; padding: 3px; gap: 2px; }
+.level-seg button {
+  border: none; background: transparent; color: rgba(255,255,255,0.8);
+  font: inherit; font-size: 13px; font-weight: 600; padding: 5px 14px; border-radius: 6px; cursor: pointer;
+}
+.level-seg button:hover { color: white; }
+.level-seg button.active { background: white; color: #1C1C1A; }
+.levels-card { grid-column: 1 / -1; }
+.levels-card .card-header { padding: 18px 22px; border-bottom: 1px solid var(--border); }
+.levels-card .card-header h3 { font-size: 16px; }
+.levels-table { display: grid; grid-template-columns: minmax(150px, 1.1fr) repeat(3, 1fr); }
+.levels-table > div { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 13px; min-width: 0; }
+.levels-head { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; }
+button.levels-head { border: none; border-bottom: 1px solid var(--border); background: none; text-align: left; padding: 12px 16px; cursor: pointer; font-family: inherit; }
+.levels-table .sel { background: var(--green-light); }
+button.levels-head.sel { color: var(--green); }
+.levels-day-name { font-weight: 600; }
+.levels-day-date { font-size: 12px; color: var(--muted); }
+.levels-opt-name { font-weight: 500; }
+.levels-opt-stats { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.levels-same { color: var(--muted); font-style: italic; }
+.levels-total { font-weight: 600; }
+.levels-foot { padding: 12px 16px; font-size: 12px; color: var(--muted); }
+.levels-mobile-tag { display: none; }
+/* Level plan box on a day card */
+.level-plan { border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; background: var(--green-light); }
+.level-plan-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.level-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--green); }
+.level-plan-name { font-weight: 600; }
+.level-confirm { font-size: 11px; color: var(--amber); border: 1px solid var(--amber); border-radius: 10px; padding: 0 7px; }
+.level-plan p { font-size: 14px; margin: 4px 0; }
+.level-plan-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.full-plan-heading { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+
 .overview-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1270,7 +1307,14 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 ═══════════════════════════════ */
 @media (max-width: 768px) {
   .top-nav { padding: 8px 16px; }
-  .hero { height: 340px; }
+  .hero { min-height: 340px; }
+  .levels-table { grid-template-columns: 1fr; }
+  .levels-table > .levels-head, .levels-table > button.levels-head { display: none; }
+  .levels-table > .levels-cell { border-bottom: none; padding: 4px 16px; }
+  .levels-table > .levels-day { padding-top: 14px; border-bottom: none; }
+  .levels-table > .levels-cell:nth-child(4n) { border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+  .levels-mobile-tag { display: inline; font-weight: 600; color: var(--muted); }
+  .levels-table > .levels-total { border-bottom: none; padding: 4px 16px; }
   .hero-content { padding: 28px 16px; }
   .hero h1 { font-size: 28px; }
   .hero-stats { gap: 16px; }
@@ -1331,6 +1375,7 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
     <h1 id="heroTitle"></h1>
     <div class="hero-dates" id="heroDates"></div>
     <div class="hero-stats" id="heroStats"></div>
+    <div class="level-picker" id="levelPicker"></div>
   </div>
   <div class="hero-credit" id="heroCredit" style="display:none;"></div>
 </section>
@@ -1381,6 +1426,11 @@ button { font-family: 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
         <div class="card-header"><h3>Trip Overview</h3></div>
         <div class="stats-grid" id="overviewStats"></div>
         <div class="trip-summary" id="tripSummary"></div>
+      </div>
+      <div class="card levels-card" id="levelsCard" style="display:none;">
+        <div class="card-header"><h3>Hiking days by level</h3></div>
+        <div class="levels-table" id="levelsTable"></div>
+        <div class="levels-foot" id="levelsFoot"></div>
       </div>
       <div class="card accommodation-card">
         <div class="card-header"><h3>Accommodations</h3></div>
@@ -1811,6 +1861,7 @@ function initUploadScreen() {
 document.addEventListener('DOMContentLoaded', async () => {
   initTheme();
   initUnits();
+  initLevel();
   initTabs();
   initLightbox();
   initUploadScreen();
@@ -1905,20 +1956,37 @@ function renderHero() {
 
   document.getElementById('heroDates').textContent = formatDateRange(t.dates.start, t.dates.end);
 
+  renderHeroStats();
+}
+
+/** Hero figures follow the chosen hiking level; the picker shows only when the trip has levels. */
+function renderHeroStats() {
+  const t = tripData.trip;
   const h = hikeTotals();
   const allDays = tripData.days.length;
+  const levels = tripHasLevels();
+  const suffix = levels ? ` &middot; ${LEVEL_LABELS[hikeLevel]}` : '';
   const heroStat = (value, label) => `
     <div class="hero-stat">
       <div class="hero-stat-value">${value}</div>
       <div class="hero-stat-label">${label}</div>
     </div>`;
   document.getElementById('heroStats').innerHTML = [
-    h.count ? heroStat(formatDist(h.distance), h.count < allDays ? 'Hiking Distance' : 'Total Distance') : '',
-    h.count ? heroStat(formatElev(h.ascent), 'Total Ascent') : '',
+    h.count ? heroStat(formatDist(h.distance), (h.count < allDays ? 'Hiking Distance' : 'Total Distance') + suffix) : '',
+    h.count ? heroStat(formatElev(h.ascent), 'Total Ascent' + suffix) : '',
     heroStat(allDays, 'Days'),
     h.count && h.count < allDays ? heroStat(h.count, 'Hiking Days') : '',
     t.group_size ? heroStat(t.group_size, 'Travellers') : '',
   ].join('');
+
+  const picker = document.getElementById('levelPicker');
+  if (!levels) { picker.innerHTML = ''; return; }
+  picker.innerHTML = `
+    <span class="level-picker-label">Hiking level</span>
+    <div class="level-seg" role="group" aria-label="Hiking level">
+      ${LEVELS.map(l => `<button type="button" data-level="${l}" class="${l === hikeLevel ? 'active' : ''}" aria-pressed="${l === hikeLevel}">${LEVEL_LABELS[l]}</button>`).join('')}
+    </div>`;
+  picker.querySelectorAll('button[data-level]').forEach(b => b.addEventListener('click', () => setLevel(b.dataset.level)));
 }
 
 /** Hero photo line: "<caption> · Photo: <artist> · <license> · Wikimedia Commons" (local photos: caption only). */
@@ -1945,28 +2013,95 @@ function isHikeDay(day) {
   return !day.day_type || day.day_type === 'hike';
 }
 
-function hikeTotals() {
+/* ═══════════════════════════════
+   HIKE LEVELS
+   "full" is the day as planned. day.levels.easy / .moderate hold the easier
+   options; { same_as_full: true } means that level does the full day.
+═══════════════════════════════ */
+const LEVELS = ['easy', 'moderate', 'full'];
+const LEVEL_LABELS = { easy: 'Easy', moderate: 'Moderate', full: 'Full' };
+const LEVEL_KEY = 'hike-level';
+let hikeLevel = 'full';
+
+function tripHasLevels() {
+  return tripData.days.some(d => isHikeDay(d) && d.levels);
+}
+
+function initLevel() {
+  const fromUrl = new URLSearchParams(location.search).get('level');
+  let saved = null;
+  try { saved = localStorage.getItem(LEVEL_KEY); } catch { /* storage blocked */ }
+  if (LEVELS.includes(fromUrl)) {
+    hikeLevel = fromUrl;
+    try { localStorage.setItem(LEVEL_KEY, fromUrl); } catch { /* storage blocked */ }
+  } else if (LEVELS.includes(saved)) {
+    hikeLevel = saved;
+  }
+}
+
+function setLevel(level) {
+  if (!LEVELS.includes(level) || level === hikeLevel) return;
+  hikeLevel = level;
+  try { localStorage.setItem(LEVEL_KEY, level); } catch { /* storage blocked */ }
+  const url = new URL(location.href);
+  if (level === 'full') url.searchParams.delete('level'); else url.searchParams.set('level', level);
+  history.replaceState(null, '', url);
+  renderHeroStats();
+  renderOverview();
+  renderDays();
+}
+
+/**
+ * What a hike day looks like at a level: the variant's figures, or the full day's.
+ * isVariant is true only when the level has its own plan (not same_as_full).
+ */
+function hikePlan(day, level = hikeLevel) {
+  const v = level !== 'full' && day.levels ? day.levels[level] : null;
+  if (v && !v.same_as_full) return { ...v, level, isVariant: true };
+  return {
+    level: v ? level : 'full',
+    isVariant: false,
+    sameAsFull: !!v,
+    note: v ? v.note : '',
+    name: day.label,
+    distance_km: day.distance_km,
+    ascent_m: day.ascent_m,
+    estimated_hours: day.estimated_hours,
+    difficulty: day.difficulty,
+  };
+}
+
+/** "4 km · 100 m · ~1.5h" for a plan; a missing ascent reads "little climbing". */
+function planStatsText(p) {
+  const ascent = p.ascent_m == null ? 'little climbing' : `${formatElevShort(p.ascent_m)} ascent`;
+  return `${formatDist(p.distance_km)} &middot; ${ascent} &middot; ~${p.estimated_hours}h`;
+}
+
+function hikeTotals(level = hikeLevel) {
   const hikes = tripData.days.filter(isHikeDay);
-  const sum = key => hikes.reduce((s, d) => s + (Number(d[key]) || 0), 0);
+  const plans = hikes.map(d => hikePlan(d, level));
+  const sum = key => plans.reduce((s, p) => s + (Number(p[key]) || 0), 0);
   return {
     count: hikes.length,
     distance: Math.round(sum('distance_km') * 10) / 10,
     ascent: Math.round(sum('ascent_m')),
     hours: sum('estimated_hours'),
     hikes,
+    plans,
   };
 }
 
 /** CSS class for the day badge / pill: difficulty on hike days, day_type otherwise. */
 function dayClass(day) {
   if (!isHikeDay(day)) return DAY_TYPE_LABELS[day.day_type] ? day.day_type : 'travel';
-  return (day.difficulty || 'moderate').toLowerCase();
+  return (hikePlan(day).difficulty || 'moderate').toLowerCase();
 }
 
-/** Pill text: "Hiking · Moderate" on hike days, "City" / "Travel" otherwise. */
+/** Pill text: "Hiking · Moderate" on hike days (at the chosen level), "City" / "Travel" otherwise. */
 function dayPillText(day) {
   if (!isHikeDay(day)) return DAY_TYPE_LABELS[day.day_type] || 'Travel';
-  return day.difficulty ? `Hiking &middot; ${day.difficulty}` : 'Hiking';
+  const diff = hikePlan(day).difficulty;
+  return diff ? `Hiking &middot; ${diff}` : 'Hiking';
 }
 
 /** Road legs with a distance: transport_to_start, then transport_after_hike. */
@@ -2112,7 +2247,7 @@ function renderOverview() {
 
   // Difficulty counts (hiking days only)
   const diffs = {};
-  h.hikes.forEach(d => { diffs[d.difficulty] = (diffs[d.difficulty] || 0) + 1; });
+  h.plans.forEach(p => { diffs[p.difficulty] = (diffs[p.difficulty] || 0) + 1; });
   const diffStr = Object.entries(diffs).map(([k, v]) => `<span style="white-space:nowrap">${v} ${k}</span>`).join('<br>');
 
   const statCell = (value, label) => `
@@ -2120,9 +2255,10 @@ function renderOverview() {
       <div class="stat-cell-value">${value}</div>
       <div class="stat-cell-label">${label}</div>
     </div>`;
+  const lvSuffix = tripHasLevels() ? ` &middot; ${LEVEL_LABELS[hikeLevel]}` : '';
   document.getElementById('overviewStats').innerHTML = [
-    h.count ? statCell(formatDist(h.distance), h.count < days.length ? 'Hiking Distance' : 'Total Distance') : '',
-    h.count ? statCell(formatElev(h.ascent), 'Total Ascent') : '',
+    h.count ? statCell(formatDist(h.distance), (h.count < days.length ? 'Hiking Distance' : 'Total Distance') + lvSuffix) : '',
+    h.count ? statCell(formatElev(h.ascent), 'Total Ascent' + lvSuffix) : '',
     statCell(`${days.length} days`, h.count && h.count < days.length ? `Duration &middot; ${h.count} hiking` : 'Duration'),
     h.count ? statCell(`~${h.hours.toFixed(0)} hrs`, 'Hiking Time') : '',
     t.group_size ? statCell(t.group_size, 'Group Size') : '',
@@ -2161,7 +2297,8 @@ function renderOverview() {
     const drive = km ? `${formatDist(km)} drive` : '';
     let sub;
     if (hike) {
-      sub = [`${formatDist(d.distance_km)} &middot; ${formatElevShort(d.ascent_m)} ascent &middot; ~${d.estimated_hours}h`, drive].filter(Boolean).join(' &middot; ');
+      const p = hikePlan(d);
+      sub = [p.isVariant ? `${p.name} &middot; ${planStatsText(p)}` : planStatsText(p), drive].filter(Boolean).join(' &middot; ');
     } else if (d.flights && d.flights.length) {
       const flights = d.flights.map(f => `${f.flight || ''} ${f.from_code || f.from || ''} &rarr; ${f.to_code || f.to || ''}`.trim()).join(' &middot; ');
       sub = [flights, drive].filter(Boolean).join(' &middot; ');
@@ -2186,6 +2323,46 @@ function renderOverview() {
       </div>`;
   }).join('');
   document.getElementById('routeOverview').innerHTML = routeHTML;
+
+  renderLevelsTable();
+}
+
+/** Overview table: each hike day at Easy / Moderate / Full, chosen level highlighted. Headers pick the level. */
+function renderLevelsTable() {
+  const card = document.getElementById('levelsCard');
+  if (!tripHasLevels()) { card.style.display = 'none'; return; }
+  card.style.display = '';
+  const hikes = tripData.days.filter(isHikeDay);
+  const sel = l => (l === hikeLevel ? ' sel' : '');
+
+  const head = `<div class="levels-head">Day</div>` + LEVELS.map(l =>
+    `<button type="button" class="levels-head${sel(l)}" data-level="${l}" aria-pressed="${l === hikeLevel}">${LEVEL_LABELS[l]}</button>`).join('');
+
+  const rows = hikes.map(d => {
+    const cells = LEVELS.map(l => {
+      const p = hikePlan(d, l);
+      const tag = `<span class="levels-mobile-tag">${LEVEL_LABELS[l]}: </span>`;
+      if (p.sameAsFull) {
+        return `<div class="levels-cell${sel(l)}">${tag}<span class="levels-same">Same as Full</span>${p.note ? `<div class="levels-opt-stats">${p.note}</div>` : ''}</div>`;
+      }
+      return `<div class="levels-cell${sel(l)}">${tag}<span class="levels-opt-name">${p.name}</span><div class="levels-opt-stats">${planStatsText(p)}</div></div>`;
+    }).join('');
+    return `<div class="levels-day"><div class="levels-day-name">Day ${d.day} &middot; ${d.label}</div><div class="levels-day-date">${formatShortDate(d.date)}</div></div>${cells}`;
+  }).join('');
+
+  const totals = `<div class="levels-total">Total</div>` + LEVELS.map(l => {
+    const t = hikeTotals(l);
+    return `<div class="levels-total${sel(l)}"><span class="levels-mobile-tag">${LEVEL_LABELS[l]}: </span>${formatDist(t.distance)} &middot; ${formatElevShort(t.ascent)}</div>`;
+  }).join('');
+
+  const table = document.getElementById('levelsTable');
+  table.innerHTML = head + rows + totals;
+  table.querySelectorAll('button[data-level]').forEach(b => b.addEventListener('click', () => setLevel(b.dataset.level)));
+
+  const pending = hikes.some(d => LEVELS.some(l => hikePlan(d, l).to_confirm));
+  document.getElementById('levelsFoot').textContent = pending
+    ? 'Choose a level for the whole trip here or at the top of the page. Some easier options are still being confirmed with the guides.'
+    : 'Choose a level for the whole trip here or at the top of the page.';
 }
 
 /* ═══════════════════════════════
@@ -2540,25 +2717,30 @@ function renderDayCard(day) {
     ? [accomNames(accom, false), accom.location].filter(Boolean).join(', ')
     : noAccomText(day);
 
+  // At an easier level the header figures are that option's; descent is only known for the full route
+  const plan = hike ? hikePlan(day) : null;
   const quickStatsHTML = hike ? `
       <div class="day-quick-stats">
         <div class="quick-stat">
           <span class="quick-stat-icon">&#128099;</span>
-          <span class="quick-stat-value">${formatDist(day.distance_km)}</span>
+          <span class="quick-stat-value">${formatDist(plan.distance_km)}</span>
         </div>
         <div class="quick-stat">
           <span class="quick-stat-icon">&#9650;</span>
-          <span class="quick-stat-value">${formatElevShort(day.ascent_m)}</span>
-          <span class="quick-stat-label">ascent</span>
+          ${plan.ascent_m == null
+            ? '<span class="quick-stat-label">little climbing</span>'
+            : `<span class="quick-stat-value">${formatElevShort(plan.ascent_m)}</span>
+          <span class="quick-stat-label">ascent</span>`}
         </div>
+        ${plan.isVariant ? '' : `
         <div class="quick-stat">
           <span class="quick-stat-icon">&#9660;</span>
           <span class="quick-stat-value">${formatElevShort(day.descent_m)}</span>
           <span class="quick-stat-label">descent</span>
-        </div>
+        </div>`}
         <div class="quick-stat">
           <span class="quick-stat-icon">&#9201;</span>
-          <span class="quick-stat-value">~${day.estimated_hours}h</span>
+          <span class="quick-stat-value">~${plan.estimated_hours}h</span>
         </div>
         ${driveStatsHTML(day)}
       </div>` : (driveLegs(day).length ? `
@@ -2597,6 +2779,32 @@ function renderDayCard(day) {
 
   const terrainTags = day.terrain_tags || [];
 
+  // Chosen level's plan, above the full-day description (which stays, so nothing is hidden)
+  let levelPlanHTML = '';
+  if (plan && plan.isVariant) {
+    levelPlanHTML = `
+        <div class="level-plan">
+          <div class="level-plan-top">
+            <span class="level-tag">${LEVEL_LABELS[plan.level]}</span>
+            <span class="level-plan-name">${plan.name}</span>
+            ${plan.to_confirm ? '<span class="level-confirm">To confirm</span>' : ''}
+          </div>
+          <p>${plan.summary}</p>
+          ${plan.logistics ? `<div class="level-plan-sub">${plan.logistics}</div>` : ''}
+          <div class="level-plan-sub">The full-day plan is below: ${day.label}, ${formatDist(day.distance_km)}.</div>
+        </div>
+        <div class="full-plan-heading">Full-day plan</div>`;
+  } else if (plan && plan.sameAsFull) {
+    levelPlanHTML = `
+        <div class="level-plan">
+          <div class="level-plan-top">
+            <span class="level-tag">${LEVEL_LABELS[plan.level]}</span>
+            <span class="level-plan-name">Same as the full day</span>
+          </div>
+          ${plan.note ? `<div class="level-plan-sub">${plan.note}</div>` : ''}
+        </div>`;
+  }
+
   return `
     <div class="card day-card day-${hike ? 'hike' : day.day_type}" id="day-${day.day}">
       <div class="day-card-header">
@@ -2614,6 +2822,7 @@ function renderDayCard(day) {
       <div class="day-body">
         ${statsNoteHTML}
         ${renderLogistics(day)}
+        ${levelPlanHTML}
         <p class="day-description">${day.description}</p>
         ${terrainTags.length ? `
         <div class="terrain-tags">
