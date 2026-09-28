@@ -645,7 +645,6 @@ button.levels-head.sel { color: var(--green); }
   transition: max-height 0.4s ease;
   border-top: 1px solid var(--border);
 }
-.deep-dive.open { max-height: 3000px; }
 .deep-dive-content { padding: 22px; }
 
 .elevation-chart-container {
@@ -1299,7 +1298,7 @@ button.levels-head.sel { color: var(--green); }
 .logistics-time { font-weight: 700; white-space: nowrap; font-size: 13px; }
 .logistics-time sup { font-size: 10px; color: var(--amber); margin-left: 1px; }
 
-.accom-details { list-style: none; margin: -8px 0 16px; padding-left: 14px; }
+.accom-details { list-style: none; margin: 0; padding: 0; }
 .accom-details li { font-size: 12px; color: var(--muted); padding: 2px 0; }
 .accom-details .accom-opt-name { font-weight: 600; color: var(--text); }
 .day-meals { font-size: 13px; color: var(--muted); margin: -8px 0 16px; padding-left: 14px; }
@@ -2440,6 +2439,16 @@ function wireDayCard(day, cardEl) {
     btn.addEventListener('click', () => {
       const dive = cardEl.querySelector('.deep-dive');
       const isOpen = dive.classList.contains('open');
+      // Animate to the real height, then drop the cap so late-loading maps and charts aren't clipped
+      dive.style.maxHeight = dive.scrollHeight + 'px';
+      if (isOpen) {
+        dive.offsetHeight; // reflow so the collapse starts from the current height
+        dive.style.maxHeight = '0px';
+      } else {
+        dive.addEventListener('transitionend', () => {
+          if (dive.classList.contains('open')) dive.style.maxHeight = 'none';
+        }, { once: true });
+      }
       dive.classList.toggle('open');
       btn.classList.toggle('open');
       btn.querySelector('.toggle-text').textContent = isOpen ? 'Deep Dive' : 'Close';
@@ -2866,6 +2875,7 @@ function renderDayCard(day) {
 
   // Accommodation line + details (address, phone, notes) per option
   let accomHTML = '';
+  let accomDetailsHTML = '';
   if (accom) {
     const opts = accom.options || [];
     const details = opts.map(o => {
@@ -2882,8 +2892,12 @@ function renderDayCard(day) {
         <div class="day-accommodation">
           <span>&#127968;</span>
           <span><strong>${accomNames(accom, true)}</strong>${accom.location ? ` &middot; ${accom.location}` : ''}</span>
-        </div>
-        ${details ? `<ul class="accom-details">${details}</ul>` : ''}`;
+        </div>`;
+    accomDetailsHTML = details ? `
+    <div class="detail-section">
+      <h4>&#127968; Where you're staying</h4>
+      <ul class="accom-details">${details}</ul>
+    </div>` : '';
   }
   // No hotel: the header line says "Overnight flight" when that applies; nothing else to show.
   const mealsHTML = day.meals ? `<div class="day-meals">&#127869;&#65039; Meals: <strong>${day.meals}</strong></div>` : '';
@@ -2932,13 +2946,11 @@ function renderDayCard(day) {
           ${sn.operator || ''}
         </div>` : '';
 
-  // On city/travel days the warnings are logistics (border forms, flight times), so keep them visible
-  const bodyWarningsHTML = hike ? '' : warningsHTML;
-  // Same for food: on city/travel days it's where to eat today, so show it in the body
-  const bodyFoodHTML = hike ? '' : foodStopsHTML;
+  // The card body is the day at a glance; the reference detail lives in the deep dive
   const deepDiveInner = [
-    elevationHTML, mapHTML, gpxHTML, hike ? warningsHTML : '', waypointsHTML, waterHTML, hike ? foodStopsHTML : '',
-    toiletHTML, taxiHTML, escapeHTML, resupplyHTML, externalLinksHTML, interestingLinksHTML,
+    statsNoteHTML, elevationHTML, mapHTML, gpxHTML, renderOptions(day), warningsHTML, accomDetailsHTML,
+    waypointsHTML, waterHTML, foodStopsHTML, toiletHTML, taxiHTML, escapeHTML, resupplyHTML,
+    externalLinksHTML, interestingLinksHTML,
   ].join('').trim();
 
   const ytLink = resolveYoutubeLink(day.youtube);
@@ -2995,7 +3007,6 @@ function renderDayCard(day) {
       ${quickStatsHTML}
 
       <div class="day-body">
-        ${statsNoteHTML}
         ${renderLogistics(day)}
         ${levelPlanHTML}
         <p class="day-description">${day.description}</p>
@@ -3005,9 +3016,6 @@ function renderDayCard(day) {
         </div>` : ''}
         ${accomHTML}
         ${mealsHTML}
-        ${renderOptions(day)}
-        ${bodyWarningsHTML}
-        ${bodyFoodHTML}
         ${photoSlots ? `
           <div class="photo-strip-wrapper" id="day-${day.day}-photo-strip">
             <div class="photo-strip">${photoSlots}</div>
