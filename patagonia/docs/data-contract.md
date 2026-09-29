@@ -91,12 +91,14 @@ Hike-day notes:
 "short_view": {                                      // NEW (2026-09-28). Content for ?view=short.
   "summary": "...",                                  // replaces trip.description on the short Overview
   "must_know": [ { "group": "Before you leave", "items": [ { "title": "...", "text": "...", "url": "optional" } ] } ],
-  "gear": [ { "item": "...", "levels": ["easy", "moderate", "full"] } ]   // short packing list, filtered by level
+  "gear": [ { "item": "...", "levels": ["easy", "moderate", "full"] } ]   // short packing list; items not needed at every level are tagged with their levels
 }
 ```
 
-URL parameters: `?level=easy|moderate|full` (default Full, remembered per browser) and `?view=short`.
-Both can be combined. The full guide at Full level shows everything the guide showed before levels were added.
+URL parameter: `?view=short`. There is no page-wide level (changed 2026-09-29, coordinator feedback):
+the Overview's "Hiking options by day" table compares the levels, each hike-day card lists Easy, then
+Moderate (when it differs), then the full-day plan, and the Trip Overview card has its own Easy / Moderate / Full
+switch for its figures only (opens on Full, not remembered). Old `?level=` links load normally and the parameter is ignored.
 
 Unchanged and still used on every day type: `label`, `date`, `description`, `warnings`, `interesting_links`
 (city sights go here, with real `url` where known), `food_stops`, `photos`, `location_keywords`, `youtube`.
